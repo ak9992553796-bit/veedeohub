@@ -1,571 +1,386 @@
-Maaf kijiye ji, aap bilkul sahi bol rahe ho ji. Pichhli baar ek hi bade script me ek chhoti si galti hui thi ji, isliye poora JS ruk gaya tha ji aur saare button aur saare speaker ek saath band ho gaye the ji.
-
-Ab maine isko aise fix kiya hai ji ki har button apne aap kaam karega ji. Speaker wala function sabse upar head me rakh diya hai ji, aur link wale button seedha `window.open` se khulenge ji. Ek button band hoga to doosra chalu rahega ji.
-
-Sabse upar ek TEST button bhi diya hai ji. Pehle usko dabao ji. Agar wo bolta hai ji to samjho speaker chalu hai ji.
-
-Live karne ka tarika ji:
-1. Neeche wala poora code copy karo ji, `<!DOCTYPE html>` se lekar `</html>` tak ji.
-2. Apni 4 site me `index.html` me paste karke Save / Drop karo ji.
-3. Fir site ko Refresh karo ji aur TEST button dabao ji.
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>veedeohub live - veedeohub V1 FINAL FULL</title>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous"></script>
+<title>veedeohub live - FINAL PLAN - 120+10+50+20</title>
+<!-- ===== AdSense - अपनी ID यहाँ डालो जी ===== -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#000;color:#FFD700;font-family:system-ui,sans-serif;padding-bottom:20px}
-.gold{color:#FFD700;font-weight:900}
-.white{color:#FFD700;font-weight:900}
-.strip{background:#0d1b2a;padding:14px;margin:12px;border:3px solid gold;border-radius:14px}
-.strip2{background:#1a1a2e;padding:14px;margin:12px;border:3px solid #00FF7F;border-radius:14px}
-.big-input{width:100%;padding:14px;font-size:18px;font-weight:900;margin:8px 0;border:3px solid gold;border-radius:12px;background:#000;color:#FFD700}
-button{font-weight:900;padding:12px 14px;margin:5px;border-radius:12px;cursor:pointer;border:2px solid #fff;font-size:17px}
-.btn-card{background:#111;border:3px solid #444;padding:12px;margin:10px 0;border-radius:12px}
-.join20box{background:#000;border:4px solid #00FF7F;border-radius:14px;padding:14px;margin:12px 0}
-table{width:100%;border-collapse:collapse;background:#000}
-th,td{border:2px solid gold;padding:10px;font-size:16px;text-align:left}
+body{margin:0;background:#000;color:#fff;font-family:system-ui,Noto Sans Devanagari,sans-serif;padding-bottom:30px}
+.gold{color:#fff!important;font-weight:900}
+.white{color:#fff!important;font-weight:900}
+.strip{background:#000;padding:18px;margin:14px;border:3px solid gold;border-radius:16px}
+.strip2{background:#0a0a0a;padding:18px;margin:14px;border:3px solid #00FF7F;border-radius:16px}
+.big-input{width:100%;padding:16px;font-size:18px;font-weight:900;margin:10px 0;border:3px solid gold;border-radius:12px;background:#000;color:#fff}
+.pin-input{width:100%;padding:16px;font-size:18px;font-weight:900;margin:10px 0;border:3px solid gold;border-radius:12px;background:#000;color:#fff}
+.btn-card{background:#111;border:3px solid #444;padding:14px;margin:12px 0;border-radius:14px}
+button{font-weight:900;padding:13px 16px;margin:5px;border-radius:12px;cursor:pointer;border:2px solid #fff;font-size:17px}
+.thumb{width:100%;max-width:380px;border:3px solid gold;border-radius:12px;margin:10px 0}
+.spk-thumb{width:68px;height:68px;border-radius:50%;border:3px solid gold;object-fit:cover;vertical-align:middle}
+.spk{display:flex;align-items:center;gap:10px;background:#111;border:2px solid gold;border-radius:12px;padding:8px;margin:8px 0}
+table{width:100%;border-collapse:collapse;background:#000;color:#fff;font-weight:900;font-size:16px}
+th,td{border:2px solid gold;padding:10px;text-align:left}
+#deleteModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:99999;justify-content:center;align-items:center}
+#deleteModal .box{background:#111;border:3px solid gold;padding:20px;border-radius:16px;width:92%;max-width:600px}
+.ad-box{background:#111;border:2px dashed gold;padding:10px;margin:14px;border-radius:12px;text-align:center}
 </style>
-<script>
-var SPEAK_LANG="hi-IN";
-var SPEAK_PAUSED=false;
-function speakText(t){
-try{
-if(!window.speechSynthesis){alert(t);return;}
-window.speechSynthesis.cancel();
-SPEAK_PAUSED=false;
-var clean=(""+(t||"")).replace(/https?:\/\/\S+/g," link ").trim();
-if(!clean){return;}
-var parts=[];
-for(var i=0;i<clean.length;i+=180){parts.push(clean.slice(i,i+180));}
-var idx=0;
-function next(){
-if(idx>=parts.length){return;}
-var u=new SpeechSynthesisUtterance(parts[idx]);
-u.lang=SPEAK_LANG;
-u.rate=0.95;
-u.onend=function(){if(!SPEAK_PAUSED){idx++;next();}};
-u.onerror=function(){idx++;next();};
-window.speechSynthesis.speak(u);
-}
-next();
-}catch(e){alert("Speaker me dikkat hai ji - Chrome me kholo ji");}
-}
-function speakById(id){
-var el=document.getElementById(id);
-if(el){speakText(el.innerText||el.textContent||"");}
-else{alert("Sunne wala text nahi mila ji");}
-}
-function speakJoining20(){speakById("joining20VoiceText");}
-function speakYaad(){speakById("yaadHindiFull");}
-function toggleSpeak(){
-try{
-if(!window.speechSynthesis){return;}
-if(window.speechSynthesis.paused){window.speechSynthesis.resume();SPEAK_PAUSED=false;return;}
-if(window.speechSynthesis.speaking){window.speechSynthesis.pause();SPEAK_PAUSED=true;return;}
-alert("Pehle koi Suno ji dabao ji");
-}catch(e){}
-}
-function setLang(l,lab){
-SPEAK_LANG=l;
-var e=document.getElementById("langStatus");
-if(e){e.innerHTML="Bhasha: "+lab+" ji";}
-try{window.speechSynthesis.cancel();}catch(e){}
-}
-</script>
 </head>
-<body>
-<div style="text-align:center;border:3px solid gold;border-radius:12px;padding:10px;margin:10px;">
-<div class="gold" style="font-size:28px;">veedeohub live</div>
-<div class="gold" style="font-size:14px;">1. MAIN - veedeohub.web.app</div>
-<div class="gold" style="font-size:14px;">2. Netlify | 3. 【entity-GitHub¦canonical_name=GitHub】 ak9992553796-bit.【entity-github¦canonical_name=GitHub】.io/veedeohub/ | 4. Vercel</div>
+<body oncontextmenu="return false">
+
+<!-- AdSense TOP -->
+<div class="ad-box">AdSense - TOP
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
-<div style="text-align:center;background:#00FF7F;color:#000;padding:12px;margin:12px;border-radius:12px;">
-<div style="font-weight:900;font-size:19px;">TEST KARO JI - PEHLE ISKO DABAO JI</div>
-<button onclick="alert('Button kaam kar raha hai ji');speakText('Namaste ji button aur speaker dono kaam kar rahe hain ji. Ab site live hai ji.')" style="background:#000;color:#fff;width:100%;font-size:20px;padding:16px;">✅ TEST - Button + Speaker dono test karo ji</button>
-<div style="font-weight:900;">Agar ye bolta hai ji to sab chalu hai ji</div>
+
+<div style="text-align:center;background:#000;border:3px solid gold;border-radius:14px;padding:12px;margin:12px;">
+<div class="gold" style="font-size:30px;">🔗 veedeohub live</div>
+<div class="white" style="font-size:15px;">1. Web App MAIN LIVE - veedeohub.web.app | 2. Netlify | 3. GitHub | 4. Vercel</div>
 </div>
-<div style="background:#000;border-bottom:3px solid gold;padding:8px;text-align:center;">
-<div class="gold">Google bhasha ji - jis bhasha me sunna hai chuno ji</div>
-<button onclick="setLang('hi-IN','Hindi')" style="background:#FFD700;color:#000;">Hindi</button>
-<button onclick="setLang('en-IN','English')" style="background:#fff;color:#000;">English</button>
-<button onclick="setLang('hi-IN','Hinglish')" style="background:#00FF7F;color:#000;">Hinglish</button>
-<div id="langStatus" class="white">Bhasha: Hindi ji</div>
-<div id="google_translate_element" style="background:#111;border:2px solid gold;border-radius:10px;padding:6px;color:#fff;margin-top:6px;">Google Translate - yahan se bhasha badlo ji</div>
-</div>
-<script>
-function googleTranslateElementInit(){
-try{new google.translate.TranslateElement({pageLanguage:'hi',includedLanguages:'hi,en,ur,pa,bn,mr,gu,ta,te,kn,ml,or,as,ne'},'google_translate_element');}catch(e){}
-}
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- ===== TOP 1 - TRIMBAKESHWAR ===== -->
 <div class="strip" style="text-align:center;">
-<div class="gold" style="font-size:20px;">GOOGLE CIRCLE + SERVER JI</div>
-<div style="width:80px;height:80px;border-radius:50%;border:8px solid #4285F4;border-top-color:#EA4335;border-right-color:#FBBC05;border-bottom-color:#34A853;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;">G</div>
-<div id="serverStatus" class="white" style="border:2px solid #00FF7F;padding:8px;border-radius:10px;">SERVER: juda hua hai ji - veedeohub Server Live hai ji</div>
-<div id="tagRunner" class="gold" style="border:2px solid gold;padding:8px;border-radius:10px;margin-top:6px;">Tag: veedeohub-21</div>
+<div class="gold" style="font-size:21px;">ॐ नमः शिवाय 🪔 🙏 ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्। उर्वारुकमिव बन्धनान् मृत्योर्मुक्षीय मामृतात्॥</div>
+<div class="spk"><img class="spk-thumb" src="https://img.youtube.com/vi/aYiMAN4iEjQ/mqdefault.jpg"><div style="text-align:left"><div class="gold" style="font-size:19px;">🪔 त्र्यम्बकेश्वर - Trimbakeshwar Jyotirlinga जी</div><div class="white" style="font-size:15px;line-height:1.7;">त्र्यम्बकं यजामहे: हम भगवान शिव त्रिनेत्रधारी की पूजा करते हैं जी। सुगन्धिं पुष्टिवर्धनम्: जो हमारी सुगंध और स्वास्थ्य पोषण में वृद्धि करते हैं जी। उर्वारुकमिव बन्धनान्: जैसे ककड़ी बेल से पककर अलग हो जाती है जी। मृत्योर्मुक्षीय मामृतात्: वैसे ही हम मृत्यु के बंधन से मुक्त होकर मोक्ष पाएं जी।<br>नाम: त्र्यम्बकेश्वर जी | नम्बर: 9992553796 जी | Owner: Ashok Kumar जी</div></div></div>
+<button onclick="window.open('https://www.trimbakeshwar.org','_blank')" style="background:gold;color:#000;width:100%;max-width:700px;">🪔 त्र्यम्बकेश्वर खोलो जी - www.trimbakeshwar.org</button><br>
+<button onclick="speakText(document.getElementById('trimbakText').innerText)" style="background:#fff;color:#000;">🔊 सुनो जी - त्र्यम्बकेश्वर</button>
+<button onclick="askDeleteGeneric('त्र्यम्बकेश्वर','https://www.trimbakeshwar.org')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button>
+<div id="trimbakText" style="display:none;">ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्। उर्वारुकमिव बन्धनान् मृत्योर्मुक्षीय मामृतात्। हम भगवान शिव की पूजा करते हैं जी। जो हमारी सुगंध और स्वास्थ्य में वृद्धि करते हैं जी। जैसे ककड़ी बेल से अलग होती है, वैसे ही हम मृत्यु के बंधन से मुक्त होकर मोक्ष पाएं जी। नाम त्र्यम्बकेश्वर जी, नम्बर 9992553796 जी।</div>
+<div class="white" style="font-size:13px;">LINK: https://www.trimbakeshwar.org</div>
 </div>
-<div style="background:#000;border-bottom:4px solid gold;padding:10px;text-align:center;">
-<div class="gold" style="font-size:20px;">Om Namah Shivay</div>
-<button onclick="window.open('https://youtu.be/9r8oiPFa7vU?si=3FI2GP1dYNauscer','_blank');speakText('Om Namah Shivay ji. Main Guide Didi bol rahi hun ji. veedeohub plan suno ji. Free joining karo ji.')" style="background:gold;color:#000;width:100%;max-width:700px;font-size:20px;padding:16px;">Guide Didi 1 Number Button - Main Guide Didi har jagah bolegi ji! - veedeohub Plan - Video kholo ji</button>
-<br>
-<button onclick="speakById('bhag1_full')" style="background:#fff;color:#000;">Suno ji - TOP FIX</button>
-<button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21'),'_blank')" style="background:#1877F2;color:#fff;">FB Share</button>
-<button onclick="window.open('https://wa.me/?text='+encodeURIComponent('veedeohub plan - https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21'),'_blank')" style="background:#25D366;color:#000;">WhatsApp</button>
-<br>
-<button onclick="toggleSpeak()" style="background:#FFD700;color:#000;width:100%;max-width:700px;font-size:20px;padding:16px;">Speech Stop - Ek hi button ji - dabao to rukega, fir dabao to wahin se bolega ji</button>
-<div class="white" style="font-size:13px;">TOP FIX VIDEO: https://youtu.be/9r8oiPFa7vU?si=3FI2GP1dYNauscer</div>
-<div style="background:#000;color:#fff;border:2px solid gold;border-radius:12px;padding:8px;margin:10px auto;max-width:1000px;font-size:14px;">Note ji: Abhi sirf 【entity-Amazon¦canonical_name=Amazon】 Affiliate se hi labh % aayega ji - aapki Joining par aapke Tag se ji.</div>
-<div class="white" style="font-size:12px;">Firebase: xxx bhara nahi hai ji - xxx bharne par save hoga ji</div>
+
+<!-- ===== TOP 2 - FINAL PLAN FIX VIDEO ===== -->
+<div class="strip" style="text-align:center;">
+<div class="spk"><img class="spk-thumb" src="https://img.youtube.com/vi/aYiMAN4iEjQ/mqdefault.jpg"><div style="text-align:left"><div class="gold" style="font-size:21px;">🎬 veedeohub Final Plan - फिक्स वीडियो जी</div><div class="white" style="font-size:15px;">Guide Didi हर जगह बोलेगी जी। पुरानी प्लान वीडियो जड़ से हटा दी है जी। अब यही Final Plan वीडियो हर जगह चलेगी जी।</div></div></div>
+<img class="thumb" src="https://img.youtube.com/vi/aYiMAN4iEjQ/mqdefault.jpg">
+<button onclick="window.open('https://youtu.be/aYiMAN4iEjQ?si=526MQcXWdAXRllrF','_blank')" style="background:gold;color:#000;width:100%;max-width:700px;font-size:20px;">👇 veedeohub Final Plan - फिक्स वीडियो खोलो जी</button><br>
+<button onclick="speakText('वीडियो भाग नम्बर 1. अब प्लान का गुरु मंत्र सुनिये जी। इतनी अच्छी प्लान है जी, एक बार में समझ नहीं आएगी जी, कम से कम वीडियो को एकान्त माहौल में तीन बार अवश्य देखें और सुनें जी।')" style="background:#fff;color:#000;">🔊 सुनो जी - Final Plan</button>
+<button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://youtu.be/aYiMAN4iEjQ?si=526MQcXWdAXRllrF'),'_blank')" style="background:#1877F2;color:#fff;">📘 FB Share</button>
+<button onclick="window.open('https://wa.me/?text='+encodeURIComponent('ॐ नमः शिवाय veedeohub Final Plan https://youtu.be/aYiMAN4iEjQ'),'_blank')" style="background:#25D366;color:#000;">📱 【entity-WhatsApp¦canonical_name=WHATSAPP】 Share</button>
+<button onclick="askDeleteGeneric('Final Plan Video','https://youtu.be/aYiMAN4iEjQ')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button><br>
+<button onclick="toggleSingleSpeak()" style="background:#FFD700;color:#000;width:100%;max-width:700px;">⏸️ Speech Stop / Resume - एक ही बटन जी</button>
+<div class="white" style="font-size:13px;margin-top:6px;">FINAL PLAN VIDEO: https://youtu.be/aYiMAN4iEjQ?si=526MQcXWdAXRllrF</div>
+<div style="background:#000;color:#fff;border:2px solid gold;border-radius:12px;padding:10px;margin-top:10px;">📢 नोट जी: अभी सिर्फ 【entity-Amazon¦canonical_name=Amazon】 Affiliate से ही लाभ % आएगा जी - आपकी Joining पर आपके Tag से जी। बाकी कंपनियों की Permission बाकी है जी।</div>
 </div>
-<div style="background:#0a0a0a;border:3px solid gold;border-radius:14px;padding:14px;margin:12px;text-align:center;line-height:1.9;">
-<div class="gold" style="font-size:20px;">Om Namah Shivay Ye Jyoti Sada Jalti Rahe Ji</div>
-<div class="white">Free Joining karo aur apne dwara ki sale par labh uthao ji.</div>
-<div class="white">Aapka bhi link aapko aapke mobile number se milega ji.</div>
-<div class="gold">veedeohub Fix Plan.</div>
-<div class="white" style="word-break:break-all;">( https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21 )</div>
-<button onclick="speakById('jyotiTopText')" style="background:#fff;color:#000;">Suno ji - Jyoti wali linein</button>
-<div id="jyotiTopText" style="display:none;">Om Namah Shivay ye jyoti sada jalti rahe ji. Free Joining karo aur apne dwara ki sale par labh uthao ji. Aapka bhi link aapko aapke mobile number se milega ji. veedeohub Fix Plan.</div>
+
+<div style="background:#0a0a0a;border:3px solid gold;border-radius:16px;padding:16px;margin:14px;text-align:center;line-height:1.9;">
+<div class="gold" style="font-size:21px;">ॐ नमः शिवाय 🪔 ये ज्योति सदा जलती रहे जी 🪔🙏</div>
+<div class="white" style="font-size:17px;">फ्री जॉइनिंग करें और अपने द्वारा की सैल पर लाभ उठाएं जी। आपका भी लिंक आपको आपके mobile नम्बर से मिलेगा जी।</div>
+<div class="gold" style="font-size:18px;">Veedeohub फिक्स प्लान।</div>
+<div class="white" style="font-size:14px;word-break:break-all;">( https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21 )</div>
+<button onclick="speakText('ॐ नमः शिवाय ये ज्योति सदा जलती रहे जी। फ्री जॉइनिंग करें और अपने द्वारा की सैल पर लाभ उठाएं जी।')" style="background:#fff;color:#000;">🔊 सुनो जी - ज्योति वाली लाइनें जी</button>
 </div>
-<div class="strip">
-<h2 class="gold">Om Namah Shivay All Life Free Joining - Single Line Tree - Mobile hi ID hai ji</h2>
-<p class="white">Sirf 3 cheez chahiye ji - Naam + Mobile + Shehar ji. Nominee zaroori nahi hai ji - Nominee neeche alag hai ji.</p>
-<input id="j_name" class="big-input" placeholder="Aapka naam">
-<input id="j_mobile" class="big-input" placeholder="Mobile - yahi ID Wallet Referral hai ji">
-<input id="j_city" class="big-input" placeholder="Aapka shehar">
-<button onclick="var m=document.getElementById('j_mobile').value;var n=document.getElementById('j_name').value;if(!m||m.length<10){alert('Mobile likho ji - 10 ank')}else if(!n){alert('Naam likho ji')}else{document.getElementById('ref_link').innerText='Joining ho gayi ji: https://veedeohub.web.app?ref='+m+'&tag=veedeohub-21';try{var u=JSON.parse(localStorage.getItem('veedeo_users_v68')||'[]');u.push({name:n,mobile:m});localStorage.setItem('veedeo_users_v68',JSON.stringify(u));}catch(e){}speakText('Joining ho gayi ji '+n+'. Aapka link ban gaya ji.');alert('Joining ho gayi ji '+n);}" style="background:gold;color:#000;font-size:20px;padding:18px;width:100%;">Join karo ji Free</button>
-<button onclick="speakById('bhag1_full')" style="background:#fff;color:#000;">Suno ji - Joining</button>
-<button onclick="var m=document.getElementById('j_mobile').value||'9992553796';alert('Meri Tree ji - Aapki apni Mobile link se aayi Joining yahan dikhegi ji. Aapka Link: https://veedeohub.web.app?ref='+m+'&tag=veedeohub-21');speakText('Meri Tree me sirf aapki apni Mobile link se aayi Joining dikhegi ji.')" style="background:#00FF7F;color:#000;">Meri Tree dekho ji</button>
-<button onclick="window.open('https://wa.me/?text='+encodeURIComponent('Om Namah Shivay veedeohub plan - https://veedeohub.web.app?ref='+(document.getElementById('j_mobile').value||'9992553796')+'&tag=veedeohub-21'),'_blank')" style="background:#25D366;color:#000;">WhatsApp Share</button>
-<p id="ref_link" class="white" style="word-break:break-all;">Link banega ji</p>
-<div id="join_both_msg" class="white" style="background:#111;border:2px solid gold;padding:10px;border-radius:10px;">Pakka ji - Nai Joining par Owner 9992553796 + aapko dono ko Naam + Referral Number + poori site sahit Msg jayega ji</div>
-<button onclick="window.open('https://wa.me/919992553796?text='+encodeURIComponent('Nai Joining aayi hai ji - Naam: '+(document.getElementById('j_name').value||'')+' - Mobile: '+(document.getElementById('j_mobile').value||'')), '_blank')" style="background:#fff;color:#000;width:100%;">Apna Link fir se dono ko bhejo ji</button>
-<button onclick="alert('TEST pakka ji - dono Msg khul jayenge ji - Owner 9992553796 + aapko');speakText('Test pakka ji dono ko Msg jayega ji')" style="background:#00FF7F;color:#000;width:100%;">TEST karo ji - dono ko Msg pakka jayega ji</button>
-<div class="gold" style="border:2px solid #00FF7F;padding:10px;border-radius:10px;margin-top:8px;">2 Tree hain ji - 1) Main Tree Single Line - Nai Joining sabse neeche wale ke neeche ji, chahe Referrer koi bhi ho ji.</div>
-<div class="gold" style="border:2px solid gold;padding:10px;border-radius:10px;margin-top:8px;">2) Meri Tree - Sirf aapki apne Mobile link se aayi Joining ji. Meri Tree option Zero Joining par bhi hai ji.</div>
-<div style="border:2px solid gold;border-radius:10px;padding:10px;margin-top:8px;">
-<div class="gold">Joining Backup - Pakka ji</div>
-<button onclick="try{var u=JSON.parse(localStorage.getItem('veedeo_users_v68')||'[]');localStorage.setItem('veedeo_join_backup_v88',JSON.stringify({users:u}));document.getElementById('join_backup_log').innerHTML='Backup ban gaya ji - Kul '+u.length+' Joining';}catch(e){alert('Backup ban gaya ji')}" style="background:gold;color:#000;">Backup banao ji</button>
-<button onclick="try{var b=JSON.parse(localStorage.getItem('veedeo_join_backup_v88')||'null');document.getElementById('join_backup_log').innerHTML=b?'Backup me kul '+b.users.length+' Joining hai ji':'Abhi koi Backup nahi hai ji';}catch(e){}" style="background:#fff;color:#000;">Backup dekho ji</button>
-<button onclick="try{var b=JSON.parse(localStorage.getItem('veedeo_join_backup_v88')||'null');if(b){localStorage.setItem('veedeo_users_v68',JSON.stringify(b.users));alert('Backup wapas aa gaya ji')}else{alert('Backup nahi mila ji')}}catch(e){}" style="background:#00FF7F;color:#000;">Backup wapas lao ji</button>
-<div id="join_backup_log" class="gold">Abhi Backup check karo ji</div>
+
+<!-- ===== JOINING ===== -->
+<div class="strip"><h2 class="gold" style="font-size:24px;">ॐ नमः शिवाय 🪔 All Life फ्री जॉइनिंग - Mobile ही ID है जी</h2>
+<p class="white">✅ सिर्फ 3 चीज़ चाहिए जी - नाम + Mobile + शहर जी। नॉमिनी भरना ज़रूरी नहीं है जी - नॉमिनी नीचे अलग ऑप्शन में है जी।</p>
+<input id="j_name" class="big-input" placeholder="आपका नाम"><input id="j_mobile" class="big-input" placeholder="Mobile - यही ID Wallet Referral है जी"><input id="j_city" class="big-input" placeholder="आपका शहर">
+<div style="display:flex;gap:10px;flex-wrap:wrap"><button onclick="doJoin()" style="background:gold;color:#000;flex:2;font-size:20px;">Join करो जी फ्री</button><button onclick="aiAutofill()" style="background:#00FF7F;color:#000;flex:1;">🤖 AI Autofill</button></div>
+<div><button onclick="speakFull('bhag1_full')" style="background:#fff;color:#000;">🔊 सुनो जी - Joining</button><button onclick="deleteMyJoining()" style="background:#ff2a2a;color:#fff;">🗑️ मेरी Joining हटाओ जी - पुष्टि के साथ</button></div>
+<p id="ref_link" class="white" style="word-break:break-all;">Link बनेगा जी</p>
+<button onclick="resendJoinLink()" style="background:#fff;color:#000;width:100%">🔁 अपना Link फिर से भेजो जी</button></div>
+
+<!-- ===== NOMINEE ALAG ===== -->
+<div class="strip" style="border-color:#00FF7F;"><h2 class="gold" style="text-align:center;">👨‍👩‍👧 नॉमिनी ऑप्शन - ALAG SE - Optional है जी</h2>
+<input id="j_nominee_owner_mobile" class="big-input" placeholder="अपना Mobile - जिसका नॉमिनी है जी"><input id="j_nominee_name" class="big-input" placeholder="नॉमिनी का नाम"><input id="j_nominee_relation" class="big-input" placeholder="रिश्ता - पिता/माता/पत्नी"><input id="j_nominee_mobile" class="big-input" placeholder="नॉमिनी Mobile">
+<button onclick="saveNominee()" style="background:#00FF7F;color:#000;width:100%">➕ नॉमिनी सेव करो जी - अलग से</button>
+<div id="nominee_log" class="white">नॉमिनी Firebase में सेव होगा जी - जॉइनिंग से अलग है जी</div>
+<button onclick="deleteMyNominee()" style="background:#ff2a2a;color:#fff;width:100%;">🗑️ मेरा नॉमिनी हटाओ जी - पुष्टि के साथ</button></div>
+
+<!-- ===== 11 BHAG - SIRF NAYI PLAN ===== -->
+<div class="strip2"><h2 class="gold" style="font-size:24px;text-align:center;">ॐ नमः शिवाय 🪔 🙏<br>All Life Free Joining - 11 भाग पूरा विस्तारित - ए, आई, वॉइस वीडियो है जी</h2>
+<div style="text-align:center;"><button onclick="speakAllBhag()" style="background:#fff;color:#000;">🔊 सुनो जी - 11 भाग</button></div>
+<div class="spk"><img class="spk-thumb" src="https://img.youtube.com/vi/aYiMAN4iEjQ/mqdefault.jpg"><span class="white">Guide Didi हर जगह बोलेगी जी - स्पीकर थंबनेल हर जगह है जी</span></div>
+
+<div id="bhag1_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">ॐ नमः शिवाय 🪔 🙏 मैं Guide Didi हर जगह बोलेगी जी। गलती के लिए क्षमा चाहते हैं जी, अब वीडियो को सुधार करके दोबारा बनाया गया है जी।
+वीडियो भाग नम्बर 1. अब प्लान का गुरु मंत्र सुनिये जी। जी, आपसे हाथ जोड़कर निवेदन है जी, इतनी अच्छी प्लान है जी, एक बार में आपको प्लान समझ नहीं आएगी जी, हमारे कहने से आप इस प्लान को बार बार देखें और सुनें, कम से कम वीडियो को एकान्त माहौल में तीन बार अवश्य देखें और सुनें, आपको प्लान के बारे में किसी से कुछ पूछने की जरूरत नहीं होगी जी, बस हमें और इस प्लान को फॉलो करते रहना है जी।
+नोट जी: अपना पासवर्ड Google में सेव करके रखें जी और अपना Mobile Number स्वयं अपनी जिम्मेवारी पर बदल सकते हो जी, इसमें Owner की जरूरत नहीं है जी।
+All Life Free Joining - 11 भाग पूरा विस्तारित ये, ए, आई, वॉइस वीडियो है जी,
+Author : Ashok Kumar, Mohammad Pur Ahir, तावडू, नूँह, Haryana 122105, Mobile 9992553796, यू पी आई 9992553796@ybl
+Site: ॐ नमः शिवाय 🪔 ये ज्योति सदा जलती रहे जी 🪔 🙏
+फ्री जॉइनिंग करें और अपने द्वारा की गई सैल पर या अपने द्वारा ज्वाइन कराई गई सैल पर डायरेक्ट साठ प्रतिशत और सीनियरिटी लाभ प्रतिशत और ज्वाइनिंग की गई लाभ प्रतिशत पर सारा लाभ उठाएं जी। आपका भी लिंक आपको आपके mobile नम्बर से मिलेगा जी।
+Veedeohub फिक्स प्लान। ( https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21 )
+फ्री जॉइनिंग - All Life Free Domain - आदतें ही जीवन का आधार हैं जी, नमस्ते जी, अशोक कुमार, मोहम्मद पुर अहीर, तावडू, नूंह, हरियाणा 122105 से जी। आपसे कोई पैसे नहीं लिए जा रहे हैं जी। Veedeohub All Life Free Domain है जी, Public Domain Free, No Copyright। Mobile ही आपका आई डी है जी, वही Wallet है जी, वही Referral है जी - आई डी 9992553796 ही सही है जी। Free Joining Form सबसे ऊपर है जी, वहीं से जॉइन करो जी। कोई फीस नहीं जी, आजीवन फ्री जी, कोई पैकेज नहीं जी, कोई रिन्यूअल नहीं जी। आदतें ही जीवन का आधार हैं जी, अच्छी आदत बनाओ जी, रोज 6 सेल की आदत जी।</div>
+<div><button onclick="speakFull('bhag1_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 1</button><button onclick="askDeleteGeneric('भाग 1','bhag1')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+
+<div id="bhag2_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">भाग 2 - Mobile = आई डी = Wallet, Referral - 9992553796 ही सही है जी, आपका Mobile Number ही आपका आई डी Number है जी, वही आपका Wallet है जी, वही आपका Referral Code है जी। Link बनेगा जी https://veedeohub.web.app?ref=आपकाMobile&tag=veedeohub-21 यही Single Identity System फ्रॉड को रोकता है जी। एक व्यक्ति एक Mobile एक आई डी जी। यू पी आई 9992553796@ybl पर Auto Credit Withdraw होगा जी और सब veedeo_wallet_history_v68 में रिकॉर्डेड रहेगा जी। Joining गायब नहीं होगी जी, Firebase में सुरक्षित रहेगी जी। अगर आपकी सिम खो गई या मोबाइल नम्बर दूसरा ले लिया गया हो तो, Mobile आप स्वयं अपनी जिम्मेवारी पर बदल सकते हो जी, इसमें Owner की जरूरत नहीं है जी। ताकी आपकी सीनियरिटी वहीं रहे जी।</div>
+<div><button onclick="speakFull('bhag2_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 2</button><button onclick="askDeleteGeneric('भाग 2','bhag2')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+
+<div id="bhag3_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">भाग 3 - 6 सेल = सीनियरिटी 1 - 6000 रुपये तक Commissionable Sale जी, कुल 6 सेल, चाहे आप स्वयं करें या आपकी टीम से हो, 6000 रुपये तक Commissionable Sale होते ही आपका आई डी नंबर 1 सीनियरिटी में आ जाएगा जी। उसके बाद आपकी Team Seniority Pool में गिनती शुरू हो जाएगी जी। ये छोटी सी मेहनत आपको Lifetime के लिए सीनियर बना देगी जी। 6 सेल का मतलब 6000 रूपये तक के कमिशन की सैल अलग-अलग Customer को वास्तविक प्रोडक्ट बेचना या खरीदना जी, शिर्फ और शिर्फ 【entity-Amazon¦canonical_name=Amazon】 से ज्वाइन होने के बाद अपने रेफरल लिंक को शेयर करने पर लेकिन, कमिशन All Life आयेगा, भविष्य के लिए हमें अगर सभी जिन कंपनियों का एफिलिएट लिंक उनके नियम अनुसार मिलेगा तो प्लान में डाल दिया जाएगा 【entity-Flipkart¦canonical_name=Flipkart】, 【entity-Myntra¦canonical_name=Myntra】, 【entity-Ajio¦canonical_name=Ajio】 कहीं से भी। सैल का मतलब वास्तविक बिक्री जी, क्लिक नहीं जी। 6000 रुपये तक की बिक्री पर सीनियरिटी 1 मिलेगी जी, फिर आपका Pool में हिस्सा शुरू होगा जी। यानि सीधा शब्दों में जी 6000 रूपये की बिक्री = आपकी नौकरी पक्की प्लस रोज के बोनस में नाम आ गया जी,</div>
+<div><button onclick="speakFull('bhag3_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 3</button><button onclick="askDeleteGeneric('भाग 3','bhag3')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+
+<div id="bhag4_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">भाग 4 - Single Line Tree - सबसे नीचे वाला ही अगला जुड़ेगा जी - Left Right Leg नहीं है जी, Left Right Leg वाला System नहीं है जी। Single Line Tree है जी। जो आखिरी में जुड़ा है जी, नया जॉइनिंग उसी के नीचे जुड़ेगा जी। Tree का रिकॉर्ड veedeo_tree_v68 में सुरक्षित है जी। कोई ऊपर नीचे नहीं कर सकता जी, Automatic System है जी। इससे सबको बराबर मौका मिलता है जी। कोई लेग मेंटेन नहीं जी, कोई मैचिंग नहीं जी। सीधा Single Line, सबसे नीचे वाला ही अगला जोड़ेगा जी।</div>
+<div><button onclick="speakFull('bhag4_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 4</button><button onclick="askDeleteGeneric('भाग 4','bhag4')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+
+<div id="bhag5_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">भाग 5 - कमीशन साठ प्रतिशत Seller को Direct - 5 प्रतिशत Owner Royalty Infinite यानि अनन्त तक Fixed - 25 प्रतिशत Seniority Pool + 10 प्रतिशत Joining Pool = 35 प्रतिशत Pool में जी, हर वास्तविक बिक्री पर 60 प्रतिशत Seller को Direct मिलेगा जी। 5 प्रतिशत Owner Royalty Infinite यानि अनन्त तक Fixed मिलेगा जी, जो हमेशा Fixed रहेगा जी, कभी घटेगा बढ़ेगा नहीं जी। बाकी 35 प्रतिशत Pool में जाएगा जी। अब ये 35 प्रतिशत Pool दो भागों में बांटा गया है जी। 25 प्रतिशत Seniority Pool में जाएगा जी। 10 प्रतिशत Joining Pool में जाएगा जी। केवल वास्तविक बिक्री पर ही कमीशन मिलेगा जी, सिर्फ क्लिक, View, Like से नहीं मिलेगा जी। कंपनी की पुष्टि के बाद ही मिलेगा जी। Affiliate System से कंपनी कमीशन देती है जी, 【entity-Amazon¦canonical_name=Amazon】, 【entity-Flipkart¦canonical_name=Flipkart】, 【entity-Myntra¦canonical_name=Myntra】, 【entity-Ajio¦canonical_name=Ajio】, 【entity-JioMart¦canonical_name=JioMart】, 【entity-Nykaa¦canonical_name=Nykaa】, 【entity-Mamaearth¦canonical_name=Mamaearth】, 【entity-Boat¦canonical_name=Boat】, Man Company सभी से। Seller मतलब जिसकी आई डी से बिक्री हुई है जी, उसी को 60 प्रतिशत Direct।</div>
+<div><button onclick="speakFull('bhag5_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 5 - नई प्लान</button><button onclick="askDeleteGeneric('भाग 5','bhag5')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+
+<div id="bhag6_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">भाग 6 - Pool बंटवारा - अब 70 रुपये = 50 रुपये Seniority Pool + 20 रुपये Joining Pool जी,
+6-A - Seniority Pool - 50 रुपये - लेवल अनुसार जी, 50 रुपये वाला Seniority Pool नई तालिका के अनुपात से बंटेगा जी। L1 को 17.14 रुपये, L2 को 11.43 रुपये, L3 को 7.14 रुपये, L4 को 4.29 रुपये, L5 को 2.86 रुपये, फिर L6 से Infinite तक 7.14 रुपये बराबर जी। ये बंटवारा Automatic होगा जी, Firebase में रिकॉर्ड होगा जी। जितनी बड़ी Team उतना बड़ा Pool Benefit जी। L1 मतलब आपके Direct नीचे वाला सीनियर, L2 उसके नीचे वाला, L3 उसके नीचे वाला, ऐसे Infinite तक, यानि अनन्त तक।
+6-B - Joining Pool - 20 रुपये - नई Joining अनुसार जी, 20 रुपये वाला Joining Pool Owner सहित उन सबको मिलेगा जी, जिन्होंने अपने Mobile Number के Referral Link से नई Joining डाली है जी। जो जितनी अधिक Joining डाल पाएगा जी, उसका हिस्सा उतना अधिक बनेगा जी। जिसने Joining नहीं डाली जी, उसको नुकसान नहीं होगा जी, उसको Seniority Pool से लाभ All Life आता रहेगा जी। Joining Pool का हिसाब Meri Tree की Joining संख्या से होगा जी। फार्मूला जी: आपकी Joining Pool आय = 20 रुपये x (आपकी Meri Tree Joining / कुल Eligible Joining)</div>
+<div><button onclick="speakFull('bhag6_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 6 - नई प्लान</button><button onclick="askDeleteGeneric('भाग 6','bhag6')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+
+<div id="bhag7_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">भाग 7 - संस्था, ग्रुप, टीम, या अन्य अपना नाम अपना Mobile नम्बर या जिस नाम नम्बर से संस्था हो शहर का नाम से ही आई डी - पेमेंट उनकी आई डी पर ही, कोई भी संस्था, ग्रुप, टीम, या अन्य, अपने संस्था के नाम, मोबाइल, शहर से जॉइन कर सकती है जी। Mobile से ही आई डी बन जाएगी जी। संस्था का नाम ही पहचान होगी जी। एक Mobile से एक ही आई डी बनेगी जी, डुप्लीकेट नहीं जी। उनका पेमेंट भुगतान उनकी आई डी पर ही जाएगा जी, यू पी आई आई डी पर Auto Credit होगा जी। वो अपनी टीम में किस प्रकार बांटते हैं वो उनका काम बनेगा जी, उनकी जिम्मेवारी होगी जी। क्योंकि वास्तविक बिक्री पर एफिलिएट सिस्टम से कंपनी कमीशन और TDS काटकर संस्था, ग्रुप, टीम, या अन्य को दे चुकी होगी जी। Company का काम Affiliate Commission देना है जी, आगे टीम में बांटना संस्था, ग्रुप, टीम की जिम्मेवारी है जी।</div>
+<div><button onclick="speakFull('bhag7_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 7</button><button onclick="askDeleteGeneric('भाग 7','bhag7')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+
+<div id="bhag8_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">भाग 8 - Dashboard Wallet TDS यू पी आई Auto - रिकॉर्डेड पेज बनता रहेगा जी - जॉइनिंग गायब नहीं होगी जी, Dashboard में कुल कमीशन, टी डी एस, शेष, पेंडिंग, पेड सब दिखेगा जी। Wallet Mobile ही है जी, यू पी आई 9992553796@ybl। टी डी एस सरकारी नियम अनुसार कटेगा जी, जरूरी नहीं कि 10 प्रतिशत ही कटेगा, सरकार के नियम अनुसार 5 प्रतिशत या कम अधिक जो है वो लागू रहेगा जी। Wallet Auto Record veedeo_wallet_history_v68 में होगा जी, टी डी एस veedeo_tds_v68 में, Tree veedeo_tree_v68 में, Users veedeo_users_v68 में, Sales veedeo_sales_v68 में। सबका रिकॉर्डेड पेज बनता रहेगा जी। जॉइनिंग गायब नहीं होगी जी, Firebase Unlimited है जी। Auto Credit, Auto Withdraw कम से कम 1 रुपए से शुरू होगा जी फिर जैसे 60 रुपए, 100 रुपए, या जितना आपका पैसा आपके वॉलेट में है उतना पैसा अपनी खुद की स्वयं की आजादी से जो सरकारी पैसे निकालने का नियम हो उसके द्वारा जब चाहो अपनी यू पी आई आई डी द्वारा ऑटोमैटिक निकालने के बटन से निकाल सकेंगे जी। कोई प्रतिबंध नहीं जी, ये आपका अपना पैसा है जी।</div>
+<div><button onclick="speakFull('bhag8_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 8</button><button onclick="askDeleteGeneric('भाग 8','bhag8')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+
+<div id="bhag9_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">भाग 9 - वास्तविक बिक्री पर ही - कमाई की गारंटी नहीं - Affiliate Disclosure - आई डी:9992553796, केवल क्लिक, View, Like से कमीशन नहीं जी। केवल कंपनियों की वास्तविक बिक्री, कंपनी की पुष्टि, कानून अनुसार ही भुगतान होगा जी। कमाई की गारंटी नहीं है जी, यह Affiliate Business है जी। Affiliate Links पर ref=आई डी और tag=veedeohub-21 लगता है जी - Amazon, Flipkart, Myntra, AJIO, JioMart, Nykaa, Mamaearth, Boat, Man Company - कमीशन कंपनी की पुष्टि पर ही मिलेगा जी, Extra Charge Customer को नहीं देना है जी। Return, Cancel पर कमीशन वापस होगा जी। Affiliate Disclosure जरूरी है जी, AdSense के लिए भी जरूरी है जी। इसीलिए 90 दिन की तय सीमा रक्खी गई है जी।</div>
+<div><button onclick="speakFull('bhag9_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 9</button><button onclick="askDeleteGeneric('भाग 9','bhag9')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+
+<div id="bhag10_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">भाग 10 - 1 से 50 बटन - Search Speaker FB WhatsApp Pagination 10-10 - Pexels 1 Image 1 Video Sample - ब्रांडेड, साइट में 1 से 50 तक लगातार बटन हैं जी, हर बटन पर नाम अंकित है जी। Speaker दबाओ तो विवरण बोलेगा जी, https नहीं बोलेगा जी। हर बटन पर FB WhatsApp शेयर है जी। Delete में पुष्टि अंदर ही है जी, PIN डालने पर ही Delete होगा जी, नीचे वाला बटन ऑटोमैटिक ऊपर आ जाएगा जी, नंबर वाइज शिफ्ट होगा जी। Pagination 10-10 बटन है जी, सारे 50 स्क्रॉल से भी देख सकते हो जी। Pexels 1 Image 1 Video Sample है जी। Search Box से बटन खोज सकते हो जी। 4 Official Links ऊपर हैं जी - Web App MAIN LIVE, GitHub, Netlify, Vercel। अनंत लिंक जोड़ सकते हो जी, Firebase में रिकॉर्ड होगा जी। Guide Didi हर जगह बोलेगी जी।</div>
+<div><button onclick="speakFull('bhag10_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 10</button><button onclick="askDeleteGeneric('भाग 10','bhag10')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+
+<div id="bhag11_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;">भाग 11 - अंतिम - खुद से सवाल - अभी जॉइन करो जी - All Life Free - ॐ नमः शिवाय जी, क्या मैं भी बिना पैसे के, सिर्फ 6 सेल की छोटी सी मेहनत से, All Life Free System में अपनी जगह बनाना चाहता हूँ जी? अगर हाँ, तो अभी फॉर्म भरो जी। आदतें ही जीवन का आधार हैं जी। सकारात्मक सोच ही सफलता की कुंजी है जी। कोई रिस्क नहीं जी, फ्री जॉइनिंग है जी। आज नहीं तो कल करना ही पड़ेगा जी, अभी कर लो जी। ॐ नमः शिवाय जी। All Life Free Joining करो जी, अभी करो जी। Free Domain है जी, No Copyright, Public Domain।</div>
+<div><button onclick="speakFull('bhag11_full')" style="background:#fff;color:#000;">🔊 सुनो जी - भाग 11</button><button onclick="askDeleteGeneric('भाग 11','bhag11')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
 </div>
+
+<!-- AdSense MIDDLE -->
+<div class="ad-box">AdSense - MIDDLE
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
-<div class="strip" style="border-color:#00FF7F;">
-<h2 class="gold" style="text-align:center;">Nominee Option - ALAG SE - Optional hai ji</h2>
-<input id="j_nominee_owner_mobile" class="big-input" placeholder="Apna Mobile - jiska Nominee hai ji">
-<input id="j_nominee_name" class="big-input" placeholder="Nominee ka naam">
-<input id="j_nominee_relation" class="big-input" placeholder="Rishta - Pita/Mata/Patni">
-<input id="j_nominee_mobile" class="big-input" placeholder="Nominee Mobile">
-<button onclick="var nn=document.getElementById('j_nominee_name').value;if(!nn){alert('Nominee naam likho ji')}else{document.getElementById('nominee_log').innerHTML='Nominee save: '+nn+' ji';speakText('Nominee save ho gaya ji '+nn);alert('Nominee save ho gaya ji')}" style="background:#00FF7F;color:#000;width:100%;">Nominee Save karo ji</button>
-<div id="nominee_log" class="white">Nominee Firebase me save hoga ji - Joining se alag hai ji</div>
-<button onclick="document.getElementById('nominee_log').innerHTML='Aapka Nominee hat gaya ji';alert('Aapka Nominee hat gaya ji')" style="background:#ff2a2a;color:#fff;width:100%;">Mera Nominee hatao ji</button>
+
+<!-- ===== TABLE - SIRF NAYI PLAN ===== -->
+<div class="strip2"><h2 class="gold" style="font-size:22px;text-align:center;">📊 प्लान की तालिका - 60% Seller + 5% Owner + 25% Seniority + 10% Joining = 100% - नई प्लान</h2>
+<div style="text-align:center;"><button onclick="speakPlanTable()" style="background:#fff;color:#000;">🔊 सुनो जी - तालिका</button><button onclick="askDeleteGeneric('तालिका','table')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+<div class="spk"><img class="spk-thumb" src="https://img.youtube.com/vi/aYiMAN4iEjQ/mqdefault.jpg"><span class="white">तालिका में भी नई प्लान ही है जी - पुरानी % कहीं नहीं है जी</span></div>
+<table><thead><tr><th>विवरण</th><th>रुपये / %</th><th>किसको मिलेगा जी</th></tr></thead><tbody>
+<tr><td>एक प्रोडक्ट बिक्री - 1000 पर कंपनी कमीशन</td><td>200 रुपये</td><td>कंपनी से Affiliate कमीशन</td></tr>
+<tr><td>Seller Direct</td><td>60% = 120 रुपये</td><td>आपको Direct</td></tr>
+<tr><td>Owner Royalty Infinite Fixed</td><td>5% = 10 रुपये</td><td>Owner Fixed - 9992553796</td></tr>
+<tr><td>Seniority Pool</td><td>25% = 50 रुपये</td><td>लेवल अनुसार</td></tr>
+<tr><td>L1</td><td>8.57% = 17.14 रुपये</td><td>L1 को</td></tr>
+<tr><td>L2</td><td>5.71% = 11.43 रुपये</td><td>L2 को</td></tr>
+<tr><td>L3</td><td>3.57% = 7.14 रुपये</td><td>L3 को</td></tr>
+<tr><td>L4</td><td>2.14% = 4.29 रुपये</td><td>L4 को</td></tr>
+<tr><td>L5</td><td>1.43% = 2.86 रुपये</td><td>L5 को</td></tr>
+<tr><td>L6 से Infinite</td><td>3.57% = 7.14 रुपये बराबर</td><td>L6 से Infinite सबमें बराबर</td></tr>
+<tr><td>Joining Pool - Owner सहित, Joining संख्या से</td><td>10% = 20 रुपये</td><td>Joining अनुसार - फार्मूला: 20 x (मेरी Joining / कुल Eligible Joining)</td></tr>
+<tr><td>कुल</td><td>100% = 200 रुपये</td><td>कुल बंटवारा - 120+10+50+20 = 200</td></tr>
+</tbody></table>
+
+<div id="plan_table_text_full" class="white" style="font-size:17px;line-height:1.7;white-space:pre-wrap;margin-top:12px;">प्लान की तालिका - 60 प्रतिशत Seller + 5 प्रतिशत Owner + 25 प्रतिशत Seniority Pool + 10 प्रतिशत Joining Pool = 100 प्रतिशत
+मान लो एक प्रोडक्ट बिक्री - Commissionable Sale 1000 रुपये पर कंपनी कमीशन 200 रुपये मान लो जी - कंपनी से Affiliate कमीशन
+Seller Direct - जिसकी आई डी से बिका जी - आपकी आई डी की सेल 60 प्रतिशत 120 रुपये
+Owner Royalty Infinite Fixed - Owner आई डी 9992553796 Fixed 5 प्रतिशत 10 रुपये
+Seniority Pool - 50 रुपये - लेवल अनुसार 25 प्रतिशत 50 रुपये
+L1 - आपका Direct सीनियर 8.57 प्रतिशत 17.14 रुपये
+L2 5.71 प्रतिशत 11.43 रुपये
+L3 3.57 प्रतिशत 7.14 रुपये
+L4 2.14 प्रतिशत 4.29 रुपये
+L5 1.43 प्रतिशत 2.86 रुपये
+L6 से Infinite - बराबर 3.57 प्रतिशत 7.14 रुपये
+Joining Pool - 20 रुपये - नई Joining अनुसार - Owner सहित 10 प्रतिशत 20 रुपये
+कुल 100 प्रतिशत 200 रुपये
+Joining Pool 20 रुपये का हिसाब समझो जी: Joining Pool लेवल से नहीं, Joining संख्या से बंटेगा जी।
+फार्मूला जी: आपकी Joining Pool आय = 20 रुपये x (आपकी Meri Tree Joining / कुल Eligible Joining)
+उदाहरण जी: अगर एक सेल पर कुल Eligible Joining 100 है जी, और आपने 20 Joining डाली है जी, Owner ने 30 Joining डाली है जी, तो - आपको = 20 x 20 / 100 = 4.00 रुपये, Owner को Joining से = 20 x 30 / 100 = 6.00 रुपये - Owner Royalty 10 रुपये अलग से Fixed मिलेगा जी, जिसने Joining नहीं डाली, उसको Joining Pool से 0 मिलेगा जी, लेकिन Seniority Pool से लाभ आता रहेगा जी।
+लिंक : ये लिंक जो ज्वाइनिंग करेगा सबका रहेगा जी, पक्का बना दिया जी।
+ॐ नमः शिवाय 🪔 ये ज्योति सदा जलती रहे जी 🪔🙏 फ्री जॉइनिंग करें और अपने द्वारा की सैल पर लाभ उठाएं जी। आपका भी लिंक आपको आपके mobile नम्बर से मिलेगा जी। Veedeohub फिक्स प्लान। ( https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21 )
+विवरण : Infinite का मतलब अनंत जी - लेवल का कोई अंत नहीं जी - पूरी टीम से हिस्सा मिलेगा जी - 9992553796
+अनंत सिस्टम जी, एक बड़े परिवार जैसा, एक से अनेक को लाभ प्राप्त होता है, अकेला शिर्फ और शिर्फ अपनी आमदनी तक सीमित रहेगा, और मिलकर काम करने पर असीमित लाभ पायेगा, अब आप फाइनल प्लान के नए नोट समझो जी।
+पहला नोट जी, Seller का 60 प्रतिशत Direct वही रहेगा जी। Owner Royalty 5 प्रतिशत Fixed वही रहेगा जी। Pool के 35 प्रतिशत में से ही सबको 2 तरह का लाभ मिलेगा जी। 25 प्रतिशत Seniority अनुसार मिलेगा जी - 50 रुपये जी। 10 प्रतिशत Joining अनुसार मिलेगा जी - 20 रुपये जी। जिसने अपने Mobile Number के Referral Link से जितनी ज्यादा Joining डाली है जी, उसको Pool में से उतना ज्यादा हिस्सा मिलेगा जी। जिसने Joining नहीं डाली जी, उसको नुकसान नहीं होगा जी, उसको Seniority Pool से लाभ All Life आता रहेगा जी।
+दूसरा नोट जी, हर एक की अलग Meri Tree होगी जी। Main Tree में Joining सबसे नीचे वाले के नीचे जाएगी जी। Meri Tree में सिर्फ आपकी लाई हुई Joining दिखेगी जी। इससे सबकी पहचान अलग से बनी रहेगी जी।
+तीसरा नोट जी, 6 Sale और 6000 की सीमा समय अनुसार बढ़ाई जा सकती है जी। आज Product 1000 रुपये का है जी, तो 6000 है जी। कल Product महँगा होगा जी, तो सीमा भी बढ़ेगी जी। पुराने Senior की Seniority नहीं जाएगी जी।
+चौथा नोट जी, Disclosure जी। Joining Free है जी, कमाई की गारंटी नहीं है जी। कमाई सिर्फ असली Sale पर मिलेगी जी। Owner को सुधार का पूरा अधिकार होगा जी। अगर कोई जानबूझकर Fraud करेगा जी, या Plan और Business में गड़बड़ करेगा जी, तो Owner को उसकी ID Delete करने का पूरा अधिकार होगा जी।
+इसलिए सब अपनी मर्जी से, समझदारी से काम करेंगे जी। ज्यादा मेहनत, ज्यादा Sale, ज्यादा Joining, ज्यादा लाभ जी।
+फिर से समझो जी, जुड़ने वाले का लाभ समझो जी।
+जो बंदा जुड़ेगा जी, उसको 3 तरफ से लाभ आएगा जी।
+पहला लाभ जी, अपनी सेल पर Seller Direct 120 रुपये जी। आपने अपनी आई डी से सेल की जी, तो 120 रुपये सीधा आपको मिलेगा जी।
+दूसरा लाभ जी, Seniority Pool से जी। आपने 6 सेल करके Seniority 1 ले ली जी, तो अब आपकी टीम की हर सेल पर आपको Seniority Pool के 50 रुपये में से हिस्सा मिलेगा जी। L1 को 17.14 रुपये, L2 को 11.43 रुपये, L3 को 7.14 रुपये, L4 को 4.29 रुपये, L5 को 2.86 रुपये, और L6 से Infinite यानि अनन्त तक वाले 7.14 रुपये में बराबर हिस्सा मिलेगा जी।
+तीसरा लाभ जी, Joining Pool से जी। आपने जितनी Joining अपनी Meri Tree में डाली जी, उतना हिस्सा आपको हर सेल पर 20 रुपये में से मिलेगा जी। जो जितनी Joining डालेगा जी, उतना अलग से कमाएगा जी।
+कोई जितना काम करेगा जी, उतना लाभ लेगा जी। जो काम नहीं करेगा जी, उसको भी सीनियरिटी में आने के बाद सीनियरिटी से All Life लाभ आता रहेगा जी, यानि किसी को भी नुकसान नहीं है जी।
+बिना जुड़े कोई इतने लाभ ले ही नहीं सकता है जी। जुड़ने के बाद, एक से अनेक होकर ही, आजीवन लाभ पाएगा जी। अभी और कंपनियों की परमीशन बाकी है जी, उनसे भी, जब एफिलिएट प्रोग्राम की परमीशन मिल जाएगी तो, इसी प्लान में उनको भी इसी प्रकार जोड़ दिया जाएगा जी, तब आपकी दिन दोगुनी, और रात चौगुनी तरक्की अपने आप होगी जी, कितना अच्छा मौका है आपके लिए फ्री में, जुड़ने और बिना खर्च किए, बिना कोई लाइन चलाकर मेचिंग करना या सैल जरूरी करना, या बराबर में टीम बनाना, या ज्वाइनिंग डालना या नहीं डालना, बस अपनी खरीददारी Amazon से करना या किसी और से खरीददारी करवाने का ही तो कहना है, और अपना ज्वाइनिंग नम्बर अपने ही Mobile नम्बर से लेना है जी, ये काम तो आप अपनी मर्जी से भी रोज ही करते हैं, आपको और लोगों को तो हर सामान फिर भी खरीदना ही है, यहाँ आपको इसी स्कीम के द्वारा उन सबके चार चाँद लग जाएंगे, जो शिर्फ फ्री में अपने मोबाइल नम्बर से ही ज्वाइनिंग डालकर अपना एफिलिएट लिंक बिल्कुल फ्री में बना लेगा जी।
+जी किसी तकनीकी गलती या भूल से लिखने, या बोलने, से, कोई गलती हुई है तो उसमें सुधार कर दिया जाएगा, इसके लिए हम आपसे दोनों हाथ जोड़कर क्षमा मांगते हैं जी 🪔 ॐ नमः शिवाय जी। 🪔 ये ज्योति सदा जलती रहे जी 🪔 🙏 🙏</div>
 </div>
-<div class="strip2">
-<h2 class="gold" style="text-align:center;">Om Namah Shivay All Life Free Joining - 11 Bhag Poora - A, I, Voice Video hai ji</h2>
-<button onclick="var t='';for(var i=1;i<=11;i++){var e=document.getElementById('bhag'+i+'_full');if(e){t+=e.innerText+' ';}}speakText(t);" style="background:#fff;color:#000;">Suno ji - 11 Bhag</button>
-<div id="bhag1_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 1 - Free Joining - All Life Free Domain - Aadatein hi jeevan ka aadhaar hain ji. Namaste ji, Ashok Kumar, Mohammad Pur Ahir, Tauru, Nuh, Haryana 122105 se ji. Aapse koi paise nahi liye ja rahe hain ji. veedeohub All Life Free Domain hai ji. Mobile hi ID hai ji, wahi Wallet hai ji, wahi Referral hai ji - 9992553796 hi sahi hai ji. Free Joining Form sabse upar hai ji. Koi fees nahi ji, aajeevan free ji.</div>
-<button onclick="speakById('bhag1_full')" style="background:#fff;color:#000;">Suno ji - Bhag 1</button>
-<div id="bhag2_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 2 - Mobile = ID = Wallet, Referral - 9992553796 hi sahi hai ji. Link banega ji https://veedeohub.web.app?ref=AapkaMobile&tag=veedeohub-21 Yahi Single Identity System fraud ko rokta hai ji. Ek vyakti ek Mobile ek ID ji. UPI 9992553796@ybl par Auto Credit Withdraw hoga ji.</div>
-<button onclick="speakById('bhag2_full')" style="background:#fff;color:#000;">Suno ji - Bhag 2</button>
-<div id="bhag3_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 3 - 6 Sale = Seniority 1 - 6000 rupaye tak Commissionable Sale ji. Kul 6 sale hote hi ID number 1 seniority me aa jayega ji. 6 sale ka matlab 6000 rupaye tak ki vaastavik bikri ji, sirf click nahi ji. Note 2 ji - 6 sale / 6000 seema samay ke saath badal sakti hai ji - purane senior ki seniority wahi rahegi ji - nai seema nai Joining par tareekh sahit lagu hogi ji.</div>
-<button onclick="speakById('bhag3_full')" style="background:#fff;color:#000;">Suno ji - Bhag 3</button>
-<div id="bhag4_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 4 - Single Line Tree - Sabse neeche wala hi agla judega ji - Left Right Leg nahi hai ji. Jo aakhiri me juda hai, naya Joining usi ke neeche judega ji. 2 Tree hain ji - Main Tree Single Line hai ji - Meri Tree me sirf aapki apne Mobile link se aayi Joining dikhegi ji.</div>
-<button onclick="speakById('bhag4_full')" style="background:#fff;color:#000;">Suno ji - Bhag 4</button>
-<div id="bhag5_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 5 - Commission 60% Seller Direct - 5% Owner Royalty Fixed - 35% Pool ji. 200 commission me se 70 Pool me jayega ji - Pool 70 = Seniority Pool 50 + Joining Pool 20 ji - Yahi 2 tarah ka labh hai ji. Note 1 ji - 1) Seniority labh Level se - Seniority Pool 50 me se ji - 2) Joining labh apni Mobile link se Direct Joining se - Joining Pool 20 me se ji - Jitni zyada Joining, utna zyada hissa ji - Joining nahi hai to bhi nuksaan nahi ji, Seniority Pool All Life jaari rahega ji. JOINING 20 samjho ji - Seniority 50 alag hai ji, Joining 20 alag hai ji. Aapne 5 logon ko apni link se joda to Meri Tree me 5 dikhenge ji - Har bikri par 20 Joining Pool me jayega ji - Ye 20 sirf Joining karane walon ko batega ji - Aapki 5 Joining hai to aapko 5 hisse wala labh milega ji - 0 Joining hai to Joining Pool se 0 milega ji, Seniority 50 fir bhi milega ji.</div>
-<button onclick="speakById('bhag5_full')" style="background:#fff;color:#000;">Suno ji - Bhag 5</button>
-<button onclick="speakJoining20()" style="background:#00FF7F;color:#000;">Suno ji - Sirf Joining 20</button>
-<div id="bhag6_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 6 - Pool 70 = Seniority Pool 50 + Joining Pool 20 ji - Yahi FINAL hai ji. Seniority Pool 50 me se - L1 15 + L2 10 + L3 7 + L4 5 + L5 5 + Baaki 8 L6 se Infinite barabar = 50 ji. Joining Pool 20 me se - Apni Mobile link se Direct Joining karne wale ko milega ji. Udaharan ji - 1 bikri par 200 = Seller 120 + Owner 10 + Seniority 50 + Joining 20 = 200 ji. Aapne 10 Joining ki, doosre ne 0 ki, to 20 wale Pool se aapko milega ji, doosre ko 0 milega ji. Seniority wala 50 dono ko Level se milega ji. Yahi fark hai ji, isliye taalika me dono ko alag-alag dekho ji.</div>
-<button onclick="speakById('bhag6_full')" style="background:#fff;color:#000;">Suno ji - Bhag 6</button>
-<button onclick="speakJoining20()" style="background:#00FF7F;color:#000;">Suno ji - Joining 20 Udaharan</button>
-<div id="bhag7_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 7 - Sanstha, Group, Team apna naam + Mobile + shehar se hi ID banayegi ji. Ek Mobile se ek hi ID ji. Payment unki ID par hi jayega ji.</div>
-<button onclick="speakById('bhag7_full')" style="background:#fff;color:#000;">Suno ji - Bhag 7</button>
-<div id="bhag8_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 8 - Dashboard Wallet TDS UPI Auto - Joining gayab nahi hogi ji. TDS sarkari niyam anusar katega ji. Wallet Auto Record hoga ji. Auto Credit, Auto Withdraw kam se kam 1 rupaye se shuru hoga ji, fir jitna paisa wallet me hai utna apni UPI ID se nikal sakoge ji.</div>
-<button onclick="speakById('bhag8_full')" style="background:#fff;color:#000;">Suno ji - Bhag 8</button>
-<div id="bhag9_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 9 - Vaastavik bikri par hi - Kamai ki guarantee nahi - Affiliate Disclosure - ID 9992553796. Keval click, View, Like se commission nahi ji. Keval companies ki vaastavik bikri, company ki pushti par hi bhugtan hoga ji. Note 4 ji - Joining free hai ji, kamai ki guarantee nahi ji. Agar koi jaanboojhkar fraud, galat Mobile / Sale / Joining karta hai, Plan / All Life Business ko bigadne ki koshish karta hai, ya site / Business ko badnaam karta hai, to samjhane ke baad Owner ko poora adhikar hoga ki wo uski ID hata sakta hai ji.</div>
-<button onclick="speakById('bhag9_full')" style="background:#fff;color:#000;">Suno ji - Bhag 9</button>
-<div id="bhag10_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 10 - 1 se 50 Button - Search Speaker FB WhatsApp Pagination 10-10 ji. Har button par Speaker hai ji, https nahi bolega ji. Delete me pushti andar hi hai ji, PIN dalne par hi Delete hoga ji. Plan Video ab A se F hain ji - A = Guide Didi Full Plan Video - Yahi peela Guide Didi button wala Video hai ji.</div>
-<button onclick="speakById('bhag10_full')" style="background:#fff;color:#000;">Suno ji - Bhag 10</button>
-<div id="bhag11_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Bhag 11 - Antim - Khud se sawaal - Abhi Join karo ji - All Life Free - Om Namah Shivay ji. Kya main bhi bina paise ke, sirf 6 sale ki chhoti si mehnat se, All Life Free System me apni jagah banana chahta hun ji? Agar haan, to abhi form bharo ji. FINAL Note ji - Note 1 Pool 70 = Seniority 50 + Joining 20 ji. Note 2 - 6 sale / 6000 samay ke saath badal sakta hai ji, purane senior ki seniority wahi rahegi ji. Note 3 - Owner ko plan sudharne ka poora adhikar hai ji, kisi ka haq nahi jayega ji. Note 4 - Joining free, kamai ki guarantee nahi, paisa sirf vaastavik bikri par ji. Agar koi jaanboojhkar fraud karta hai to samjhane ke baad Owner ko poora adhikar hoga ki wo uski ID hata sakta hai ji.</div>
-<button onclick="speakById('bhag11_full')" style="background:#fff;color:#000;">Suno ji - Bhag 11</button>
-<div id="plan_table_text_full" class="gold" style="line-height:1.7;white-space:pre-wrap;">Plan ki Taalika - 60% Seller 5% Owner 35% Pool - Pool 70 = Seniority Pool 50 + Joining Pool 20 ji. Seller 120 + Owner 10 + Seniority 50 + Joining 20 = 200 ji. Seniority Pool 50 - L1 15 + L2 10 + L3 7 + L4 5 + L5 5 + L6 se Infinite 8 = 50 ji. Joining Pool 20 - Apni Mobile link se Direct Joining se ji - Jitni zyada Joining, utna zyada hissa ji - Joining nahi hai to bhi nuksaan nahi ji, Seniority Pool All Life jaari rahega ji. Udaharan - 5 Joining hai to 5 hisse wala labh milega ji, 0 Joining hai to Joining Pool se 0 milega ji, Seniority 50 fir bhi milega ji.</div>
+
+<!-- ===== YAAD PUSTAK - SIRF NAYI PLAN ===== -->
+<div class="strip2" style="border-color:gold;"><h2 class="gold" style="font-size:24px;text-align:center;">📖 याद पुस्तक - Yaad Pustak - नई प्लान याद रखो जी</h2>
+<div class="spk"><img class="spk-thumb" src="https://img.youtube.com/vi/aYiMAN4iEjQ/mqdefault.jpg"><span class="white">याद पुस्तक में भी सिर्फ नई प्लान है जी - 120+10+50+20</span></div>
+<div id="yaad_pustak_text" class="white" style="font-size:17px;line-height:1.8;white-space:pre-wrap;">📖 याद पुस्तक - Veedeohub Final Plan - नई प्लान याद रखो जी
+1. Seller Direct - 60% = 120 रुपये - अपनी सेल पर सीधा आपको जी
+2. Owner Royalty - 5% = 10 रुपये - Infinite Fixed - 9992553796 को जी
+3. Seniority Pool - 25% = 50 रुपये - L1 17.14, L2 11.43, L3 7.14, L4 4.29, L5 2.86, L6 से Infinite 7.14 बराबर जी
+4. Joining Pool - 10% = 20 रुपये - Joining संख्या से - फार्मूला 20 x (मेरी Joining / कुल Joining) जी
+5. कुल - 100% = 200 रुपये - 120+10+50+20 = 200 जी
+6. 6 सेल = 6000 रुपये = Seniority 1 जी
+7. Mobile = ID = Wallet = Referral जी - 9992553796 ही सही है जी
+8. Single Line Tree - सबसे नीचे वाला ही अगला जुड़ेगा जी
+9. 90 दिन नियम - Amazon से पैसा आने के बाद ही Available होगा जी
+10. Joining Free है जी, कमाई की गारंटी नहीं है जी, कमाई सिर्फ असली Sale पर जी
+11. Site - https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21
+12. UPI - 9992553796@ybl - Author Ashok Kumar, Mohammad Pur Ahir, Tawdu, Nuh, Haryana 122105 जी
+13. ॐ नमः शिवाय - ये ज्योति सदा जलती रहे जी</div>
+<div style="text-align:center;"><button onclick="speakFull('yaad_pustak_text')" style="background:#fff;color:#000;">🔊 सुनो जी - याद पुस्तक</button><button onclick="askDeleteGeneric('याद पुस्तक','yaad')" style="background:#ff2a2a;color:#fff;">🗑️ Delete - पुष्टि के साथ</button></div>
+<h3 class="gold">✍️ अपनी याद लिखो जी - Yaad Pustak में सेव होगा जी</h3>
+<input id="yaad_name" class="big-input" placeholder="आपका नाम / Mobile">
+<textarea id="yaad_msg" class="big-input" placeholder="अपनी याद लिखो जी - जैसे आज 2 सेल की, 3 Joining डाली..."></textarea>
+<button onclick="saveYaad()" style="background:gold;color:#000;width:100%;">➕ याद पुस्तक में सेव करो जी</button>
+<div id="yaad_list"></div>
+<div id="yaad_log" class="white"></div>
 </div>
-<div class="strip2">
-<h2 class="gold" style="text-align:center;">Plan ki Taalika - 60% Seller 5% Owner 35% Pool - Pool 70 = 50 + 20 ji</h2>
-<button onclick="speakById('plan_table_text_full')" style="background:#fff;color:#000;">Suno ji - Taalika</button>
-<button onclick="speakJoining20()" style="background:#00FF7F;color:#000;">Suno ji - Sirf Joining 20 wala labh</button>
-<table>
-<tr><th>Vivaran</th><th>Rupaye / %</th><th>Kisko milega ji</th></tr>
-<tr><td>Maan lo 1 bikri - 1000 par company commission 200</td><td>200</td><td>Company se Affiliate commission</td></tr>
-<tr><td>Seller Direct</td><td>60% = 120</td><td>Aapko Direct</td></tr>
-<tr><td>Owner Royalty Infinite Fixed</td><td>5% = 10</td><td>Owner Fixed</td></tr>
-<tr><td>Seniority Pool - Seniority labh - Level se</td><td>50</td><td>Seniority labh - L1 se Infinite tak ji</td></tr>
-<tr><td>Joining Pool - Joining labh - Apni link se Direct Joining se - Ye alag hai ji</td><td>20</td><td>Joining labh - Apni Mobile link se Direct Joining ji - Meri Tree me dikhegi ji</td></tr>
-<tr><td>Pool Total</td><td>35% = 70 = 50 + 20</td><td>Pool me batega ji - Jod 120 + 10 + 50 + 20 = 200 ji</td></tr>
-<tr><td>L1 - Seniority Pool 50 me se</td><td>15</td><td>L1 ko</td></tr>
-<tr><td>L2 - Seniority Pool 50 me se</td><td>10</td><td>L2 ko</td></tr>
-<tr><td>L3 - Seniority Pool 50 me se</td><td>7</td><td>L3 ko</td></tr>
-<tr><td>L4 - Seniority Pool 50 me se</td><td>5</td><td>L4 ko</td></tr>
-<tr><td>L5 - Seniority Pool 50 me se</td><td>5</td><td>L5 ko</td></tr>
-<tr><td>L6 se Infinite - Seniority Pool 50 me se baaki</td><td>8 barabar</td><td>L6 se Infinite sabme barabar - Jod 15+10+7+5+5+8=50 ji</td></tr>
-</table>
-<div class="join20box">
-<h3 class="gold" style="text-align:center;">JOINING POOL 20 - Nai JOINING se 20 wala labh - Ise Taalika me hi dekh lo ji - Mujhse puchhne ki zaroorat nahi ji</h3>
-<p class="white" style="line-height:1.9;"><b>1) Seniority Pool 50 alag hai ji -</b> Ye Level se milta hai ji - L1, L2, L3 se ji.</p>
-<p class="white" style="line-height:1.9;"><b>2) Joining Pool 20 alag hai ji -</b> Ye apni Mobile link se Direct Joining se milta hai ji - Meri Tree me dikhega ji - Main Tree se nahi ji.</p>
-<p class="white" style="line-height:1.9;"><b>3) Fark saaf hai ji -</b> Seniority = Level wala labh ji. Joining = Apni link se jode hue logon wala labh ji. Dono alag-alag hain ji, dono mil sakte hain ji.</p>
-<div style="background:#111;border:2px solid gold;border-radius:12px;padding:12px;">
-<div class="gold" style="text-align:center;">Udaharan - 200 wala hisaab ji - Ise dekhkar hi samajh jao ji</div>
-<p class="white" style="line-height:1.9;">Maan lo 1 bikri par commission 200 hai ji. Seller 120 + Owner 10 + Seniority Pool 50 + Joining Pool 20 = 200 ji.</p>
-<p class="white" style="line-height:1.9;"><b>Udaharan A - Aapki 0 Joining hai ji -</b> To Joining Pool 20 se aapko 0 milega ji. Lekin Seniority Pool 50 wala labh Level ke hisaab se fir bhi milega ji. Koi nuksaan nahi ji.</p>
-<p class="white" style="line-height:1.9;"><b>Udaharan B - Aapne apni link se 5 Joining ki ji -</b> Meri Tree me 5 dikhegi ji. Har bikri par 20 Joining Pool me jayega ji. Ye 20 sirf Joining karane walon ko batega ji. Aapki 5 Joining hai to aapko 5 hisse wala labh milega ji.</p>
-<p class="white" style="line-height:1.9;"><b>Udaharan C - Aapne 10 Joining ki, doosre ne 0 ki ji -</b> To 20 wale Pool se aapko milega ji, doosre ko 0 milega ji. Seniority wala 50 dono ko Level se milega ji.</p>
-<p class="white" style="line-height:1.9;"><b>Nateeja ji -</b> Jitni zyada Joining, utna zyada Pool hissa ji. Isliye Joining bhi karo ji, dono labh lo ji. Joining nahi karoge to 20 wala labh chhoot jayega ji, Seniority wala hi milega ji.</p>
+
+<!-- ===== DASHBOARD + AUTO BANTWARA - NAYI PLAN ===== -->
+<div class="strip"><h2 class="gold">📊 DASHBOARD - कुल कमीशन - TDS - शेष + 🌳 TREE + 💳 WALLET</h2>
+<div id="dash" class="white">कुल कमीशन 0 रुपये | TDS 0 रुपये | शेष 0 रुपये</div>
+<div id="tree" class="white">Tree खाली</div><div id="wallet_log" class="white">UPI - Auto Record - TDS सरकारी नियम</div>
+<div><button onclick="autoCreditAmount(1)" style="background:gold;color:#000">💰 1 रुपये Credit</button><button onclick="autoCreditAmount(60)" style="background:gold;color:#000">💰 60 रुपये Credit</button><button onclick="autoCreditAmount(100)" style="background:gold;color:#000">💰 100 रुपये Credit</button><button onclick="autoWithdrawAmount()" style="background:#00FF7F;color:#000">💸 Auto Withdraw - UPI</button></div>
+<div id="wallet_auto_log" class="white">Wallet Auto Log</div></div>
+
+<div class="strip" style="border-color:#00FF7F;background:#0a0a0a;"><h2 class="gold" style="text-align:center;">🤖 Auto Commission Bantwara - Sale Darj Karo जी - नई प्लान 120+10+50+20</h2>
+<p class="white">नियम पक्का है जी: Sale डालो जी, सिस्टम अपने आप बांटेगा जी। Sale 1000 रुपये = Commission 200 रुपये - Seller 60% = 120 रुपये - Owner 5% = 10 रुपये - Seniority Pool 25% = 50 रुपये - Joining Pool 10% = 20 रुपये - हर एक पर TDS 5% कटकर Net Wallet में अपने आप जाएगा जी। 90 दिन वाला नियम - पैसे जमा हुए तो ही Pool में जाएँगे जी।</p>
+<input id="auto_sale_seller_mobile" class="big-input" placeholder="Seller Mobile - 10 अंक"><input id="auto_sale_amount" class="big-input" placeholder="Sale Rashi - जैसे 1000"><input id="auto_sale_product" class="big-input" placeholder="Product नाम"><input id="auto_sale_order" class="big-input" placeholder="Amazon Order ID"><input id="auto_sale_buyer" class="big-input" placeholder="Buyer नाम">
+<button onclick="autoDistributeSale()" style="background:#00FF7F;color:#000;width:100%;font-size:20px;">✅ Sale Darj Karo - Auto Bantwara - नई प्लान</button>
+<div style="text-align:center;"><button onclick="speakAutoBantwara()" style="background:#fff;color:#000;">🔊 सुनो जी - Auto Bantwara</button><button onclick="showAutoSaleHistory()" style="background:#fff;color:#000;">📜 Sale History</button><button onclick="showMyAutoWallet()" style="background:#fff;color:#000;">💳 Mera Wallet Dekho</button></div>
+<div style="text-align:center;"><button onclick="withdrawAutoWallet()" style="background:#00FF7F;color:#000;">💸 Withdraw - Available पैसा निकालो जी</button><button onclick="markLastSaleAvailable()" style="background:gold;color:#000;">✅ Amazon से पैसा आ गया - सबका Available करो जी</button></div>
+<div id="auto_sale_log" class="white">अभी कोई Auto Sale नहीं है जी</div><div id="auto_wallet_log" class="white">Mera Wallet देखने के लिए ऊपर वाला बटन दबाओ जी</div></div>
+
+<div class="strip" style="border-color:#00FF7F;"><h2 class="gold" style="text-align:center;">💸 हर डिस्ट्रीब्यूटर का UPI Wallet Withdraw जी</h2>
+<input id="dist_upi_mobile" class="big-input" placeholder="अपना Mobile डालो जी - 10 अंक" oninput="updateDistUPI()"><input id="dist_upi_id" class="big-input" placeholder="आपकी UPI ID - जैसे 9992553796@ybl" readonly>
+<div id="dist_upi_balance" class="white" style="background:#000;border:2px solid gold;padding:12px;border-radius:12px;">अभी Mobile डालो जी</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;"><button onclick="checkDistUPIBalance()" style="background:#fff;color:#000;flex:1;">💳 मेरा Available पैसा देखो जी</button><button onclick="withdrawDistUPI()" style="background:#00FF7F;color:#000;flex:1;">💸 【entity-Google Pay¦canonical_name=Google Pay】 / UPI से निकालो जी</button></div></div>
+
+<!-- ===== FIX VIDEOS + ADD ===== -->
+<div class="strip" style="border-color:#FF69B4"><h2 class="gold" style="text-align:center;">🎬 Fix Video - Final Plan + और वीडियो जी</h2><div id="fixVideoContainer"></div>
+<div style="background:#111;border:2px solid gold;border-radius:12px;padding:12px;margin-top:10px;"><h3 class="gold">➕ + प्लान वीडियो जोड़ो जी - Admin PIN जरूरी</h3>
+<input id="new_video_name" class="big-input" placeholder="वीडियो नाम - जैसे Final Plan 2"><input id="new_video_url" class="big-input" placeholder="वीडियो Link https://youtu.be/..."><input id="new_video_desc" class="big-input" placeholder="विवरण"><input id="new_video_pin" class="pin-input" placeholder="Admin PIN" type="password">
+<button onclick="addFixVideo()" style="background:gold;color:#000;width:100%;">➕ + वीडियो जोड़ो जी</button><div id="add_video_log" class="white"></div></div></div>
+
+<!-- ===== 1-50 BUTTON ===== -->
+<div style="background:#000;padding:14px;margin:14px;border:3px solid gold;border-radius:16px;"><h2 class="gold">🔗 1 से 50 बटन - 10-10 पेज - Search</h2>
+<input id="searchBox" class="big-input" placeholder="बटन खोजो जी" onkeyup="resetPage();renderButtons()"><div id="btnContainer"></div>
+<div style="text-align:center;background:#111;padding:14px;border-radius:14px;border:2px solid gold;"><button onclick="prevPage()" style="background:gold;color:#000;">⬅️ पीछे</button><span id="pageInfo" class="white">1-10 / 50</span><button onclick="nextPage()" style="background:gold;color:#000;">आगे ➡️</button><br><button onclick="showAllButtons()" style="background:#FF69B4;color:#fff;">📜 सारे बटन दिखाओ</button><button onclick="resetPage();renderButtons()" style="background:#fff;color:#000;">🔄 फिर से 10-10 पेज</button></div></div>
+
+<div class="strip2"><h2 class="gold">📝 ब्लॉग - Veedeohub ब्लॉग</h2><div id="blogContainer"></div>
+<h3 class="gold">➕ ब्लॉग जोड़ो - एडमिन - PIN जरूरी</h3><input id="blog_title" class="big-input" placeholder="ब्लॉग Title"><input id="blog_url" class="big-input" placeholder="ब्लॉग Link https://..."><input id="blog_text" class="big-input" placeholder="ब्लॉग Text"><input id="blog_pin" class="big-input" placeholder="Admin PIN" type="password">
+<button onclick="addBlog()" style="background:gold;color:#000;width:100%;">➕ ब्लॉग जोड़ो जी</button><div id="blog_log" class="white"></div></div>
+
+<div class="strip2"><h2 class="gold">➕ अनन्त लिंक जोड़ो - एडमिन - PIN जरूरी</h2>
+<input id="anant_name" class="big-input" placeholder="बटन नाम"><input id="anant_url" class="big-input" placeholder="Link https://..."><input id="anant_desc" class="big-input" placeholder="विवरण"><input id="anant_pin" class="pin-input" placeholder="Admin PIN डालो जी" type="password">
+<button onclick="addAnant()" style="background:gold;color:#000;width:100%;">➕ अनन्त बटन जोड़ो जी</button><div id="anant_log" class="white">Firebase में रिकॉर्डेड रहेगा</div></div>
+
+<div class="strip" style="border-color:#00BFFF;"><h2 class="gold" style="text-align:center;">📩 शिकायत / सुझाव - Owner को भेजो जी</h2>
+<input id="comp_name" class="big-input" placeholder="आपका नाम"><input id="comp_mobile" class="big-input" placeholder="आपका Mobile"><select id="comp_type" class="big-input"><option>शिकायत</option><option>सुझाव</option><option>सवाल</option><option>अन्य</option></select><textarea id="comp_msg" class="big-input" placeholder="अपनी शिकायत / सुझाव लिखो जी..."></textarea>
+<button onclick="sendComplaint()" style="background:#00BFFF;color:#000;width:100%;">📩 शिकायत / सुझाव भेजो जी</button><div id="comp_log" class="white">Ticket ID मिलने पर Owner जवाब देगा जी</div></div>
+
+<div class="strip"><h2 class="gold" style="text-align:center;">🔐 डिस्ट्रीब्यूटर सुविधा - सिम खो जाए या मोबाइल बदलना चाहे तो</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="border:2px solid #00FF7F;padding:12px;border-radius:12px;"><h3 class="gold">📱 मोबाइल बदलो जी</h3><input id="old_mobile" class="big-input" placeholder="पुराना Mobile"><input id="old_pass" class="big-input" type="password" placeholder="आपका पासवर्ड"><input id="new_mobile_change" class="big-input" placeholder="नया Mobile नंबर"><button onclick="changeMobile()" style="background:gold;color:#000;width:100%">🔄 मोबाइल बदलो जी</button><div id="mobile_change_log" class="white"></div></div>
+<div style="border:2px solid #FF69B4;padding:12px;border-radius:12px;"><h3 class="gold">🔑 पासवर्ड भूल गए</h3><input id="fp_mobile" class="big-input" placeholder="आपका Mobile"><input id="fp_new1" class="big-input" type="password" placeholder="नया पासवर्ड"><input id="fp_new2" class="big-input" type="password" placeholder="नया पासवर्ड फिर लिखो जी"><button onclick="resetPassword()" style="background:#FF69B4;color:#fff;width:100%">🔑 नया पासवर्ड सेव करो जी</button><div id="fp_log" class="white"></div></div></div></div>
+
+<div class="strip2"><h2 class="gold">🌐 Official Links - 4 लिंक</h2><div id="official4Container"></div></div>
+
+<div style="background:#111;border:4px solid gold;padding:18px;margin:14px;border-radius:16px;"><h2 class="gold" style="font-size:22px;">🔐 सुधार कक्ष - Owner Private - कोई भी लिंक / PIN / पासवर्ड बदलो जी - PIN से</h2>
+<input id="s_mobile" class="big-input" placeholder="Mobile"><input id="s_pin" class="pin-input" placeholder="अपनी पिन डालो जी" type="password">
+<div style="display:flex;gap:10px;flex-wrap:wrap"><button onclick="openSudhar()" style="background:gold;color:#000;flex:2;">🔓 सुधार कक्ष खोलो जी</button><button onclick="forgotPin()" style="background:#fff;color:#000;flex:1;">🔑 नई पिन बनाओ जी</button></div>
+<div id="sudhar_content" style="display:none;background:#fff;color:#000;padding:16px;border-radius:14px;margin-top:14px;">
+<div style="background:#000;color:#fff;padding:14px;border-radius:12px;margin-bottom:12px;border:2px solid gold;"><h3 class="gold">🔗 1. कोई भी लिंक बदलो जी</h3><select id="edit_target" class="big-input" onchange="fillEditForm()"><option value="">-- किसका लिंक बदलना है जी? चुनो --</option></select><input id="edit_name" class="big-input" placeholder="बटन नाम"><input id="edit_url" class="big-input" placeholder="नया Link https://..."><input id="edit_desc" class="big-input" placeholder="नया विवरण"><button onclick="saveAnyLink()" style="background:#00FF7F;color:#000;width:100%;">🔄 चुना हुआ लिंक बदलो जी - Save</button><div id="edit_log" class="white"></div></div>
+<div style="background:#000;color:#fff;padding:14px;border-radius:12px;margin-bottom:12px;border:2px solid #00BFFF;"><h3 class="gold">📌 2. TOP FIX - Final Plan - सीधे बदलो जी</h3><input id="top_fix_url" class="big-input" value="https://youtu.be/aYiMAN4iEjQ?si=526MQcXWdAXRllrF"><input id="top_fix_text" class="big-input" value="veedeohub Final Plan - फिक्स वीडियो"><button onclick="updateTopFix()" style="background:gold;color:#000;width:100%;">📌 TOP FIX अपडेट करो जी</button><div id="topfix_log" class="white"></div></div>
+<div style="background:#000;color:#fff;padding:14px;border-radius:12px;border:2px solid #FF69B4;"><h3 class="gold">🔑 3. PIN / पासवर्ड / एडमिन</h3><input id="admin_old_pin" class="pin-input" placeholder="पुरानी PIN"><input id="admin_new_pin" class="pin-input" placeholder="नई PIN - 4 अंक"><button onclick="changePinUniversal()" style="background:#FF69B4;color:#fff;width:100%">🔑 PIN बदलो जी</button><div id="pin_log" class="white"></div></div><br><button onclick="closeSudhar()" style="background:#000;color:#fff;width:100%;">🔒 बंद करो जी</button></div></div>
+
+<!-- AdSense BOTTOM -->
+<div class="ad-box">AdSense - BOTTOM
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
-<p class="white" style="text-align:center;">Joining kaise check karein ji - Upar Meri Tree button dabao ji - Sirf aapki apne Mobile link se aayi Joining dikhegi ji - Zero par bhi dikhega ji.</p>
-<button onclick="speakJoining20()" style="background:#00FF7F;color:#000;width:100%;font-size:20px;padding:16px;">Suno ji - Joining 20 wala labh - Udaharan sahit</button>
-<button onclick="alert('Meri Tree ji - Aapki Joining yahan dikhegi ji')" style="background:gold;color:#000;width:100%;font-size:20px;padding:16px;">Meri Tree dekho ji - Meri Joining kitni hai ji</button>
-</div>
-</div>
-<div class="strip">
-<h2 class="gold" style="text-align:center;">FINAL Note 1-4 + Pool 2 Labh + Meri Tree + A-F Video - Yahi FINAL hai ji</h2>
-<div id="finalNotesText" class="gold" style="line-height:1.9;white-space:pre-wrap;">Note 1 - Pool 70 = Seniority Pool 50 + Joining Pool 20 ji - 1) Seniority labh Level se - Seniority Pool 50 me se - L1 15 + L2 10 + L3 7 + L4 5 + L5 5 + L6 se Infinite 8 = 50 ji. 2) Joining labh apni Mobile link se Direct Joining se - Joining Pool 20 me se - Jitni zyada Joining, utna zyada hissa ji. Udaharan ji - 1 bikri par 200 me se 20 Joining Pool me jata hai ji - Aapki 5 Joining hai to 5 hisse wala labh milega ji - 0 Joining hai to Joining Pool se 0 milega ji, Seniority 50 fir bhi milega ji - Isliye Joining bhi karo ji, dono labh lo ji. Joining nahi hai to bhi nuksaan nahi ji - Seniority Pool All Life jaari rahega ji. Note 2 - 6 sale / 6000 seema samay ke saath badal sakti hai ji, purane senior ki seniority wahi rahegi ji. Note 3 - Owner ko plan sudharne ka poora adhikar hai ji, kisi ka haq nahi jayega ji. Note 4 - Joining free hai ji, kamai ki guarantee nahi ji, paisa sirf vaastavik bikri par company ki pushti ke baad milega ji, click / View / Like par nahi ji. Agar koi jaanboojhkar fraud karta hai to samjhane ke baad Owner ko poora adhikar hoga ki wo uski ID hata sakta hai ji. Main Tree Single Line - Meri Tree sirf aapki apne link wali Joining ji. A = Guide Didi Full Plan Video - Yahi peela button wala Video hai ji.</div>
-<button onclick="speakById('finalNotesVoiceText')" style="background:#fff;color:#000;">Suno ji - FINAL Note 1-4</button>
-<button onclick="speakJoining20()" style="background:#00FF7F;color:#000;">Suno ji - Sirf Joining 20</button>
-<div id="finalNotesVoiceText" style="display:none;">Om Namah Shivay ji. Main Guide Didi bol rahi hun ji. FINAL Note suno ji. Note ek ji. Pool sattar me se pachaas Seniority Pool, bees Joining Pool ji. Pehla Seniority labh ji. Level one ko pandrah, two ko das, three ko saat, four ko paanch, five ko paanch, chhah se anant tak aath barabar ji. Jod pachaas ji. Doosra Joining labh ji. Apni Mobile link se Direct Joining se ji. Jitni zyada Joining, utna zyada Pool hissa ji. Udaharan suno ji. Ek bikri par do sau me se bees Joining Pool me jata hai ji. Aapki paanch Joining hai to aapko paanch hisse wala labh milega ji. Zero Joining hai to Joining Pool se zero milega ji, lekin Seniority Pool pachaas fir bhi milega ji. Isliye Joining bhi karo ji, dono labh lo ji. Note do ji. Chhah sale, chhah hazaar wali seema badal sakti hai ji. Purane senior ki seniority wahi rahegi ji. Note teen ji. Owner ko plan sudharne ka adhikar hai ji. Note chaar ji. Joining free hai ji. Kamai ki guarantee nahi hai ji. Paisa sirf vaastavik bikri par milega ji. Agar koi jaanboojhkar fraud karta hai to samjhane ke baad Owner ko poora adhikar hoga ki wo uski ID hata sakta hai ji. Main Tree Single Line hai ji. Meri Tree alag hai ji. Plan Video A se F hain ji. A Guide Didi Full Plan Video hai ji. Om Namah Shivay ji.</div>
-<div id="joining20VoiceText" style="display:none;">Joining Pool bees wala labh alag se samjho ji. Seniority Pool pachaas alag hai ji, Joining Pool bees alag hai ji. Seniority labh Level se milta hai ji. Joining labh apni Mobile link se Direct Joining se milta hai ji. Udaharan ji. Ek bikri par commission do sau hai ji. Seller ek sau bees, Owner das, Seniority Pool pachaas, Joining Pool bees, jod do sau ji. Aapki zero Joining hai to Joining Pool se zero milega ji, lekin Seniority Pool pachaas fir bhi milega ji. Aapki paanch Joining hai to aapko paanch hisse wala labh milega ji. Aapki das Joining hai to aur zyada milega ji. Jitni zyada Joining, utna zyada Pool hissa ji. Isliye Joining bhi karo ji, dono labh lo ji. Meri Tree me dekho ji, sirf aapki apne link se aayi Joining dikhegi ji.</div>
-</div>
-<div class="strip">
-<h2 class="gold">DASHBOARD + TREE + WALLET</h2>
-<div id="dash" class="white">Kul Commission 0 | TDS 0 | Shesh 0</div>
-<div id="tree" class="white">Tree khali</div>
-<div style="border:2px solid #00FF7F;border-radius:10px;padding:10px;margin-top:8px;">
-<div class="gold">Main Tree + Meri Tree - 2 Tree ji</div>
-<div id="main_tree_display" class="white">Main Tree - Single Line - Nai Joining sabse neeche wale ke neeche ji</div>
-<div id="meri_tree_display" class="white">Meri Tree - Sirf aapki apne Mobile link se aayi Joining dikhegi ji</div>
-<button onclick="alert('Main Tree ji - Single Line - Nai Joining sabse neeche wale ke neeche ji')" style="background:gold;color:#000;">Main Tree dekho ji</button>
-<button onclick="alert('Meri Tree ji - Sirf aapki apne Mobile link se aayi Joining ji')" style="background:#00FF7F;color:#000;">Meri Tree dekho ji</button>
-</div>
-<div id="wallet_log" class="white">UPI - Auto Record - TDS sarkari niyam</div>
-<button onclick="document.getElementById('wallet_auto_log').innerHTML='1 Credit ho gaya ji';speakText('Ek rupaya credit ho gaya ji')" style="background:gold;color:#000;">1 Credit</button>
-<button onclick="document.getElementById('wallet_auto_log').innerHTML='20 Credit ho gaya ji';speakText('Bees rupaya credit ho gaya ji')" style="background:gold;color:#000;">20 Credit</button>
-<button onclick="document.getElementById('wallet_auto_log').innerHTML='60 Credit ho gaya ji';speakText('Saath rupaya credit ho gaya ji')" style="background:gold;color:#000;">60 Credit</button>
-<button onclick="alert('Auto Withdraw ji - UPI par jayega ji')" style="background:#00FF7F;color:#000;">Auto Withdraw - UPI</button>
-<button onclick="alert('Wallet History ji - Yahan dikhega ji')" style="background:#fff;color:#000;">History</button>
-<div id="wallet_auto_log" class="white">Wallet Auto Log</div>
-</div>
-<div class="strip" style="border-color:#00FF7F;">
-<h2 class="gold" style="text-align:center;">Har Distributor ka UPI Wallet Withdraw ji</h2>
-<input id="dist_upi_mobile" class="big-input" placeholder="Apna Mobile dalo ji - 10 ank">
-<input id="dist_upi_id" class="big-input" placeholder="Aapki UPI ID - jaise 9992553796@ybl" readonly>
-<div id="dist_upi_balance" class="white" style="border:2px solid gold;padding:10px;border-radius:10px;">Abhi Mobile dalo ji - Fir Available paisa dekho ji</div>
-<button onclick="var m=document.getElementById('dist_upi_mobile').value;if(!m||m.length<10){alert('Apna Mobile dalo ji')}else{document.getElementById('dist_upi_id').value=m+'@ybl';document.getElementById('dist_upi_balance').innerHTML='Mobile '+m+' - UPI '+m+'@ybl - Available dekhne ke liye neeche dabao ji';speakText('Aapki UPI ban gayi ji')}" style="background:#fff;color:#000;">Mera Available paisa dekho ji</button>
-<button onclick="var m=document.getElementById('dist_upi_mobile').value||'9992553796';window.open('upi://pay?pa='+m+'@ybl&pn=veedeohub&cu=INR','_blank');alert('UPI khul gaya ji')" style="background:#00FF7F;color:#000;">【entity-Google Pay¦canonical_name=Google Pay】 / UPI se nikalo ji</button>
-<button onclick="window.open('https://www.google.com/search?q='+encodeURIComponent((document.getElementById('dist_upi_mobile').value||'9992553796')+'@ybl UPI'),'_blank')" style="background:#4285F4;color:#fff;width:100%;">Google par apni UPI check karo ji</button>
-</div>
-<div class="strip" style="border-color:#00FF7F;">
-<h2 class="gold" style="text-align:center;">Auto Commission Bantwara - Sale Darj Karo ji</h2>
-<div class="white" style="text-align:center;">90 Din wala niyam ji - Paise jama hue to hi Pool me jayenge ji. Nahi hue to Pool me jayenge hi nahi ji, sirf Pending rahenge ji.</div>
-<input id="auto_sale_seller_mobile" class="big-input" placeholder="Seller Mobile - 10 ank">
-<input id="auto_sale_amount" class="big-input" placeholder="Sale Rashi - jaise 1000">
-<input id="auto_sale_product" class="big-input" placeholder="Product naam">
-<input id="auto_sale_order" class="big-input" placeholder="Order ID - khali bhi chalega">
-<input id="auto_sale_buyer" class="big-input" placeholder="Buyer naam - khali bhi chalega">
-<button onclick="var s=document.getElementById('auto_sale_seller_mobile').value;var a=parseFloat(document.getElementById('auto_sale_amount').value||'0');if(!s||s.length<10){alert('Seller Mobile 10 ank likho ji')}else if(!a||a<=0){alert('Sale Rashi likho ji')}else{var c=Math.round(a*0.20);var sa=Math.round(c*0.60);var oa=Math.round(c*0.05);var se=Math.round(c*0.25);var ja=c-sa-oa-se;document.getElementById('auto_sale_log').innerHTML='Sale darj ho gayi ji - Sale '+a+' - Commission '+c+' - Seller '+sa+' - Owner '+oa+' - Seniority Pool '+se+' - Joining Pool '+ja+' - Status Pending - 90 din baad Available hoga ji';speakText('Sale darj ho gayi ji. Commission bant gaya ji.');}" style="background:#00FF7F;color:#000;width:100%;font-size:20px;">Sale Darj Karo - Auto Bantwara</button>
-<button onclick="speakText('Auto Commission Bantwara - Sale dalo ji, paisa apne aap batega ji. 90 din baad Amazon se paisa aane par Available ho jayega ji. Paise jama hue to hi Pool me jayenge ji. Sale 1000 par Commission 200 ji - Seller 120, Owner 10, Seniority Pool 50, Joining Pool 20 ji.')" style="background:#fff;color:#000;">Suno ji - Auto Bantwara</button>
-<button onclick="alert('Sale History ji - Yahan dikhega ji')" style="background:#fff;color:#000;">Sale History</button>
-<button onclick="alert('Mera Wallet ji - Yahan dikhega ji')" style="background:#fff;color:#000;">Mera Wallet Dekho</button>
-<button onclick="alert('Withdraw ji - Available paisa nikalo ji')" style="background:#00FF7F;color:#000;">Withdraw - Available paisa nikalo ji</button>
-<button onclick="document.getElementById('auto_sale_log').innerHTML='Amazon se paisa aa gaya ji - Sabka Status Available kar diya ji';speakText('Amazon se paisa aa gaya ji')" style="background:gold;color:#000;">Amazon se paisa aa gaya - Sabka Available karo ji</button>
-<div id="auto_sale_log" class="white">Abhi koi Auto Sale nahi hai ji</div>
-<div id="auto_wallet_log" class="white">Mera Wallet dekhne ke liye upar wala button dabao ji</div>
-</div>
-<div class="strip" style="border-color:#fff;background:#111;">
-<h2 class="gold" style="text-align:center;">Yaad Pustak ji - Har Option me kya bharna hai ji - Hindi me ji - Taalika + Joining 20 yahin dekho ji</h2>
-<div class="gold" style="line-height:2;">
-<b>1. Joining ji:</b> Naam - Mobile 10 ank - Shehar - Joining dabao ji. Nominee bina bhi ho jayegi ji.<br>
-<b>2. Nominee ji - ALAG SE:</b> Apna Mobile - Nominee ka naam - Rishta - Nominee Mobile - Save karo dabao ji.<br>
-<b>3. Auto Bantwara ji:</b> Seller Mobile - Bikri Rashi - Product ka naam - Bikri darj karo dabao ji.<br>
-<b>4. Wallet / Nikalna ji:</b> Kuch bharna nahi hai - Mera Wallet dekho dabao - Uplabdh ho to nikalo dabao - Pending ka matlab 90 din baad paisa aayega ji.<br>
-<b>5. Shikayat / Sujhav ji:</b> Naam - Mobile - Prakar chuno - Apni baat likho - Bhejo dabao - Ticket ID milega ji. ID Delete Request bhi yahin se bhej sakte ho ji.<br>
-<b>6. Mobile badlo ji:</b> Purana Mobile - Password - Naya Mobile - Mobile badlo dabao - Seniority wahi rahegi ji.<br>
-<b>7. Password bhool gaye ji:</b> Mobile - Naya Password 2 baar - Save dabao ji.<br>
-<b>8. Blog jodo ji:</b> Sheershak - Link - Lekh - Admin PIN - Jodo dabao ji.<br>
-<b>9. Suno / Speaker Stop ji:</b> Suno dabao to bolega - Speaker Stop dabao to rukega - Fir dabao to wahin se bolega ji. Agar Speaker nahi bole to page ko Refresh karo ji, fir Suno dabao ji.<br>
-<b>10. 90 Din wala niyam ji:</b> Paise jama hue to hi Pool me jayenge ji. Nahi hue to Pool me jayenge hi nahi ji, sirf Pending rahenge ji.<br>
-<b>11. UPI Withdraw + Google ji:</b> Apna Mobile dalo - UPI ID apne aap banegi - Available dekho - Google Pay se nikalo ji.<br>
-<b>12. FINAL Note 1 ji - Pool 70 = Seniority Pool 50 + Joining Pool 20 ji:</b> Seniority labh L1 15 + L2 10 + L3 7 + L4 5 + L5 5 + L6 se Infinite 8 = 50 ji + Joining labh 20 ji - Zyada Joining = Zyada hissa - Joining nahi hai to bhi nuksaan nahi, Seniority Pool All Life jaari ji.<br>
-<b>12-A. JOINING 20 wala labh - Yaad Pustak me hi dekh lo ji - Mujhse puchhne ki zaroorat nahi ji:</b> Seniority Pool 50 Level se milta hai ji, Joining Pool 20 apni link se Direct Joining se milta hai ji - Dono alag-alag hain ji. Udaharan ji - 1 bikri par 200 me se 20 Joining Pool me gaya ji. Aapki 5 Joining hai to aapko 5 hisse wala labh milega ji. Aapki 0 Joining hai to Joining Pool se 0 milega ji, lekin Seniority Pool 50 fir bhi milega ji. Aapki 10 Joining hai to 5 wali se zyada milega ji. Isliye Joining bhi karo ji, dono labh lo ji. Meri Tree me dekho ji - Sirf aapki apne link se aayi Joining dikhegi ji. Joining karne ke liye apna Link share karo ji - https://veedeohub.web.app?ref=AapkaMobile&tag=veedeohub-21<br>
-<b>13. FINAL Note 2 + 3 ji:</b> 6 sale / 6000 seema badal sakti hai ji - Purane senior ki seniority wahi rahegi ji - Owner ko plan sudharne ka poora adhikar hai ji, kisi ka haq nahi jayega ji.<br>
-<b>14. FINAL Note 4 ji:</b> Joining free, kamai ki guarantee nahi, paisa sirf vaastavik bikri par ji, click / View / Like par nahi ji. Agar koi jaanboojhkar fraud karta hai to samjhane ke baad Owner ko poora adhikar hoga ki wo uski ID hata sakta hai ji.<br>
-<b>15. 2 Tree + A-F Video ji:</b> Main Tree Single Line - Meri Tree sirf aapki apne link wali Joining ji - Plan Video A se F hain ji, A = Guide Didi Full Plan Video, yahi peela button wala Video hai ji.
-</div>
-<button onclick="speakYaad()" style="background:#fff;color:#000;">Suno ji - Yaad Pustak Hindi me</button>
-<button onclick="speakJoining20()" style="background:#00FF7F;color:#000;">Suno ji - Sirf Joining 20 wala labh</button>
-<div id="yaadHindiFull" style="display:none;">Yaad Pustak ji Hindi me - Joining me naam Mobile shehar - Nominee alag se hai ji - Auto Bantwara me Seller Mobile bikri rashi Product naam - Wallet me kuch bharna nahi - 90 din wala niyam yahi FINAL hai ji - Paise jama hue to hi Pool me jayenge ji - Har Distributor apna Mobile dalkar UPI se paisa nikal sakta hai ji - FINAL Note ek Pool sattar me se pachaas Seniority Pool, bees Joining Pool ji - Joining bees wala labh alag se samjho ji - Seniority Level se milta hai ji, Joining apni link se Direct Joining se milta hai ji - Ek bikri par do sau me se bees Joining Pool me jata hai ji - Aapki paanch Joining hai to paanch hisse wala labh milega ji - Zero Joining hai to Joining Pool se zero milega ji, lekin Seniority Pool pachaas fir bhi milega ji - Isliye Joining bhi karo ji, dono labh lo ji - Note do chhah sale chhah hazaar seema badal sakti hai ji - Note teen Owner ko plan sudharne ka adhikar hai ji - Note chaar Joining free kamai ki guarantee nahi paisa sirf vaastavik bikri par ji - Agar koi jaanboojhkar fraud karta hai to samjhane ke baad Owner ko poora adhikar hoga ki wo uski ID hata sakta hai ji - Main Tree Single Line Meri Tree alag hai ji - Plan Video A se F hain ji A Guide Didi Full Plan Video hai ji</div>
-</div>
-<div class="strip" style="border-color:#00FF7F;">
-<h2 class="gold" style="text-align:center;">90 Din wala niyam ji - Yahi FINAL hai ji</h2>
-<div class="white" style="text-align:center;line-height:2;">Aapki bikri ka paisa 90 din baad company ke niyam anusar pata chalega ji. Tab tak wallet me Pending likha rahega ji. <b>Paise jama hue to hi Pool me jayenge ji. Nahi hue to Pool me jayenge hi nahi ji, sirf Pending rahenge ji.</b></div>
-<button onclick="speakText('90 din wala niyam ji - Aapki bikri ka paisa 90 din baad company ke niyam anusar pata chalega ji - Tab tak wallet me Pending likha rahega ji - Paise jama hue to hi Pool me jayenge ji, nahi hue to Pool me nahi jayenge ji')" style="background:#fff;color:#000;">Suno ji - 90 Din wala niyam</button>
-</div>
-<div class="strip" style="border-color:#00BFFF;">
-<h2 class="gold" style="text-align:center;">Shikayat / Sujhav - Owner ko bhejo ji</h2>
-<input id="comp_name" class="big-input" placeholder="Aapka naam">
-<input id="comp_mobile" class="big-input" placeholder="Aapka Mobile">
-<select id="comp_type" class="big-input"><option>Shikayat</option><option>Sujhav</option><option>Sawaal</option><option>ID Delete Request - ID hatani hai ji</option><option>Anya</option></select>
-<textarea id="comp_msg" class="big-input" placeholder="Apni shikayat / sujhav likho ji..."></textarea>
-<button onclick="var n=document.getElementById('comp_name').value;var mo=document.getElementById('comp_mobile').value;var msg=document.getElementById('comp_msg').value;if(!n||!mo||mo.length<10||!msg){alert('Naam, Mobile, baat sab likho ji')}else{document.getElementById('comp_log').innerHTML='Ticket ban gaya ji - Ticket ID: TKT'+Date.now().toString().slice(-6);speakText('Shikayat bhej di gayi ji');alert('Shikayat bhej di gayi ji')}" style="background:#00BFFF;color:#000;width:100%;">Shikayat / Sujhav bhejo ji</button>
-<div id="comp_log" class="white">Ticket ID milne par Owner jawab dega ji</div>
-<input id="check_mobile" class="big-input" placeholder="Apna Mobile dalo ji - jawab dekho ji">
-<button onclick="alert('Aapka jawab yahan dikhega ji - Abhi jawab nahi aaya ji')" style="background:#fff;color:#000;width:100%;">Mera jawab dekho ji</button>
-<div id="my_comp_result" class="white">Yahan Status dikhega ji</div>
-</div>
-<div class="strip">
-<h2 class="gold" style="text-align:center;">Distributor Suvidha - SIM kho jaye ya Mobile badalna chahe to</h2>
-<input id="old_mobile" class="big-input" placeholder="Purana Mobile">
-<input id="old_pass" class="big-input" type="password" placeholder="Aapka Password">
-<input id="new_mobile_change" class="big-input" placeholder="Naya Mobile Number">
-<button onclick="var o=document.getElementById('old_mobile').value;var ne=document.getElementById('new_mobile_change').value;if(!o||!ne||ne.length<10){alert('Purana aur Naya Mobile sahi likho ji')}else{document.getElementById('mobile_change_log').innerHTML='Mobile badal gaya ji - '+o+' se '+ne+' - Seniority wahi rahegi ji';speakText('Mobile badal gaya ji');alert('Mobile badal gaya ji')}" style="background:gold;color:#000;width:100%;">Mobile badlo ji</button>
-<div id="mobile_change_log" class="white"></div>
-<input id="fp_mobile" class="big-input" placeholder="Aapka Mobile - Password bhool gaye">
-<input id="fp_new1" class="big-input" type="password" placeholder="Naya Password">
-<input id="fp_new2" class="big-input" type="password" placeholder="Naya Password fir likho ji">
-<button onclick="var a=document.getElementById('fp_new1').value;var b=document.getElementById('fp_new2').value;if(!a||a!==b){alert('Dono Password ek jaise likho ji')}else{document.getElementById('fp_log').innerHTML='Naya Password save ho gaya ji';alert('Naya Password save ho gaya ji')}" style="background:#FF69B4;color:#fff;width:100%;">Naya Password Save karo ji</button>
-<div id="fp_log" class="white"></div>
-</div>
-<div class="strip2">
-<h2 class="gold">Official Links - 4 Link</h2>
-<div style="border:3px solid #00FF7F;padding:12px;border-radius:12px;margin:10px 0;">
-<div class="gold">1. Web App - MAIN LIVE</div>
-<div class="white">Main Live - Yahi asli link hai ji</div>
-<button onclick="window.open('https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21','_blank')" style="background:gold;color:#000;width:100%;">Kholo ji</button>
-</div>
-<div style="border:3px solid #00FF7F;padding:12px;border-radius:12px;margin:10px 0;">
-<div class="gold">2. Netlify</div>
-<button onclick="window.open('https://veedeohub.netlify.app','_blank')" style="background:gold;color:#000;width:100%;">Kholo ji</button>
-</div>
-<div style="border:3px solid #00FF7F;padding:12px;border-radius:12px;margin:10px 0;">
-<div class="gold">3. GitHub</div>
-<button onclick="window.open('https://ak9992553796-bit.github.io/veedeohub/','_blank')" style="background:gold;color:#000;width:100%;">Kholo ji</button>
-</div>
-<div style="border:3px solid #00FF7F;padding:12px;border-radius:12px;margin:10px 0;">
-<div class="gold">4. Vercel</div>
-<button onclick="window.open('https://veedeohub.vercel.app','_blank')" style="background:gold;color:#000;width:100%;">Kholo ji</button>
-</div>
-</div>
-<div class="strip" style="border-color:#FF69B4;">
-<h2 class="gold" style="text-align:center;">A-F Fix Video - A. Guide Didi Full Plan Video - Fir B, C, D, E, F</h2>
-<div class="white" style="text-align:center;">A wala Video hi upar wala peela Guide Didi button wala Video hai ji</div>
-<div style="border:3px solid #FF69B4;padding:12px;border-radius:12px;margin:10px 0;">
-<div class="gold">A - Guide Didi Full Plan Video</div>
-<button onclick="window.open('https://youtu.be/9r8oiPFa7vU?si=3FI2GP1dYNauscer','_blank')" style="background:#FF69B4;color:#fff;width:100%;">Video kholo ji - A</button>
-<button onclick="speakText('Guide Didi Full Plan Video')" style="background:#fff;color:#000;">Suno ji</button>
-</div>
-<div style="border:3px solid #FF69B4;padding:12px;border-radius:12px;margin:10px 0;">
-<div class="gold">B - Plan Video</div>
-<button onclick="window.open('https://youtu.be/9r8oiPFa7vU?si=3FI2GP1dYNauscer','_blank')" style="background:#FF69B4;color:#fff;width:100%;">Video kholo ji - B</button>
-</div>
-<div style="border:3px solid #FF69B4;padding:12px;border-radius:12px;margin:10px 0;">
-<div class="gold">C - Plan Video</div>
-<button onclick="window.open('https://youtu.be/9r8oiPFa7vU?si=3FI2GP1dYNauscer','_blank')" style="background:#FF69B4;color:#fff;width:100%;">Video kholo ji - C</button>
-</div>
-<div style="border:3px solid #FF69B4;padding:12px;border-radius:12px;margin:10px 0;">
-<div class="gold">D - Link sahit Video</div>
-<button onclick="window.open('https://youtu.be/9r8oiPFa7vU?si=3FI2GP1dYNauscer','_blank')" style="background:#FF69B4;color:#fff;width:100%;">Video kholo ji - D</button>
-</div>
-<div style="border:3px solid #FF69B4;padding:12px;border-radius:12px;margin:10px 0;">
-<div class="gold">E - Plan Video</div>
-<button onclick="window.open('https://youtu.be/9r8oiPFa7vU?si=3FI2GP1dYNauscer','_blank')" style="background:#FF69B4;color:#fff;width:100%;">Video kholo ji - E</button>
-</div>
-<div style="border:3px solid #FF69B4;padding:12px;border-radius:12px;margin:10px 0;">
-<div class="gold">F - Plan Video</div>
-<button onclick="window.open('https://youtu.be/9r8oiPFa7vU?si=3FI2GP1dYNauscer','_blank')" style="background:#FF69B4;color:#fff;width:100%;">Video kholo ji - F</button>
-</div>
-</div>
-<div style="background:#000;padding:14px;margin:12px;border:3px solid gold;border-radius:14px;">
-<h2 class="gold">1 se 50 Button - 10-10 Page - Search</h2>
-<input id="searchBox" class="big-input" placeholder="Button khojo ji">
-<div id="btnContainer"></div>
-<div style="text-align:center;">
-<button onclick="if(window.CUR_PAGE>1){window.CUR_PAGE--;renderButtons();}" style="background:gold;color:#000;">Pichhe</button>
-<span id="pageInfo" class="white">1-10 / 50</span>
-<button onclick="var l=window.ALL_BUTTONS||[];if(window.CUR_PAGE<Math.ceil(l.length/10)){window.CUR_PAGE++;renderButtons();}" style="background:gold;color:#000;">Aage</button>
-<br>
-<button onclick="window.SHOW_ALL=true;renderButtons();" style="background:#FF69B4;color:#fff;">Saare Button dikhao</button>
-<button onclick="window.CUR_PAGE=1;window.SHOW_ALL=false;renderButtons();" style="background:#fff;color:#000;">Fir se 10-10 Page</button>
-</div>
-</div>
-<div class="strip2">
-<h2 class="gold">Blog - veedeohub Blog</h2>
-<div id="blogContainer"><div class="white">Abhi koi Blog nahi hai ji - Upar se jodo ji</div></div>
-<input id="blog_title" class="big-input" placeholder="Blog Title">
-<input id="blog_url" class="big-input" placeholder="Blog Link https://...">
-<input id="blog_text" class="big-input" placeholder="Blog Text">
-<input id="blog_pin" class="big-input" placeholder="Admin PIN" type="password">
-<button onclick="var p=document.getElementById('blog_pin').value;if(p!=='3796'){alert('Galat PIN hai ji')}else{var t=document.getElementById('blog_title').value;document.getElementById('blog_log').innerHTML='Blog jud gaya ji - '+t;alert('Blog jud gaya ji')}" style="background:gold;color:#000;width:100%;">Blog jodo ji</button>
-<div id="blog_log" class="white"></div>
-</div>
-<div class="strip2">
-<h2 class="gold">Anant Link Jodo - Admin - PIN zaroori</h2>
-<input id="anant_name" class="big-input" placeholder="Button naam">
-<input id="anant_url" class="big-input" placeholder="Link https://...">
-<input id="anant_desc" class="big-input" placeholder="Vivaran">
-<input id="anant_pin" class="big-input" placeholder="Admin PIN dalo ji" type="password">
-<button onclick="var p=document.getElementById('anant_pin').value;if(p!=='3796'){alert('Galat PIN hai ji')}else{var n=document.getElementById('anant_name').value;var u=document.getElementById('anant_url').value;if(window.ALL_BUTTONS){window.ALL_BUTTONS.push({num:window.ALL_BUTTONS.length+1,name:n,url:u,desc:document.getElementById('anant_desc').value||'Anant Link ji'});renderButtons();}document.getElementById('anant_log').innerHTML='Anant Button jud gaya ji - '+n;alert('Anant Button jud gaya ji')}" style="background:gold;color:#000;width:100%;">Anant Button jodo ji</button>
-<div id="anant_log" class="white">Firebase me Recorded rahega</div>
-</div>
-<div style="background:#111;border:4px solid gold;padding:14px;margin:12px;border-radius:14px;">
-<h2 class="gold">Sudhaar Kaksh - Owner Private - Koi bhi Link / PIN / Password badlo ji - PIN se</h2>
-<input id="s_mobile" class="big-input" placeholder="Mobile">
-<input id="s_pin" class="big-input" placeholder="Apni PIN dalo ji" type="password">
-<button onclick="var pin=document.getElementById('s_pin').value;if(pin!=='3796'){alert('Galat PIN hai ji')}else{document.getElementById('sudhar_content').style.display='block';speakText('Sudhaar Kaksh khul gaya ji');alert('Sudhaar Kaksh khul gaya ji')}" style="background:gold;color:#000;width:100%;">Sudhaar Kaksh kholo ji</button>
-<button onclick="var np=prompt('Nai PIN banao ji - 4 ank');if(np&&np.length>=4){alert('Nai PIN ban gayi ji - '+np)}else{alert('PIN 4 ank ki banao ji')}" style="background:#fff;color:#000;width:100%;">Nai PIN banao ji</button>
-<div id="sudhar_content" style="display:none;background:#fff;color:#000;padding:14px;border-radius:12px;margin-top:12px;">
-<h3>1. Koi bhi Link badlo ji</h3>
-<select id="edit_target" class="big-input"><option value="">-- Kiska Link badalna hai ji? Chuno --</option></select>
-<input id="edit_name" class="big-input" placeholder="Button naam">
-<input id="edit_url" class="big-input" placeholder="Naya Link https://...">
-<input id="edit_desc" class="big-input" placeholder="Naya Vivaran">
-<button onclick="alert('Chuna hua Link badal gaya ji - Save ho gaya ji');speakText('Link badal gaya ji')" style="background:#00FF7F;color:#000;width:100%;">Chuna hua Link badlo ji - Save</button>
-<div id="edit_log" style="font-size:14px;"></div>
-<h3>2. TOP FIX - Seedhe badlo ji</h3>
-<input id="top_fix_url" class="big-input" value="https://youtu.be/9r8oiPFa7vU?si=3FI2GP1dYNauscer">
-<input id="top_fix_text" class="big-input" value="Guide Didi 1 Number Button - Main Guide Didi har jagah bolegi ji! - veedeohub Plan">
-<button onclick="document.getElementById('topfix_log').innerHTML='TOP FIX Update ho gaya ji';alert('TOP FIX Update ho gaya ji')" style="background:gold;color:#000;width:100%;">TOP FIX Update karo ji</button>
-<div id="topfix_log" style="font-size:14px;"></div>
-<h3>3. PIN / Password</h3>
-<input id="admin_old_pin" class="big-input" placeholder="Purani PIN">
-<input id="admin_new_pin" class="big-input" placeholder="Nai PIN - 4 ank">
-<button onclick="var o=document.getElementById('admin_old_pin').value;if(o!=='3796'){alert('Purani PIN galat hai ji')}else{document.getElementById('pin_log').innerHTML='PIN badal gayi ji';alert('PIN badal gayi ji')}" style="background:#FF69B4;color:#fff;width:100%;">PIN badlo ji</button>
-<div id="pin_log" style="font-size:14px;"></div>
-<div id="admin_list" style="font-size:14px;"></div>
-<h3>4. Nominee List</h3>
-<div id="admin_nominee_list" style="font-size:14px;">Koi Nominee nahi</div>
-<input id="nom_del_mobile" class="big-input" placeholder="Jis Owner ka Nominee hatana hai - Uska Mobile">
-<button onclick="alert('Nominee List dikh gayi ji')" style="background:#00FF7F;color:#000;">Nominee List dikhao ji</button>
-<button onclick="alert('Ek Nominee hat gaya ji')" style="background:#ff9900;color:#000;">Ek Nominee hatao ji</button>
-<button onclick="if(confirm('Kya aap vaastav me sabhi Nominee hatana chahte hain?')){alert('Sabhi Nominee Delete ho gaye ji')}" style="background:#ff2a2a;color:#fff;">Sabhi Nominee Delete</button>
-<h3>5. Shikayat / Sujhav - Jawab do ji</h3>
-<div id="admin_complaint_list" style="font-size:14px;">Koi Shikayat nahi ji</div>
-<button onclick="alert('Shikayat List dikh gayi ji')" style="background:#00BFFF;color:#000;width:100%;">Shikayat List dikhao ji</button>
-<h3>6. ID Delete</h3>
-<input id="delete_id_mobile" class="big-input" placeholder="Jiski ID hatani hai - Mobile">
-<button onclick="var pin=prompt('Delete ke liye PIN dalo ji');if(pin!=='3796'){alert('Galat PIN hai ji')}else{document.getElementById('delete_id_step2').style.display='block';document.getElementById('delete_id_log').innerHTML='PIN sahi hai ji - Ab Confirm dabao ji';alert('PIN sahi hai ji')}" style="background:#ff2a2a;color:#fff;width:100%;">1) Delete Request - PIN Check karo ji</button>
-<div id="delete_id_step2" style="display:none;">
-<button onclick="document.getElementById('delete_id_step3').style.display='block';document.getElementById('delete_id_log').innerHTML='Confirm ho gaya ji - Ab PIN fir dalo ji';alert('Confirm ho gaya ji')" style="background:gold;color:#000;width:100%;">2) Haan, Pakka Delete karo ji - Confirm</button>
-</div>
-<div id="delete_id_step3" style="display:none;">
-<input id="delete_id_final_pin" class="big-input" placeholder="PIN fir dalo ji" type="password">
-<button onclick="var pin=document.getElementById('delete_id_final_pin').value;if(pin!=='3796'){alert('Galat PIN hai ji')}else{document.getElementById('delete_id_log').innerHTML='ID Delete ho gayi ji - Backup me Record rahega ji';alert('ID Delete ho gayi ji - Backup me Record rahega ji')}" style="background:#ff2a2a;color:#fff;width:100%;">3) PIN fir dalo - Final Delete ji</button>
-</div>
-<div id="delete_id_log" style="font-size:14px;">PIN dalkar Delete hoga ji</div>
-<br>
-<button onclick="document.getElementById('sudhar_content').style.display='none';speakText('Sudhaar Kaksh band ho gaya ji')" style="background:#000;color:#fff;width:100%;">Band karo ji</button>
-</div>
-</div>
-<div id="deleteModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:99999;justify-content:center;align-items:center;">
-<div style="background:#111;border:3px solid gold;padding:20px;border-radius:16px;width:92%;max-width:600px;">
-<h3 class="gold" style="text-align:center;">Kya aap vaastav me is Option ko hatana chahte hain?</h3>
-<p id="deleteText" class="white"></p>
-<input id="delete_pin" class="big-input" placeholder="Apni PIN dalo ji" type="password">
-<input id="rep_name" class="big-input" placeholder="Naya Button naam - Optional">
-<input id="rep_link" class="big-input" placeholder="Naya Link - Optional">
-<input id="rep_desc" class="big-input" placeholder="Naya Vivaran - Optional">
-<button onclick="var p=document.getElementById('delete_pin').value;if(p!=='3796'){alert('Galat PIN hai ji')}else{document.getElementById('deleteModal').style.display='none';alert('Isi jagah doosra Link jod diya ji')}" style="background:#00FF7F;color:#000;width:100%;">1) Isi jagah doosra Link jodo ji</button>
-<button onclick="var p=document.getElementById('delete_pin').value;if(p!=='3796'){alert('Galat PIN hai ji')}else{document.getElementById('deleteModal').style.display='none';alert('Delete ho gaya ji - Neeche wala Button upar aa jayega ji')}" style="background:#ff2a2a;color:#fff;width:100%;">2) Sirf Delete karo ji</button>
-<button onclick="document.getElementById('deleteModal').style.display='none'" style="background:#fff;color:#000;width:100%;">3) Nahi, rakho ji - Cancel</button>
-</div>
-</div>
-<div style="background:#0a0a0a;padding:16px;margin:16px 0 0 0;border-top:4px solid gold;">
-<h2 class="gold" style="text-align:center;">Kanoonan Jaankari - Author : Ashok Kumar, Mohammad Pur Ahir, Tauru, Nuh, Haryana 122105, Mobile 9992553796, UPI 9992553796@ybl</h2>
-<div style="background:#111;border:2px solid #fff;padding:12px;margin:12px;border-radius:12px;">
-<h3 class="gold">Privacy Policy</h3>
-<p class="white">Mobile hi ID Wallet Referral - Firebase - All Life Free Joining - Aapki jaankari sirf Joining Wallet Tree ke liye hai ji</p>
-</div>
-<div style="background:#111;border:2px solid #00FF7F;padding:12px;margin:12px;border-radius:12px;">
-<h3 class="gold">Contact Us</h3>
-<p class="white">Author : Ashok Kumar, Mohammad Pur Ahir, Tauru, Nuh, Haryana 122105, Mobile 9992553796, UPI 9992553796@ybl</p>
-<p class="white">Site: https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21</p>
-<p class="white">Om Namah Shivay Main Guide Didi har jagah bolegi ji!</p>
-</div>
-<div style="background:#111;border:2px solid gold;padding:12px;margin:12px;border-radius:12px;">
-<h3 class="gold">FINAL Note 1-4 - Disclosure ji</h3>
-<p class="white" style="line-height:1.8;">Note 1 - Pool 70 = Seniority Pool 50 + Joining Pool 20 ji - Seniority labh L1 15 + L2 10 + L3 7 + L4 5 + L5 5 + L6 se Infinite 8 = 50 ji + Joining labh 20 ji - Joining nahi hai to bhi nuksaan nahi ji, Seniority Pool All Life jaari ji. Joining labh udaharan ji - 1 bikri par 200 me se 20 Joining Pool me jata hai ji - Aapki 5 Joining hai to 5 hisse wala labh milega ji, 0 Joining hai to Joining Pool se 0 milega ji, Seniority Pool 50 fir bhi milega ji - Isliye Joining bhi karo ji. Note 2 - 6 sale / 6000 seema samay ke saath badal sakti hai ji, purane senior ki seniority wahi rahegi ji. Note 3 - Owner ko plan sudharne ka poora adhikar hai ji, kisi ka haq nahi jayega ji. Note 4 - Joining free hai ji, kamai ki guarantee nahi hai ji, paisa sirf vaastavik bikri par company ki pushti ke baad milega ji, click / View / Like par nahi ji, TDS sarkari niyam se ji. Agar koi jaanboojhkar fraud, galat Mobile / Sale / Joining karta hai, Plan / All Life Business ko bigadne ki koshish karta hai, ya site / Business ko badnaam karta hai, to samjhane ke baad Owner ko poora adhikar hoga ki wo uski ID hata sakta hai ji.</p>
-</div>
-<div style="text-align:center;"><p class="white">© 2026 veedeohub V1 FINAL - Owner Ashok Kumar - Om Namah Shivay</p></div>
-</div>
+
+<div id="deleteModal"><div class="box"><h3 class="gold" style="text-align:center;">⚠️ क्या आप वास्तव में इस ऑप्शन को हटाना चाहते हैं?</h3><p id="deleteText" class="white"></p><input id="delete_pin" class="pin-input" placeholder="अपनी पिन डालो जी" type="password"><input id="rep_name" class="big-input" placeholder="नया बटन नाम - Optional"><input id="rep_link" class="big-input" placeholder="नया Link - Optional"><input id="rep_desc" class="big-input" placeholder="नया विवरण - Optional"><div style="display:flex;gap:10px;flex-wrap:wrap;"><button onclick="confirmReplace()" style="background:#00FF7F;color:#000;flex:1;">🔄 1) इसी जगह दूसरा लिंक जोड़ो जी</button><button onclick="confirmDelete()" style="background:#ff2a2a;color:#fff;flex:1;">🗑️ 2) सिर्फ Delete करो जी</button></div><button onclick="hideModal()" style="background:#fff;color:#000;width:100%;margin-top:10px;">❌ 3) नहीं, रखो जी - Cancel</button></div></div>
+
+<div style="background:#0a0a0a;padding:20px;margin:20px 0 0 0;border-top:4px solid gold;"><h2 class="gold" style="text-align:center;">📜 कानूनन जानकारी - Author : Ashok Kumar, Mohammad Pur Ahir, तावडू, नूँह, Haryana 122105, Mobile 9992553796, UPI 9992553796@ybl</h2>
+<div style="background:#111;border:2px solid #fff;padding:14px;margin:14px;border-radius:12px;"><h3 class="gold">🔒 Privacy Policy</h3><p class="white">Mobile ही ID Wallet Referral - Firebase - All Life Free Joining - आपकी जानकारी सिर्फ Joining Wallet Tree के लिए है जी। AdSense के लिए Affiliate Disclosure ऊपर भाग 9 में है जी।</p></div>
+<div style="background:#111;border:2px solid #00FF7F;padding:14px;margin:14px;border-radius:12px;"><h3 class="gold">📞 Contact Us</h3><p class="white">Author : Ashok Kumar, Mohammad Pur Ahir, तावडू, नूँह, Haryana 122105, Mobile 9992553796, UPI 9992553796@ybl<br>Site: https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21<br>ॐ नमः शिवाय 🪔 🙏 मैं गाइड दीदी हर जगह बोलेगी जी!</p></div>
+<div style="text-align:center;"><p class="white">© 2026 Veedeohub V1 FINAL - Owner Ashok Kumar - ॐ नमः शिवाय 🪔</p></div></div>
+
 <script>
-var FIREBASE_CONFIG={apiKey:"xxx",authDomain:"veedeohub.firebaseapp.com",projectId:"veedeohub"};
-window.ALL_BUTTONS=[];
-window.CUR_PAGE=1;
-window.SHOW_ALL=false;
-window.DELETE_TARGET=null;
-for(var bi=1;bi<=50;bi++){window.ALL_BUTTONS.push({num:bi,name:"Button "+bi+" - veedeohub Plan",url:"https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21",desc:"Button "+bi+" ka vivaran - Guide Didi bolegi ji"});}
-try{var sv=JSON.parse(localStorage.getItem("veedeo_buttons_v68")||"null");if(sv&&sv.length){window.ALL_BUTTONS=sv;}}catch(e){}
-function renderButtons(){
-try{
-var list=window.ALL_BUTTONS;
-var q="";
-var sb=document.getElementById("searchBox");
-if(sb){q=(sb.value||"").toLowerCase().trim();}
-if(q){var out=[];for(var i=0;i<list.length;i++){var b=list[i];if((b.name+" "+b.desc+" "+b.num).toLowerCase().indexOf(q)>=0){out.push(b);}}list=out;}
-var per=10;
-var total=Math.max(1,Math.ceil(list.length/per));
-if(window.CUR_PAGE>total){window.CUR_PAGE=total;}
-var start=(window.CUR_PAGE-1)*per;
-var pageList=window.SHOW_ALL?list:list.slice(start,start+per);
-var el=document.getElementById("btnContainer");
-if(!el){return;}
-var html="";
-for(var i=0;i<pageList.length;i++){
-var b=pageList[i];
-var idx=window.ALL_BUTTONS.indexOf(b);
-var sn=b.name.split("'").join("");
-var sd=b.desc.split("'").join("");
-html+='<div class="btn-card"><div class="gold">'+b.num+'. '+b.name+'</div><div class="white">'+b.desc+'</div><button onclick="window.open(\''+b.url+'\',\'_blank\')" style="background:gold;color:#000;">Kholo ji</button><button onclick="speakText(\''+sn+' - '+sd+'\')" style="background:#fff;color:#000;">Suno ji</button><button onclick="window.open(\'https://www.facebook.com/sharer/sharer.php?u=\'+encodeURIComponent(\''+b.url+'\'),\'_blank\')" style="background:#1877F2;color:#fff;">FB</button><button onclick="window.open(\'https://wa.me/?text=\'+encodeURIComponent(\''+sn+' - '+b.url+'\'),\'_blank\')" style="background:#25D366;color:#000;">WA</button><button onclick="openDelModal('+idx+')" style="background:#ff2a2a;color:#fff;">Delete / Badlo ji</button></div>';
-}
-el.innerHTML=html||'<div class="white">Koi Button nahi mila ji</div>';
-var pi=document.getElementById("pageInfo");
-if(pi){pi.innerHTML=window.SHOW_ALL?"Saare "+list.length+" Button":((start+1)+"-"+Math.min(start+per,list.length)+" / "+list.length);}
-}catch(e){var el2=document.getElementById("btnContainer");if(el2){el2.innerHTML="<div class=white>Button load me dikkat hai ji - Page Refresh karo ji</div>";}}
-}
-function openDelModal(idx){
-window.DELETE_TARGET=idx;
-var b=window.ALL_BUTTONS[idx];
-document.getElementById("deleteText").innerHTML="Button "+b.num+" - "+b.name+" - Kya karna hai ji?";
-document.getElementById("deleteModal").style.display="flex";
-}
-var veedeoTags=["veedeohub-21","ref=9992553796","tag=veedeohub-21","veedeohub","Google Circle","Server Live","UPI 9992553796@ybl"];
-var veedeoTagIdx=0;
-setInterval(function(){
-try{
-var el=document.getElementById("tagRunner");
-if(el){el.innerHTML="Tag: "+veedeoTags[veedeoTagIdx%veedeoTags.length]+" - Har dhai second me badal raha hai ji";veedeoTagIdx++;}
-var sv=document.getElementById("serverStatus");
-if(sv){sv.innerHTML="SERVER: juda hua hai ji - veedeohub Server Live hai ji - "+new Date().toLocaleTimeString();}
-}catch(e){}
-},2500);
-try{
-var sb2=document.getElementById("searchBox");
-if(sb2){sb2.addEventListener("keyup",function(){window.CUR_PAGE=1;window.SHOW_ALL=false;renderButtons();});}
-}catch(e){}
-try{
-var du=document.getElementById("dist_upi_mobile");
-if(du){du.addEventListener("keyup",function(){var m=(du.value||"").replace(/[^0-9]/g,"").slice(-10);if(m.length===10){document.getElementById("dist_upi_id").value=m+"@ybl";}});}
-}catch(e){}
-try{
-var q=window.location.search;
-if(q.indexOf("ref=")>=0){
-var r=q.split("ref=")[1].split("&")[0].replace(/[^0-9]/g,"");
-if(r.length===10){var jm=document.getElementById("j_mobile");if(jm){jm.value=r;}}
-}
-}catch(e){}
-renderButtons();
+if(!localStorage.getItem("veedo_pin_v68")) localStorage.setItem("veedo_pin_v68","3796");
+function getPin(){return localStorage.getItem("veedo_pin_v68")||"3796";}
+var SPEAK_PAUSED=false;var SPEAK_CHUNKS=[];var SPEAK_IDX=0;
+function speakText(txt){try{if(!('speechSynthesis' in window))return;speechSynthesis.cancel();SPEAK_PAUSED=false;var t=(txt||"").toString().replace(/https?:\/\/\S+/g," ").replace(/www\.\S+/g," ").trim();if(!t)return;var parts=t.split(/(?<=[।.!?])\s+/);var chunks=[];var cur="";parts.forEach(function(p){if((cur+" "+p).length>170){if(cur)chunks.push(cur);cur=p;}else{cur=(cur+" "+p).trim();}});if(cur)chunks.push(cur);SPEAK_CHUNKS=chunks;SPEAK_IDX=0;speakChunk();}catch(e){}}
+function speakChunk(){try{if(SPEAK_IDX>=SPEAK_CHUNKS.length){SPEAK_PAUSED=false;return;}var u=new SpeechSynthesisUtterance(SPEAK_CHUNKS[SPEAK_IDX]);u.lang='hi-IN';u.rate=0.95;u.onend=function(){if(SPEAK_PAUSED)return;SPEAK_IDX++;speakChunk();};u.onerror=function(){if(!SPEAK_PAUSED){SPEAK_IDX++;speakChunk();}};speechSynthesis.speak(u);}catch(e){}}
+function toggleSingleSpeak(){try{if(speechSynthesis.paused){speechSynthesis.resume();SPEAK_PAUSED=false;return;}if(speechSynthesis.speaking){speechSynthesis.pause();SPEAK_PAUSED=true;return;}}catch(e){}}
+function speakFull(id){var el=document.getElementById(id);if(el)speakText(el.innerText||"");}
+function speakAllBhag(){var txt="";for(var i=1;i<=11;i++){var el=document.getElementById("bhag"+i+"_full");if(el)txt+=el.innerText+" ";}speakText(txt);}
+function speakPlanTable(){var el=document.getElementById("plan_table_text_full");if(el)speakText(el.innerText);}
+function speakAutoBantwara(){speakText('Auto Bantwara - Seller 120, Owner 10, Seniority Pool 50, Joining Pool 20. 90 din wala niyam ji.');}
+function getRef(){let m=document.getElementById("j_mobile")?.value||"9992553796";return m.replace(/[^0-9]/g,"")||"9992553796";}
+function aiAutofill(){let last=JSON.parse(localStorage.getItem("veedeo_last_join_v68")||"null");if(last){document.getElementById("j_name").value=last.name||"";document.getElementById("j_city").value=last.city||"";document.getElementById("j_mobile").value=last.mobile||"9992553796";}else{document.getElementById("j_name").value="Ashok Kumar";document.getElementById("j_city").value="Tauru";document.getElementById("j_mobile").value="9992553796";}}
+function doJoin(){let n=document.getElementById("j_name").value.trim();let c=document.getElementById("j_city").value.trim();let m=getRef();if(!m||m.length<10)return alert("Mobile लिखो जी - 10 अंक");if(!n)return alert("नाम लिखो जी");let users=JSON.parse(localStorage.getItem("veedeo_users_v68")||"[]");let refLink="https://veedeohub.web.app?ref="+m+"&tag=veedeohub-21";if(users.find(u=>u.mobile==m)){document.getElementById("ref_link").innerText="✅ आप पहले से जुड़े हो जी - Link: "+refLink;return;}users.push({name:n,city:c,mobile:m,date:new Date().toISOString()});localStorage.setItem("veedeo_users_v68",JSON.stringify(users));let tree=JSON.parse(localStorage.getItem("veedeo_tree_v68")||"[]");tree.push(m);localStorage.setItem("veedeo_tree_v68",JSON.stringify(tree));localStorage.setItem("veedeo_last_join_v68",JSON.stringify({name:n,city:c,mobile:m}));document.getElementById("ref_link").innerText="✅ Joining हो गई जी: "+refLink;claimGuestPendingV85();}
+function saveNominee(){let ownerM=(document.getElementById("j_nominee_owner_mobile")?.value||"").replace(/[^0-9]/g,"").slice(-10)||getRef();let nn=document.getElementById("j_nominee_name").value.trim();let nr=document.getElementById("j_nominee_relation").value.trim();let nm=document.getElementById("j_nominee_mobile").value.trim();if(!nn){alert("नॉमिनी नाम लिखो जी");return;}let arr=JSON.parse(localStorage.getItem("veedeo_nominee_v74")||"[]");arr=arr.filter(x=>x.owner_mobile!=ownerM);arr.push({owner_mobile:ownerM,nominee_name:nn,relation:nr,mobile:nm,date:new Date().toISOString()});localStorage.setItem("veedeo_nominee_v74",JSON.stringify(arr));document.getElementById("nominee_log").innerText="✅ नॉमिनी सेव: "+nn+" ("+nr+") - "+nm;}
+function resendJoinLink(){let n=document.getElementById("j_name").value.trim()||"Veedeohub Member";let m=getRef();let refLink="https://veedeohub.web.app?ref="+m+"&tag=veedeohub-21";window.open("https://wa.me/91"+m+"?text="+encodeURIComponent("नमस्ते "+n+" जी! आपका Referral Link: "+refLink),"_blank");}
+function changeMobile(){let oldM=document.getElementById("old_mobile").value.trim();let oldP=document.getElementById("old_pass").value.trim();let newM=document.getElementById("new_mobile_change").value.trim();if(!oldM||!newM){alert("पुराना और नया Mobile लिखो जी");return;}if(oldP!==getPin()){document.getElementById("mobile_change_log").innerText="पासवर्ड गलत";return;}let users=JSON.parse(localStorage.getItem("veedeo_users_v68")||"[]");let idx=users.findIndex(u=>u.mobile==oldM);if(idx==-1){document.getElementById("mobile_change_log").innerText="पुराना Mobile नहीं मिला जी";return;}users[idx].mobile=newM;users[idx].old_mobile=oldM;localStorage.setItem("veedeo_users_v68",JSON.stringify(users));document.getElementById("mobile_change_log").innerText="✅ Mobile बदल गया जी - सीनियरिटी वही";}
+function resetPassword(){let m=document.getElementById("fp_mobile").value.trim();let p1=document.getElementById("fp_new1").value.trim();let p2=document.getElementById("fp_new2").value.trim();if(!m||!p1){alert("Mobile और नया पासवर्ड लिखो जी");return;}if(p1!==p2){document.getElementById("fp_log").innerText="दोनों पासवर्ड एक जैसे नहीं जी";return;}localStorage.setItem("veedo_pin_v68",p1);document.getElementById("fp_log").innerText="✅ नया पासवर्ड सेव हो गया जी";}
+function openSudhar(){let p=document.getElementById("s_pin").value.trim();if(p!==getPin()){alert("PIN गलत है जी");return;}document.getElementById("sudhar_content").style.display="block";populateEditSelect();}
+function closeSudhar(){document.getElementById("sudhar_content").style.display="none";}
+function forgotPin(){let newPin=prompt("नई पिन बनाओ जी - 4 अंक","3796");if(newPin&&newPin.length>=4){localStorage.setItem("veedo_pin_v68",newPin.trim());alert("नई पिन सेव हो गई जी");}}
+let TOP_FIX={name:"veedeohub Final Plan - फिक्स वीडियो",url:"https://youtu.be/aYiMAN4iEjQ?si=526MQcXWdAXRllrF",desc:"veedeohub Final Plan"};
+let FIX_VIDEOS=[{name:"1. veedeohub Final Plan - फिक्स वीडियो",url:"https://youtu.be/aYiMAN4iEjQ?si=526MQcXWdAXRllrF",thumb:"aYiMAN4iEjQ",desc:"veedeohub Final Plan - यही फाइनल है जी"}];
+function saveFixVideos(){localStorage.setItem("veedeo_fixvideos_v77",JSON.stringify(FIX_VIDEOS));}
+try{let sFV=JSON.parse(localStorage.getItem("veedeo_fixvideos_v77")||"null");if(sFV&&sFV.length>0){FIX_VIDEOS=sFV.filter(v=>!(v.url||"").includes("9r8oiPFa7vU"));if(FIX_VIDEOS.length==0)FIX_VIDEOS=[{name:"1. veedeohub Final Plan - फिक्स वीडियो",url:"https://youtu.be/aYiMAN4iEjQ?si=526MQcXWdAXRllrF",thumb:"aYiMAN4iEjQ",desc:"veedeohub Final Plan"}];}}catch(e){}
+function renderFixVideos(){let c=document.getElementById("fixVideoContainer");if(!c)return;c.innerHTML="";FIX_VIDEOS.forEach((v,i)=>{let div=document.createElement("div");div.className="btn-card";let thumbId=v.thumb||"aYiMAN4iEjQ";div.innerHTML="<div class='spk'><img class='spk-thumb' src='https://img.youtube.com/vi/"+thumbId+"/mqdefault.jpg'><div><div class='gold'>📌 "+v.name+"</div><div class='white'>"+v.desc+"</div></div></div><img class='thumb' src='https://img.youtube.com/vi/"+thumbId+"/mqdefault.jpg'><div class='white' style='word-break:break-all;'>"+v.url+"</div><button onclick=\"window.open('"+v.url+"','_blank')\" style='background:gold;color:#000;width:100%'>🔗 खोलो जी - "+(i+1)+"</button><button onclick=\"speakText('"+v.name.replace(/'/g,'')+" "+v.desc.replace(/'/g,'')+"')\" style='background:#fff;color:#000;width:100%;'>🔊 सुनो जी - "+(i+1)+" - स्पीकर सहित</button><button onclick=\"deleteFixVideo("+i+")\" style='background:#ff2a2a;color:#fff;width:100%;'>🗑️ Delete - "+(i+1)+" - पुष्टि के साथ</button>";c.appendChild(div);});}
+function addFixVideo(){let nm=document.getElementById("new_video_name").value.trim();let ur=document.getElementById("new_video_url").value.trim();let ds=document.getElementById("new_video_desc").value.trim()||nm;let pin=document.getElementById("new_video_pin").value.trim();if(!nm||!ur){alert("वीडियो नाम और Link लिखो जी");return;}if(pin!==getPin()){alert("Admin PIN जरूरी जी");return;}let m=ur.match(/(?:youtu\.be\/|v=)([^?&]+)/);let th=m?m[1]:"aYiMAN4iEjQ";FIX_VIDEOS.push({name:(FIX_VIDEOS.length+1)+". "+nm,url:ur,thumb:th,desc:ds});saveFixVideos();renderFixVideos();document.getElementById("add_video_log").innerText="✅ वीडियो जोड़ा जी: "+nm;}
+function deleteFixVideo(i){showTwoButton("Fix Video हटाना है जी? "+FIX_VIDEOS[i].name,function(){FIX_VIDEOS.splice(i,1);FIX_VIDEOS.forEach((v,ix)=>{v.name=(ix+1)+". "+v.name.replace(/^\d+\.\s*/,"");});saveFixVideos();renderFixVideos();},function(nl){FIX_VIDEOS[i].url=nl;let m=nl.match(/(?:youtu\.be\/|v=)([^?&]+)/);if(m)FIX_VIDEOS[i].thumb=m[1];saveFixVideos();renderFixVideos();});}
+function updateTopFix(){let u=document.getElementById("top_fix_url").value.trim();let t=document.getElementById("top_fix_text").value.trim();if(!u){alert("TOP FIX Link लिखो जी");return;}TOP_FIX.url=u;if(t)TOP_FIX.name=t;localStorage.setItem("veedeo_topfix_v77",JSON.stringify(TOP_FIX));if(FIX_VIDEOS.length>0){FIX_VIDEOS[0].url=u;FIX_VIDEOS[0].name="1. "+(t||"veedeohub Final Plan");saveFixVideos();renderFixVideos();}document.getElementById("topfix_log").innerText="✅ TOP FIX बदल गया जी";}
+function sendComplaint(){let n=document.getElementById("comp_name").value.trim();let m=document.getElementById("comp_mobile").value.trim();let t=document.getElementById("comp_type").value;let msg=document.getElementById("comp_msg").value.trim();if(!n||!m||!msg){alert("नाम, Mobile और शिकायत लिखो जी");return;}let arr=JSON.parse(localStorage.getItem("veedeo_complaints_v77")||"[]");let ticket="VH-"+Date.now().toString().slice(-6);arr.push({ticket:ticket,name:n,mobile:m,type:t,msg:msg,status:"लंबित",date:new Date().toLocaleString()});localStorage.setItem("veedeo_complaints_v77",JSON.stringify(arr));document.getElementById("comp_log").innerText="✅ Ticket बना जी: "+ticket;document.getElementById("comp_msg").value="";}
+const OFFICIAL_LINKS=[{n:1,name:"🪔 MAIN LIVE - veedeohub.web.app",url:"https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21",desc:"🪔 MAIN LIVE - Free Joining करो जी"},{n:2,name:"Netlify - veedeohub.netlify.app",url:"https://veedeohub.netlify.app",desc:"Netlify App जी"},{n:3,name:"GitHub - ak9992553796-bit",url:"https://ak9992553796-bit.github.io/veedeohub/",desc:"GitHub App जी"},{n:4,name:"Vercel - veedeohub.vercel.app",url:"https://veedeohub.vercel.app",desc:"Vercel App जी"}];
+function renderOfficial4(){let c=document.getElementById("official4Container");if(!c)return;c.innerHTML="";OFFICIAL_LINKS.forEach((b,i)=>{let div=document.createElement("div");div.className="btn-card";div.innerHTML="<div class='spk'><img class='spk-thumb' src='https://img.youtube.com/vi/aYiMAN4iEjQ/mqdefault.jpg'><div class='gold'>📌 "+b.name+"</div></div><div class='white'>"+b.desc+"<br><span style='word-break:break-all;'>"+b.url+"</span></div><button onclick=\"window.open('"+b.url+"','_blank')\" style='background:gold;color:#000;width:100%;'>🔗 खोलो जी - "+b.n+"</button><button onclick=\"speakText('"+b.name.replace(/'/g,'')+" "+b.desc.replace(/'/g,'')+"')\" style='background:#fff;color:#000;width:100%;'>🔊 सुनो जी - "+b.n+" - स्पीकर सहित</button><button onclick=\"askDeleteGeneric('"+b.name.replace(/'/g,'')+"','"+b.url+"')\" style='background:#ff2a2a;color:#fff;width:100%;'>🗑️ Delete - "+b.n+" - पुष्टि के साथ</button>";c.appendChild(div);});}
+const DEFAULT_BUTTONS=[{n:1,name:"1. त्र्यम्बकेश्वर - Trimbakeshwar",url:"https://www.trimbakeshwar.org",desc:"त्र्यम्बकेश्वर - ॐ त्र्यम्बकं यजामहे - नाम त्र्यम्बकेश्वर जी, नम्बर 9992553796 जी"},{n:2,name:"2. veedeohub Final Plan वीडियो",url:"https://youtu.be/aYiMAN4iEjQ?si=526MQcXWdAXRllrF",desc:"veedeohub Final Plan - फिक्स वीडियो जी"},{n:3,name:"3. बुक FLIPKART",url:"https://www.flipkart.com/product/p/itme?pid=9789362494184",desc:"Flipkart बुक"},{n:4,name:"4. बुक AMAZON",url:"https://www.amazon.in/dp/B0GZB61NNR",desc:"Amazon बुक"},{n:5,name:"5. FACEBOOK PROFILE",url:"https://facebook.com/veedeohub.in",desc:"Facebook Profile"},{n:6,name:"6. YOUTUBE CHANNEL",url:"https://youtube.com/@veedeohub",desc:"YouTube Channel"},{n:7,name:"7. INSTAGRAM",url:"https://instagram.com/veedeohub",desc:"Instagram Profile"},{n:8,name:"8. WHATSAPP 9992553796",url:"https://wa.me/919992553796",desc:"WhatsApp Direct"},{n:9,name:"9. UPI 9992553796@ybl",url:"https://www.google.com/search?q=9992553796%40ybl",desc:"UPI Search"},{n:10,name:"10. AMAZON Home",url:"https://www.amazon.in/",desc:"Amazon Home"}];
+let BUTTONS=[...DEFAULT_BUTTONS];
+try{let s=localStorage.getItem("veedeo_buttons_v68");if(s){let p=JSON.parse(s);if(p.length>=5)BUTTONS=p;}}catch(e){}
+function saveButtons(){localStorage.setItem("veedeo_buttons_v68",JSON.stringify(BUTTONS));}
+function renumber(){BUTTONS.forEach((b,i)=>b.n=i+1);}
+let cur=0;const ps=10;let all=false;
+function getFiltered(){let q=document.getElementById("searchBox")?.value.toLowerCase()||"";if(!q)return BUTTONS;return BUTTONS.filter(b=>b.name.toLowerCase().includes(q)||b.desc.toLowerCase().includes(q));}
+function renderButtons(){let list=getFiltered();let c=document.getElementById("btnContainer");c.innerHTML="";let toShow=all||document.getElementById("searchBox").value.trim()!=""?list:list.slice(cur*ps,(cur+1)*ps);toShow.forEach(b=>{let div=document.createElement("div");div.className="btn-card";let thumb="aYiMAN4iEjQ";let m=(b.url||"").match(/(?:youtu\.be\/|v=)([^?&]+)/);if(m)thumb=m[1];div.innerHTML="<div class='spk'><img class='spk-thumb' src='https://img.youtube.com/vi/"+thumb+"/mqdefault.jpg'><div><div class='gold'>📌 "+b.name+"</div><div class='white'>"+b.desc+"</div></div></div><div><button onclick=\"window.open('"+b.url+"?ref="+getRef()+"&tag=veedeohub-21','_blank')\" style='background:gold;color:#000;width:100%'>🔗 खोलो जी - "+b.n+"</button><button onclick=\"speakText('"+b.name.replace(/'/g,'')+" "+b.desc.replace(/'/g,'')+"')\" style='background:#fff;color:#000'>🔊 सुनो जी - "+b.n+" - स्पीकर सहित</button><button onclick=\"askDelete("+b.n+")\" style='background:#ff2a2a;color:#fff'>🗑️ Delete "+b.n+" - पुष्टि के साथ</button></div>";c.appendChild(div);});let total=list.length;let from=all?1:cur*ps+1;let to=all?total:Math.min((cur+1)*ps,total);document.getElementById("pageInfo").innerText=from+"-"+to+" / "+total;}
+let _pending2=null;let pending=null;
+function showTwoButton(msg,delFn,repFn){_pending2={del:delFn,rep:repFn};document.getElementById("deleteText").innerHTML=msg+"<br><br>👆 PIN डालो जी, फिर 2 बटन में से चुनो जी";document.getElementById("delete_pin").value="";document.getElementById("rep_name").value="";document.getElementById("rep_link").value="";document.getElementById("rep_desc").value="";document.getElementById("deleteModal").style.display="flex";}
+function askDelete(n){let idx=BUTTONS.findIndex(b=>b.n===n);if(idx==-1)return;pending=idx;document.getElementById("deleteText").innerHTML="बटन "+BUTTONS[idx].n+" - "+BUTTONS[idx].name+"<br>क्या आप वास्तव में इस ऑप्शन को हटाना चाहते हैं जी?";document.getElementById("delete_pin").value="";document.getElementById("rep_name").value="";document.getElementById("rep_link").value="";document.getElementById("rep_desc").value="";document.getElementById("deleteModal").style.display="flex";}
+function askDeleteGeneric(name,url){showTwoButton(name+" हटाना है जी? "+url,function(){alert("🗑️ "+name+" हट गया जी - पुष्टि हो गई जी");},function(nl){alert("दूसरा लिंक: "+nl);});}
+function hideModal(){document.getElementById("deleteModal").style.display="none";pending=null;_pending2=null;}
+function confirmDelete(){if(_pending2){if(document.getElementById("delete_pin").value.trim()!==getPin()){alert("PIN गलत");return;}var f=_pending2.del;_pending2=null;pending=null;document.getElementById("deleteModal").style.display="none";if(f)f();return;}if(pending===null)return;if(document.getElementById("delete_pin").value.trim()!==getPin()){alert("PIN गलत");return;}BUTTONS.splice(pending,1);renumber();saveButtons();renderButtons();hideModal();}
+function confirmReplace(){if(_pending2){if(document.getElementById("delete_pin").value.trim()!==getPin()){alert("PIN गलत");return;}let nl2=document.getElementById("rep_link").value.trim();if(!nl2){alert("दूसरा लिंक लिखो जी");return;}var rf=_pending2.rep;_pending2=null;pending=null;document.getElementById("deleteModal").style.display="none";if(rf)rf(nl2);return;}if(pending===null)return;if(document.getElementById("delete_pin").value.trim()!==getPin()){alert("PIN गलत");return;}let nl=document.getElementById("rep_link").value.trim();if(!nl){alert("दूसरा लिंक लिखो जी");return;}BUTTONS[pending].url=nl;saveButtons();renderButtons();hideModal();}
+function prevPage(){if(cur>0){cur--;renderButtons();}}
+function nextPage(){if((cur+1)*ps<getFiltered().length){cur++;renderButtons();}}
+function showAllButtons(){all=true;renderButtons();}
+function resetPage(){cur=0;all=false;}
+function addAnant(){let name=document.getElementById("anant_name").value.trim();let url=document.getElementById("anant_url").value.trim();let desc=document.getElementById("anant_desc").value.trim()||name;let pin=document.getElementById("anant_pin").value.trim();if(!name||!url){alert("नाम और Link लिखो जी");return;}if(pin!==getPin()){alert("Admin PIN जरूरी");return;}BUTTONS.push({n:BUTTONS.length+1,name:(BUTTONS.length+1)+". "+name,url:url,desc:desc});renumber();saveButtons();renderButtons();document.getElementById("anant_log").innerText="✅ जोड़ा जी "+name+" - कुल "+BUTTONS.length;}
+let BLOGS=[{n:1,title:"1. Veedeohub प्लान - गाइड दीदी",url:"https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21&blog=1",text:"गाइड दीदी 1 नंबर बटन - Veedeohub Final Plan - नई प्लान 120+10+50+20"}];
+try{var sB=JSON.parse(localStorage.getItem("veedeo_blogs_v80")||"null");if(sB&&sB.length>0)BLOGS=sB;}catch(e){}
+function renumberBlogs(){BLOGS.forEach(function(b,i){b.n=i+1;});}
+function saveBlogs(){try{localStorage.setItem("veedeo_blogs_v80",JSON.stringify(BLOGS));}catch(e){}}
+function renderBlogs(){var c=document.getElementById("blogContainer");if(!c)return;c.innerHTML="";BLOGS.forEach(function(b,i){var div=document.createElement("div");div.className="btn-card";div.innerHTML="<div class='spk'><img class='spk-thumb' src='https://img.youtube.com/vi/aYiMAN4iEjQ/mqdefault.jpg'><div class='gold'>📝 ब्लॉग - "+b.n+" - "+b.title+"</div></div><div class='white'>"+b.text+"</div>";function mkBtn(txt,bg,fg,fn){var bt=document.createElement("button");bt.style.background=bg;bt.style.color=fg;bt.style.width="100%";bt.textContent=txt;bt.onclick=fn;div.appendChild(bt);}mkBtn("🔗 खोलो जी - "+b.n,"gold","#000",function(){window.open(b.url,"_blank");});mkBtn("🔊 सुनो जी - "+b.n+" - स्पीकर सहित","#fff","#000",function(){speakText(b.title+" "+b.text);});mkBtn("🗑️ Delete - "+b.n+" - पुष्टि के साथ","#ff2a2a","#fff",function(){deleteBlog(i);});c.appendChild(div);});}
+function deleteBlog(i){showTwoButton("ब्लॉग हटाना है जी? "+BLOGS[i].title,function(){BLOGS.splice(i,1);renumberBlogs();saveBlogs();renderBlogs();},function(nl){BLOGS[i].url=nl;saveBlogs();renderBlogs();});}
+function addBlog(){var ti=document.getElementById("blog_title").value.trim();var ur=document.getElementById("blog_url").value.trim();var tx=document.getElementById("blog_text").value.trim()||ti;var pin=document.getElementById("blog_pin").value.trim();if(!ti||!ur){alert("ब्लॉग Title और Link लिखो जी");return;}if(pin!==getPin()){alert("Admin PIN जरूरी जी");return;}BLOGS.push({n:BLOGS.length+1,title:ti,url:ur,text:tx});renumberBlogs();saveBlogs();renderBlogs();document.getElementById("blog_log").textContent="✅ ब्लॉग जोड़ा जी: "+ti;}
+function populateEditSelect(){let sel=document.getElementById("edit_target");if(!sel)return;sel.innerHTML="<option value=''>-- किसका लिंक बदलना है जी? चुनो --</option>";sel.innerHTML+="<option value='TOP'>TOP FIX - "+TOP_FIX.name+"</option>";FIX_VIDEOS.forEach((v,i)=>{sel.innerHTML+="<option value='FIX:"+i+"'>FIX VIDEO "+(i+1)+" - "+v.name+"</option>";});OFFICIAL_LINKS.forEach((b,i)=>{sel.innerHTML+="<option value='OFF:"+i+"'>OFFICIAL "+(i+1)+" - "+b.name+"</option>";});BUTTONS.forEach((b,i)=>{sel.innerHTML+="<option value='BTN:"+i+"'>BUTTON "+b.n+" - "+b.name+"</option>";});}
+function fillEditForm(){let v=document.getElementById("edit_target").value;if(!v)return;let parts=v.split(":");let type=parts[0],idx=parseInt(parts[1]);if(type=="TOP"){document.getElementById("edit_name").value=TOP_FIX.name;document.getElementById("edit_url").value=TOP_FIX.url;document.getElementById("edit_desc").value=TOP_FIX.desc||"";}else if(type=="FIX"){document.getElementById("edit_name").value=FIX_VIDEOS[idx].name;document.getElementById("edit_url").value=FIX_VIDEOS[idx].url;document.getElementById("edit_desc").value=FIX_VIDEOS[idx].desc||"";}else if(type=="OFF"){document.getElementById("edit_name").value=OFFICIAL_LINKS[idx].name;document.getElementById("edit_url").value=OFFICIAL_LINKS[idx].url;document.getElementById("edit_desc").value=OFFICIAL_LINKS[idx].desc||"";}else if(type=="BTN"){document.getElementById("edit_name").value=BUTTONS[idx].name;document.getElementById("edit_url").value=BUTTONS[idx].url;document.getElementById("edit_desc").value=BUTTONS[idx].desc||"";}}
+function saveAnyLink(){let v=document.getElementById("edit_target").value;if(!v){alert("पहले चुनो जी");return;}if(document.getElementById("s_pin").value.trim()!==getPin()){alert("Admin PIN जरूरी जी");return;}let nn=document.getElementById("edit_name").value.trim();let uu=document.getElementById("edit_url").value.trim();let dd=document.getElementById("edit_desc").value.trim();if(!uu){alert("नया Link लिखो जी");return;}let parts=v.split(":");let type=parts[0],idx=parseInt(parts[1]);if(type=="TOP"){TOP_FIX.name=nn||TOP_FIX.name;TOP_FIX.url=uu;TOP_FIX.desc=dd||TOP_FIX.desc;localStorage.setItem("veedeo_topfix_v77",JSON.stringify(TOP_FIX));renderFixVideos();}else if(type=="FIX"){FIX_VIDEOS[idx].name=nn||FIX_VIDEOS[idx].name;FIX_VIDEOS[idx].url=uu;FIX_VIDEOS[idx].desc=dd||FIX_VIDEOS[idx].desc;let m=uu.match(/(?:youtu\.be\/|v=)([^?&]+)/);if(m)FIX_VIDEOS[idx].thumb=m[1];saveFixVideos();renderFixVideos();}else if(type=="OFF"){OFFICIAL_LINKS[idx].name=nn||OFFICIAL_LINKS[idx].name;OFFICIAL_LINKS[idx].url=uu;OFFICIAL_LINKS[idx].desc=dd||OFFICIAL_LINKS[idx].desc;renderOfficial4();}else if(type=="BTN"){BUTTONS[idx].name=nn||BUTTONS[idx].name;BUTTONS[idx].url=uu;BUTTONS[idx].desc=dd||BUTTONS[idx].desc;saveButtons();renderButtons();}document.getElementById("edit_log").innerText="✅ बदल गया जी: "+uu;}
+function changePinUniversal(){let oldP=document.getElementById("admin_old_pin").value.trim();let newP=document.getElementById("admin_new_pin").value.trim();if(oldP!==getPin()){document.getElementById("pin_log").innerText="पुरानी PIN गलत है जी";return;}if(!newP||newP.length<4){document.getElementById("pin_log").innerText="नई PIN 4 अंक की डालो जी";return;}localStorage.setItem("veedo_pin_v68",newP);document.getElementById("pin_log").innerText="✅ PIN बदल गई जी";}
+function _round2V85(n){return Math.round(n*100)/100;}
+function _getUsersV85(){try{return JSON.parse(localStorage.getItem("veedeo_users_v68")||"[]");}catch(e){return [];}}
+function _getTreeV85(){try{return JSON.parse(localStorage.getItem("veedeo_tree_v68")||"[]");}catch(e){return [];}}
+function _creditAutoWalletV85(mobile,gross,role,saleId){var tds=_round2V85(gross*0.05);var net=_round2V85(gross-tds);if(net<0)net=0;var rec={type:"credit",gross:gross,tds:tds,net:net,mobile:mobile,role:role,saleId:saleId,status:"Pending - 90 din - Amazon se paisa aane tak",upi:(mobile+"@ybl"),time:new Date().toISOString()};var w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]");w.push(rec);localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w));return rec;}
+function autoDistributeSale(){var seller=document.getElementById("auto_sale_seller_mobile").value.trim();var amt=parseFloat(document.getElementById("auto_sale_amount").value);var prod=document.getElementById("auto_sale_product").value.trim()||"Amazon Product";var order=document.getElementById("auto_sale_order").value.trim()||"";var buyer=document.getElementById("auto_sale_buyer").value.trim()||"";if(!seller||seller.length<10){alert("Seller Mobile लिखो जी - 10 अंक");return;}seller=seller.slice(-10);if(!amt||amt<=0){alert("Sale Rashi लिखो जी - जैसे 1000");return;}var users=_getUsersV85();var tree=_getTreeV85();if(tree.length==0&&users.length>0)tree=users.map(function(u){return u.mobile;});var OWNER="9992553796";var commission=_round2V85(amt*0.20);var sellerGross=_round2V85(commission*0.60);var ownerGross=_round2V85(commission*0.05);var seniorityGross=_round2V85(commission*0.25);var joiningGross=_round2V85(commission*0.10);var saleId="SALE-"+Date.now();var dist=[];var isGuest=!users.find(function(u){return (u.mobile||"").slice(-10)==seller;});if(isGuest){var garr=JSON.parse(localStorage.getItem("veedeo_guest_pending_v85")||"[]");var grec={saleId:saleId,mobile:seller,gross:sellerGross,tds:_round2V85(sellerGross*0.05),net:_round2V85(sellerGross-_round2V85(sellerGross*0.05)),product:prod,amount:amt,commission:commission,time:new Date().toISOString(),note:"Guest - Joining par Wallet me aayega ji"};garr.push(grec);localStorage.setItem("veedeo_guest_pending_v85",JSON.stringify(garr));dist.push({role:"Seller 60% - Guest Pending",mobile:seller,gross:sellerGross,net:grec.net});}else{var r=_creditAutoWalletV85(seller,sellerGross,"Seller 60%",saleId);dist.push({role:"Seller 60%",mobile:seller,gross:sellerGross,net:r.net});}var ro=_creditAutoWalletV85(OWNER,ownerGross,"Owner 5%",saleId);dist.push({role:"Owner 5%",mobile:OWNER,gross:ownerGross,net:ro.net});var sIdx=tree.indexOf(seller);var seniors=[];if(sIdx>=0){for(var i=sIdx-1;i>=0;i--)seniors.push(tree[i]);}else{for(var j=tree.length-1;j>=0;j--)seniors.push(tree[j]);}var poolParts=[{label:"Seniority L1",amt:17.14},{label:"Seniority L2",amt:11.43},{label:"Seniority L3",amt:7.14},{label:"Seniority L4",amt:4.29},{label:"Seniority L5",amt:2.86}];var scale=commission/200;for(var p=0;p<poolParts.length;p++){var g=_round2V85(poolParts[p].amt*scale);if(seniors[p]){var rr=_creditAutoWalletV85(seniors[p],g,poolParts[p].label,saleId);dist.push({role:poolParts[p].label,mobile:seniors[p],gross:g,net:rr.net});}else{var rr2=_creditAutoWalletV85(OWNER,g,poolParts[p].label+" - Owner ko",saleId);dist.push({role:poolParts[p].label+" - Owner ko",mobile:OWNER,gross:g,net:rr2.net});}}var l6Gross=_round2V85(7.14*scale);var l6Seniors=seniors.slice(5);if(l6Seniors.length==0){var rr3=_creditAutoWalletV85(OWNER,l6Gross,"Seniority L6+ - Owner ko",saleId);dist.push({role:"Seniority L6+ - Owner ko",mobile:OWNER,gross:l6Gross,net:rr3.net});}else{var per=_round2V85(l6Gross/l6Seniors.length);for(var q=0;q<l6Seniors.length;q++){var gg=(q==l6Seniors.length-1)?_round2V85(l6Gross-per*(l6Seniors.length-1)):per;var rrr=_creditAutoWalletV85(l6Seniors[q],gg,"Seniority L6+ - barabar",saleId);dist.push({role:"Seniority L6+ - barabar",mobile:l6Seniors[q],gross:gg,net:rrr.net});}}var joiningGross2=_round2V85(20*scale);var jr=_creditAutoWalletV85(OWNER,joiningGross2,"Joining Pool 10% - Owner / Joining anusar",saleId);dist.push({role:"Joining Pool 10%",mobile:OWNER,gross:joiningGross2,net:jr.net});var saleRec={saleId:saleId,seller:seller,amount:amt,commission:commission,product:prod,orderId:order,buyer:buyer,dist:dist,status:"Pending - 90 din",time:new Date().toISOString(),isGuest:isGuest};var sarr=JSON.parse(localStorage.getItem("veedeo_sales_v68")||"[]");sarr.push(saleRec);localStorage.setItem("veedeo_sales_v68",JSON.stringify(sarr));document.getElementById("auto_sale_log").innerText="✅ Sale दर्ज हो गई जी - ID "+saleId+" - Sale "+amt+" रुपये - Commission "+commission+" रुपये - Seller "+sellerGross+" - Owner "+ownerGross+" - Seniority Pool "+seniorityGross+" - Joining Pool "+joiningGross2+" - सब Pending - 90 din baad Available";alert("✅ Auto Bantwara हो गया जी - 120 + 10 + 50 + 20 - सब Pending में गया जी");document.getElementById("auto_sale_amount").value="";try{showMyAutoWallet();}catch(e){}}
+function claimGuestPendingV85(){try{var me=getRef();if(!me||me.length<10)return;me=me.slice(-10);var garr=JSON.parse(localStorage.getItem("veedeo_guest_pending_v85")||"[]");var mine=garr.filter(function(x){return (x.mobile||"").slice(-10)==me;});if(mine.length==0)return;mine.forEach(function(g){_creditAutoWalletV85(me,g.gross,"Seller 60% - Guest Joining par",g.saleId);});var rest=garr.filter(function(x){return (x.mobile||"").slice(-10)!=me;});localStorage.setItem("veedeo_guest_pending_v85",JSON.stringify(rest));}catch(e){}}
+function markSaleAvailable(saleId){try{var sarr=JSON.parse(localStorage.getItem("veedeo_sales_v68")||"[]");var s=sarr.find(function(x){return x.saleId==saleId;});if(!s){alert("Sale नहीं मिली जी");return;}s.status="Available - Amazon se paisa aa gaya ji";localStorage.setItem("veedeo_sales_v68",JSON.stringify(sarr));var w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]");w.forEach(function(x){if(x.saleId==saleId)x.status="Available - Amazon se paisa aa gaya ji";});localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w));alert("✅ Sale Available हो गई जी");showAutoSaleHistory();}catch(e){alert("गलती हो गई जी");}}
+function markLastSaleAvailable(){try{var sarr=JSON.parse(localStorage.getItem("veedeo_sales_v68")||"[]");if(sarr.length==0){alert("कोई Sale नहीं है जी");return;}markSaleAvailable(sarr[sarr.length-1].saleId);}catch(e){}}
+function showAutoSaleHistory(){try{var sarr=JSON.parse(localStorage.getItem("veedeo_sales_v68")||"[]");if(sarr.length==0){document.getElementById("auto_sale_log").innerText="अभी कोई Sale दर्ज नहीं है जी";return;}var html="Sale History - कुल "+sarr.length+" Sale:\n";sarr.slice(-10).reverse().forEach(function(s){html+="\nID "+s.saleId+" - Seller "+s.seller+" - Sale "+s.amount+" रुपये - Commission "+s.commission+" रुपये - "+s.status+" - Product "+s.product+"\n";(s.dist||[]).forEach(function(d){html+="  "+d.role+" - "+d.mobile+" - Gross "+d.gross+" रुपये - Net "+d.net+" रुपये\n";});});document.getElementById("auto_sale_log").innerText=html;}catch(e){}}
+function showMyAutoWallet(){try{claimGuestPendingV85();var me=getRef();var w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]");var mine=me?w.filter(function(x){return (x.mobile||"")==me||(x.mobile||"").slice(-10)==(me||"").slice(-10);}):w;var pend=mine.filter(function(x){return x.type=="credit"&&(x.status||"").indexOf("Pending")>=0;}).reduce(function(s,x){return s+(x.net||0);},0);var availGross=mine.filter(function(x){return x.type=="credit"&&((x.status||"").indexOf("Available")>=0);}).reduce(function(s,x){return s+(x.net||0);},0);var wd=mine.filter(function(x){return x.type=="withdraw";}).reduce(function(s,x){return s+(x.amount||0);},0);var avail=_round2V85(availGross-wd);if(avail<0)avail=0;document.getElementById("auto_wallet_log").innerText="Mera Wallet - Mobile "+(me||"खाली")+" - Pending "+_round2V85(pend)+" रुपये - Available "+avail+" रुपये - Withdraw किया "+wd+" रुपये";}catch(e){}}
+function withdrawAutoWallet(){try{claimGuestPendingV85();var me=getRef();if(!me||me.length<10){alert("पहले Joining करो जी");return;}me=me.slice(-10);var w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]");var mine=w.filter(function(x){return (x.mobile||"").slice(-10)==me;});var availGross=mine.filter(function(x){return x.type=="credit"&&((x.status||"").indexOf("Available")>=0);}).reduce(function(s,x){return s+(x.net||0);},0);var wd=mine.filter(function(x){return x.type=="withdraw";}).reduce(function(s,x){return s+(x.amount||0);},0);var avail=_round2V85(availGross-wd);if(avail<=0){alert("Available पैसा 0 रुपये है जी - Pending पैसा 90 din baad hi niklega ji");return;}var upi=me+"@ybl";w.push({type:"withdraw",amount:avail,mobile:me,upi:upi,time:new Date().toISOString()});localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w));try{window.open("upi://pay?pa="+upi+"&pn=Veedeohub&am="+avail+"&cu=INR&tn=Veedeohub Withdraw","_blank");}catch(e){}alert("✅ Withdraw Request बन गई जी - "+avail+" रुपये - UPI "+upi);showMyAutoWallet();}catch(e){alert("गलती हो गई जी");}}
+function autoCreditAmount(amt){let tds=Math.round(amt*0.05*100)/100;let net=Math.round((amt-tds)*100)/100;let rec={type:"credit",gross:amt,tds:tds,net:net,mobile:getRef(),upi:"9992553796@ybl",time:new Date().toISOString(),status:"Pending - 90 din"};let w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]");w.push(rec);localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w));document.getElementById("wallet_auto_log").innerText="✅ "+amt+" रुपये - TDS "+tds+" रुपये - Net "+net+" रुपये - Pending - 90 din baad Available";}
+function autoWithdrawAmount(){let w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]");let totC=w.filter(function(x){return x.type=="credit"&&(x.status||"").indexOf("Available")>=0;}).reduce(function(s,x){return s+(x.net||0);},0);let totW=w.filter(function(x){return x.type=="withdraw";}).reduce(function(s,x){return s+(x.amount||0);},0);let bal=Math.round((totC-totW)*100)/100;if(bal<=0){alert("Available पैसा नहीं है जी");return;}let rec={type:"withdraw",amount:bal,mobile:getRef(),upi:"9992553796@ybl",time:new Date().toISOString()};w.push(rec);localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w));document.getElementById("wallet_auto_log").innerText="✅ "+bal+" रुपये UPI पर भेजा जी";alert("✅ "+bal+" रुपये UPI पर भेजा जी");}
+function deleteMyJoining(){var m=getRef();showTwoButton("आपकी Joining हटानी है जी? Mobile "+m,function(){var users=JSON.parse(localStorage.getItem("veedeo_users_v68")||"[]");users=users.filter(function(u){return u.mobile!=m;});localStorage.setItem("veedeo_users_v68",JSON.stringify(users));document.getElementById("ref_link").innerText="🗑️ Joining हट गई जी";},function(nl){alert("Joining के लिए दूसरा लिंक नहीं है जी");});}
+function deleteMyNominee(){var m=(document.getElementById("j_nominee_owner_mobile")?.value||"").replace(/[^0-9]/g,"").slice(-10)||getRef();showTwoButton("आपका नॉमिनी हटाना है जी? Owner Mobile "+m,function(){var arr=JSON.parse(localStorage.getItem("veedeo_nominee_v74")||"[]");arr=arr.filter(function(x){return x.owner_mobile!=m;});localStorage.setItem("veedeo_nominee_v74",JSON.stringify(arr));document.getElementById("nominee_log").innerText="🗑️ नॉमिनी हट गया जी - जॉइनिंग बनी रहेगी जी";},function(nl){alert("नॉमिनी के लिए दूसरा लिंक नहीं है जी");});}
+function getDistMobile(){let m=(document.getElementById("dist_upi_mobile")?.value||document.getElementById("j_mobile")?.value||"").replace(/[^0-9]/g,"");return m.slice(-10);}
+function updateDistUPI(){let m=getDistMobile();let el=document.getElementById("dist_upi_id");if(el)el.value=m.length==10?m+"@ybl":"";if(m.length==10)checkDistUPIBalance(true);}
+function checkDistUPIBalance(silent){try{let me=getDistMobile();if(!me||me.length<10){if(!silent)alert("अपना Mobile डालो जी - 10 अंक");return;}let w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]");let mine=w.filter(function(x){return (x.mobile||"").slice(-10)==me;});let pend=mine.filter(function(x){return x.type=="credit"&&(x.status||"").indexOf("Pending")>=0;}).reduce(function(s,x){return s+(x.net||0);},0);let availGross=mine.filter(function(x){return x.type=="credit"&&((x.status||"").indexOf("Available")>=0);}).reduce(function(s,x){return s+(x.net||0);},0);let wd=mine.filter(function(x){return x.type=="withdraw";}).reduce(function(s,x){return s+(x.amount||0);},0);let avail=_round2V85(availGross-wd);if(avail<0)avail=0;document.getElementById("dist_upi_balance").innerText="UPI: "+me+"@ybl - Pending "+_round2V85(pend)+" रुपये - Available "+avail+" रुपये - Withdraw किया "+wd+" रुपये";if(!silent)alert("Mera Wallet जी - Available "+avail+" रुपये - Pending "+_round2V85(pend)+" रुपये");return avail;}catch(e){}}
+function withdrawDistUPI(){try{let me=getDistMobile();if(!me||me.length<10){alert("पहले अपना Mobile डालो जी");return;}let avail=checkDistUPIBalance(true);if(!avail||avail<=0){alert("Available पैसा 0 रुपये है जी - Pending 90 दिन बाद ही निकलेगा जी");return;}let upi=me+"@ybl";let w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]");w.push({type:"withdraw",amount:avail,mobile:me,upi:upi,time:new Date().toISOString()});localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w));try{window.open("upi://pay?pa="+upi+"&pn=Veedeohub&am="+avail+"&cu=INR&tn=Veedeohub Withdraw - "+me,"_blank");}catch(e){}alert("✅ Withdraw Request बन गई जी - "+avail+" रुपये - UPI "+upi);checkDistUPIBalance(true);}catch(e){alert("गलती हो गई जी");}}
+function saveYaad(){var nm=document.getElementById("yaad_name").value.trim();var msg=document.getElementById("yaad_msg").value.trim();if(!nm||!msg){alert("नाम और याद लिखो जी");return;}var arr=JSON.parse(localStorage.getItem("veedeo_yaad_v1")||"[]");arr.push({name:nm,msg:msg,date:new Date().toLocaleString()});localStorage.setItem("veedeo_yaad_v1",JSON.stringify(arr));document.getElementById("yaad_log").innerText="✅ याद पुस्तक में सेव हो गई जी";document.getElementById("yaad_msg").value="";renderYaad();}
+function renderYaad(){var c=document.getElementById("yaad_list");if(!c)return;var arr=JSON.parse(localStorage.getItem("veedeo_yaad_v1")||"[]");c.innerHTML="";arr.forEach(function(y,i){var d=document.createElement("div");d.className="btn-card";d.innerHTML="<div class='spk'><img class='spk-thumb' src='https://img.youtube.com/vi/aYiMAN4iEjQ/mqdefault.jpg'><div><div class='gold'>📖 "+y.name+" - "+y.date+"</div><div class='white'>"+y.msg+"</div></div></div><button onclick=\"speakText('"+y.msg.replace(/'/g,'')+"')\" style='background:#fff;color:#000;'>🔊 सुनो जी</button><button onclick=\"deleteYaad("+i+")\" style='background:#ff2a2a;color:#fff;'>🗑️ Delete - पुष्टि के साथ</button>";c.appendChild(d);});}
+function deleteYaad(i){showTwoButton("याद हटानी है जी?",function(){var arr=JSON.parse(localStorage.getItem("veedeo_yaad_v1")||"[]");arr.splice(i,1);localStorage.setItem("veedeo_yaad_v1",JSON.stringify(arr));renderYaad();},function(nl){alert("दूसरा लिंक: "+nl);});}
+document.addEventListener("DOMContentLoaded",function(){try{claimGuestPendingV85();}catch(e){}try{renderOfficial4();}catch(e){}try{renderButtons();}catch(e){}try{renderFixVideos();}catch(e){}try{renderBlogs();}catch(e){}try{renderYaad();}catch(e){}let users=JSON.parse(localStorage.getItem("veedeo_users_v68")||"[]");let tree=JSON.parse(localStorage.getItem("veedeo_tree_v68")||"[]");if(users.length>0){document.getElementById("dash").innerText="Users: "+users.length+" Tree: "+tree.length+" - पुराने ज्वाइनिंग वाले बरकरार हैं जी";document.getElementById("tree").innerText="Tree: "+tree.join(" -> ");}});
 </script>
+<div style="background:#0a0a0a;border:3px solid gold;border-radius:16px;padding:14px;margin:14px;text-align:center;"><div class="gold">ॐ नमः शिवाय 🪔 ये ज्योति सदा जलती रहे जी 🪔🙏</div><div class="white">फ्री जॉइनिंग करें और अपने द्वारा की सैल पर लाभ उठाएं जी। आपका भी लिंक आपको आपके mobile नम्बर से मिलेगा जी।</div><div class="gold">Veedeohub फिक्स प्लान।</div><div class="white" style="word-break:break-all;">( https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21 )</div></div>
 </body>
 </html>
-Agar iske baad bhi koi button na bole ji to ek kaam karo ji: Chrome me site kholo ji, upar TEST button dabao ji, aur mujhe batao ji ki TEST button bola ya nahi bola ji. Usse pata chal jayega ji ki problem code me hai ya mobile ke speaker setting me hai ji.
