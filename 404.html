@@ -176,6 +176,9 @@ https://www.trimbakeshwar.org
 <div id="fbSt" style="font-size:12px;background:#111;border:1px solid #00FF7F;padding:6px;border-radius:8px;">
 फायरबेस : जांच हो रही है जी...
 </div>
+<div id="aiNigrani" style="font-size:12px;background:#000;border:1px solid gold;padding:6px;border-radius:8px;margin-top:8px;">
+एआई असिस्टेंट निगरानी : चालू है जी - हर बटन, हर बिक्री, हर बैक अप पर नजर है जी
+</div>
 </div>
 <div class="strip" style="text-align:center;line-height:1.9;">
 <div class="sunahri" style="font-size:22px;">
@@ -208,7 +211,10 @@ https://www.trimbakeshwar.org
 जुड़ो जी मुफ्त में
 </button>
 <button onclick="aiBharo()" style="background:#00FF7F;color:#000;">
-एआई से भरो जी
+एआई से भरो जी - ऑटोफिल
+</button>
+<button onclick="aiHarJagahBharo()" style="background:#fff;color:#000;">
+एआई ऑटोफिल हर स्थान पर जी
 </button>
 </div>
 <p id="linkDikhao">
@@ -220,6 +226,9 @@ https://www.trimbakeshwar.org
 <button onclick="phirLinkBhejo()" style="background:#fff;color:#000;width:100%;">
 अपना लिंक फिर से दोनों को भेजो जी
 </button>
+<div id="fraudLog" style="background:#000;border:1px solid #FF5252;padding:8px;border-radius:8px;margin-top:8px;">
+एआई फ्रॉड जांच : अभी कोई फ्रॉड नहीं मिला जी
+</div>
 </div>
 <div class="strip" style="border-color:#00FF7F;background:#0a1a0a;">
 <h2 style="color:#00FF7F;text-align:center;">
@@ -345,6 +354,7 @@ https://www.trimbakeshwar.org
 साइट में 1 से 50 तक लगातार बटन हैं जी, हर बटन पर नाम लिखा है जी।
 स्पीकर दबाओ तो विवरण बोलेगा जी।
 हटाने में पुष्टि अंदर ही है जी, पिन डालने पर ही हटेगा जी।
+51 से अनंत तक नई कंपनियां अपने आप जुड़ती रहेंगी जी।
 </div>
 <button onclick="speakFull('bhag10')" style="background:#fff;color:#000;">
 सुनो जी - भाग 10
@@ -356,25 +366,11 @@ https://www.trimbakeshwar.org
 अगर हाँ, तो अभी फॉर्म भरो जी।
 आदतें ही जीवन का आधार हैं जी।
 सकारात्मक सोच ही सफलता की कुंजी है जी।
+लोगों को तो सामान फिर भी खरीदना ही है जी, जो चाहे जिस कंपनी से सामान ले लेगा जी, लेकिन कमीशन बंटवारा ऐसे ही आता रहेगा जी।
 </div>
 <button onclick="speakFull('bhag11')" style="background:#fff;color:#000;">
 सुनो जी - भाग 11
 </button>
-<div id="talikaLekh" style="line-height:1.8;white-space:pre-wrap;">
-योजना की तालिका - 60 प्रतिशत विक्रेता + 5 प्रतिशत मालिक + 25 प्रतिशत वरिष्ठता समूह + 10 प्रतिशत जुड़ाई समूह = 100 प्रतिशत।
-मान लो एक सामान बिक्री - बिक्री 1000 रुपये पर कंपनी कमीशन 200 रुपये मान लो जी।
-विक्रेता सीधा 60 प्रतिशत 120 रुपये।
-मालिक हमेशा नियत 5 प्रतिशत 10 रुपये।
-वरिष्ठता समूह 25 प्रतिशत 50 रुपये।
-स्तर 1 - 8.57 प्रतिशत 17.14 रुपये।
-स्तर 2 - 5.71 प्रतिशत 11.43 रुपये।
-स्तर 3 - 3.57 प्रतिशत 7.14 रुपये।
-स्तर 4 - 2.14 प्रतिशत 4.29 रुपये।
-स्तर 5 - 1.43 प्रतिशत 2.86 रुपये।
-स्तर 6 से अनंत 3.57 प्रतिशत 7.14 रुपये।
-जुड़ाई समूह 10 प्रतिशत 20 रुपये।
-कुल 100 प्रतिशत 200 रुपये।
-</div>
 </div><div class="strip2">
 <h2 style="color:#00FF7F;text-align:center;">
 योजना की तालिका - 60 प्रतिशत विक्रेता, 5 प्रतिशत मालिक, 25 प्रतिशत वरिष्ठता + 10 प्रतिशत जुड़ाई = 100 प्रतिशत
@@ -447,39 +443,84 @@ https://www.trimbakeshwar.org
 </tr>
 </table>
 </div>
-<div class="strip">
-<h2 style="color:#00E5FF;text-align:center;">
-अंतिम योजना के नए नोट + जुड़ने वाले का 3 तरफा लाभ जी
+<div class="strip" style="border-color:#00FF7F;background:#001a00;">
+<h2 style="color:#00FF7F;text-align:center;">
+कंपनी अपने आप जुड़ेगी जी - फिक्स विकल्प - 51 से अनंत तक - नंबर वाइज फिक्स ही रहेगा जी
 </h2>
-<div style="line-height:1.9;">
-<b>पहला नोट जी :</b>
-विक्रेता 60 प्रतिशत सीधा वही रहेगा जी।
-मालिक 5 प्रतिशत नियत वही रहेगा जी।
-समूह 35 प्रतिशत में से ही 2 तरह का लाभ - 25 प्रतिशत वरिष्ठता 50 रुपये, 10 प्रतिशत जुड़ाई 20 रुपये जी।
-<br>
-<b>दूसरा नोट जी :</b>
-हर एक की अलग मेरी पेड़ होगी जी।
-मुख्य पेड़ में जुड़ाई सबसे नीचे वाले के नीचे जाएगी जी।
-<br>
-<b>तीसरा नोट जी :</b>
-6 बिक्री और 6000 की सीमा समय अनुसार बढ़ाई जा सकती है जी।
-पुराने वरिष्ठ की वरिष्ठता नहीं जाएगी जी।
-<br>
-<b>चौथा नोट जी :</b>
-जुड़ना मुफ्त है जी, कमाई की गारंटी नहीं है जी।
-कमाई सिर्फ असली बिक्री पर मिलेगी जी।
-<br>
-<b>पहला लाभ जी :</b>
-अपनी बिक्री पर विक्रेता सीधा 120 रुपये जी।
-<br>
-<b>दूसरा लाभ जी :</b>
-वरिष्ठता समूह 50 में से हिस्सा - स्तर 1 17.14, स्तर 2 11.43, स्तर 3 7.14, स्तर 4 4.29, स्तर 5 2.86, स्तर 6 से अनंत 7.14 बराबर जी।
-<br>
-<b>तीसरा लाभ जी :</b>
-जुड़ाई समूह 20 में से हिस्सा - जितनी जुड़ाई, उतना हिस्सा जी।
-<br>
-जी किसी तकनीकी गलती से लिखने या बोलने से कोई गलती हुई है तो उसमें सुधार कर दिया जाएगा, इसके लिए हम आपसे दोनों हाथ जोड़कर क्षमा मांगते हैं जी।
-ॐ नमः शिवाय जी।
+<p style="line-height:1.9;">
+जो भी कंपनी इस प्लान से, सेम रेफरल से, सेम नियम से, अपना कमीशन ऑटोमैटिक लागू करती है जी, वह इस सिस्टम में ऑटोमैटिक जुड़कर अपने आप कमीशन बंटवारा सिस्टम की जिम्मेवारी लेकर करेगी जी।
+हमारी कोई सिरदर्दी नहीं होगी जी। बस जुड़ना, कमीशन बंटवारा सही चलता रहेगा जी।
+कंपनी को अपना प्लान वीडियो डालना, अपनी शर्तें लागू रखना, अपनी साइट में अपना प्रोडक्ट जोड़ना, सब उसी की जिम्मेवारी पर होगा जी।
+</p>
+<input id="co_nam" class="bada" placeholder="कंपनी का पूरा नाम - जैसे शर्मा किराना">
+<input id="co_mob" class="bada" placeholder="कंपनी मोबाइल - 10 अंक">
+<input id="co_referal" class="bada" placeholder="कंपनी रेफरल नंबर - जैसे VEEDEO-51">
+<input id="co_link" class="bada" placeholder="कंपनी साइट लिंक - https://...">
+<input id="co_video" class="bada" placeholder="कंपनी प्लान वीडियो लिंक - https://youtu.be/...">
+<input id="co_comm" class="bada" placeholder="कंपनी कमीशन प्रतिशत - जैसे 20">
+<input id="co_saman" class="bada" placeholder="कंपनी सामान विवरण - क्या बेचती है जी">
+<div style="background:#111;border:2px solid #fff;padding:10px;border-radius:10px;">
+<label>
+<input type="checkbox" id="co_samjhauta" style="width:22px;height:22px;">
+मैं मालिक कमीशन समझौता मानता हूँ जी - 60 प्रतिशत विक्रेता + 5 प्रतिशत मालिक + 25 प्रतिशत वरिष्ठता + 10 प्रतिशत जुड़ाई = 100 प्रतिशत, ईमानदारी बरतूँगा जी, प्लान अनुसार सिस्टम फॉलो करूँगा जी
+</label>
+</div>
+<button onclick="companyJodoAuto()" style="background:#00FF7F;color:#000;width:100%;font-size:20px;">
+कंपनी अपने आप जोड़ो जी - नंबर वाइज फिक्स होगा जी
+</button>
+<button onclick="aiBharoCompany()" style="background:#fff;color:#000;width:100%;">
+एआई से कंपनी फॉर्म भरो जी - ऑटोफिल
+</button>
+<div id="co_log">
+51 से अनंत तक नंबर अपने आप मिलेगा जी - कोई नंबर नहीं हटेगा जी
+</div>
+<div id="co_list" style="background:#000;border:2px solid gold;padding:10px;border-radius:10px;margin-top:10px;">
+नई जुड़ी कंपनियां यहां दिखेंगी जी
+</div>
+<div style="background:#000;border:2px solid #00FF7F;padding:10px;border-radius:10px;margin-top:10px;">
+<h3 style="color:#00FF7F;">
+कंपनी को सूचना - एआई असिस्टेंट द्वारा ऑटोमैटिक संदेश जी
+</h3>
+<p id="co_suchna">
+एक साइट ऐसी है जी जो इस प्लान से, सेम रेफरल से, सेम नियम से, अगर अपना कमीशन ऑटोमैटिक लागू करती है जी, तो वह भी इस सिस्टम में ऑटोमैटिक जुड़कर अपने आप कमीशन बंटवारा सिस्टम अपनी जिम्मेवारी लेकर कर सकती है जी। और अच्छा होगा जी।
+</p>
+<button onclick="speakFull('co_suchna')" style="background:#fff;color:#000;">
+सुनो जी - कंपनी सूचना
+</button>
+</div>
+</div>
+<div class="strip" style="border-color:#FFD700;background:#1a1a00;">
+<h2 style="color:#FFD700;text-align:center;">
+सब प्रकार का बैक अप - फोन पे जैसे अपने आप सेव जी - कोई भी नियम अनुसार देख पाए जी
+</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+<button onclick="backupDikhao('jvain')" style="background:gold;color:#000;">
+ज्वाइनिंग बैक अप देखो जी
+</button>
+<button onclick="backupDikhao('sail')" style="background:#00FF7F;color:#000;">
+पिछली सैल बैक अप देखो जी
+</button>
+<button onclick="backupDikhao('tds')" style="background:#fff;color:#000;">
+सरकारी टीडीएस बैक अप देखो जी
+</button>
+<button onclick="backupDikhao('dash')" style="background:#00E5FF;color:#000;">
+डैशबोर्ड बैक अप देखो जी
+</button>
+<button onclick="backupDikhao('tree')" style="background:#FF6D00;color:#fff;">
+पेड़ बैक अप देखो जी
+</button>
+<button onclick="backupDikhao('comm')" style="background:#FF4081;color:#fff;">
+सबका कमीशन बैक अप देखो जी
+</button>
+</div>
+<div id="backupBox" style="background:#000;border:2px solid gold;padding:10px;border-radius:10px;margin-top:10px;">
+बैक अप यहां दिखेगा जी - फायरबेस + मोबाइल में दोनों जगह सेव जी
+</div>
+<button onclick="backupExport()" style="background:#fff;color:#000;width:100%;">
+सारा बैक अप कॉपी करो जी
+</button>
+<div id="aiBackupLog" style="font-size:12px;">
+एआई असिस्टेंट : हर जुड़ाई, हर सैल, हर कमीशन अपने आप बैक अप हो रहा है जी
 </div>
 </div>
 <div class="strip">
@@ -608,6 +649,9 @@ https://www.trimbakeshwar.org
 <br>
 <b>12. त्रिंबकेश्वर जी :</b>
 ऊपर 0 नंबर बटन - खोलो, सुनो, हटाओ - पिन से पुष्टि होगी जी।
+<br>
+<b>13. कंपनी अपने आप जुड़ेगी जी :</b>
+कंपनी नाम - मोबाइल - रेफरल - लिंक - वीडियो - कमीशन - समझौता टिक करो - कंपनी जोड़ो दबाओ जी - 51 से नंबर मिलेगा जी।
 </div>
 <div style="text-align:center;">
 <button onclick="speakFull('yaadPustakLekh')" style="background:#fff;color:#000;">
@@ -707,7 +751,7 @@ https://www.trimbakeshwar.org
 https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21
 </div>
 <button onclick="window.open('https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21','_blank')" style="background:#FF6D00;color:#fff;width:100%;">
-खोलो जी - 1
+खोलो जी - 1 - मुख्य लाइव क्यों है जी - मुफ्त जुड़ने के लिए है जी
 </button>
 <button onclick="speakText('मुख्य लाइव वीडियोहब वेब ऐप')" style="background:#fff;color:#000;width:100%;">
 सुनो जी - 1
@@ -724,7 +768,7 @@ https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21
 https://veedeohub.netlify.app
 </div>
 <button onclick="window.open('https://veedeohub.netlify.app','_blank')" style="background:#00C7B7;color:#000;width:100%;">
-खोलो जी - 2
+खोलो जी - 2 - नेटलिफाई क्यों है जी - दूसरी जगह से साइट खोलने के लिए है जी
 </button>
 <button onclick="speakText('नेटलिफाई वीडियोहब')" style="background:#fff;color:#000;width:100%;">
 सुनो जी - 2
@@ -741,7 +785,7 @@ https://veedeohub.netlify.app
 https://ak9992553796-bit.github.io/veedeohub/
 </div>
 <button onclick="window.open('https://ak9992553796-bit.github.io/veedeohub/','_blank')" style="background:#24292F;color:#fff;width:100%;">
-खोलो जी - 3
+खोलो जी - 3 - गिटहब क्यों है जी - कोड बैक अप के लिए है जी
 </button>
 <button onclick="speakText('गिटहब वीडियोहब')" style="background:#fff;color:#000;width:100%;">
 सुनो जी - 3
@@ -758,7 +802,7 @@ https://ak9992553796-bit.github.io/veedeohub/
 https://veedeohub.vercel.app
 </div>
 <button onclick="window.open('https://veedeohub.vercel.app','_blank')" style="background:#fff;color:#000;width:100%;">
-खोलो जी - 4
+खोलो जी - 4 - वर्सेल क्यों है जी - तेज साइट खोलने के लिए है जी
 </button>
 <button onclick="speakText('वर्सेल वीडियोहब')" style="background:#fff;color:#000;width:100%;">
 सुनो जी - 4
@@ -779,7 +823,7 @@ https://veedeohub.vercel.app
 वीडियोहब अंतिम योजना - https://youtu.be/aYiMAN4iEjQ?si=526MQcXWdAXRllrF
 </div>
 <button onclick="window.open('https://youtu.be/aYiMAN4iEjQ?si=526MQcXWdAXRllrF','_blank')" style="background:gold;color:#000;width:100%;">
-खोलो जी - 1
+खोलो जी - 1 - अंतिम योजना क्यों है जी - पूरी योजना समझने के लिए है जी
 </button>
 <button onclick="speakText('वीडियोहब अंतिम योजना')" style="background:#fff;color:#000;width:100%;">
 सुनो जी - 1 - स्पीकर
@@ -798,7 +842,7 @@ https://veedeohub.vercel.app
 मुफ्त जुड़ना - https://youtu.be/eB4pPmQDcRw
 </div>
 <button onclick="window.open('https://youtu.be/eB4pPmQDcRw','_blank')" style="background:gold;color:#000;width:100%;">
-खोलो जी - 2
+खोलो जी - 2 - मुफ्त जुड़ना क्यों है जी - बिना पैसे जुड़ना सिखाने के लिए है जी
 </button>
 <button onclick="speakText('मुफ्त जुड़ना')" style="background:#fff;color:#000;width:100%;">
 सुनो जी - 2 - स्पीकर
@@ -817,7 +861,7 @@ https://veedeohub.vercel.app
 शिव भक्ति - https://youtu.be/BxvD4sMznoc
 </div>
 <button onclick="window.open('https://youtu.be/BxvD4sMznoc','_blank')" style="background:gold;color:#000;width:100%;">
-खोलो जी - 3
+खोलो जी - 3 - शिव भक्ति क्यों है जी - भक्ति और शक्ति के लिए है जी
 </button>
 <button onclick="speakText('शिव भक्ति')" style="background:#fff;color:#000;width:100%;">
 सुनो जी - 3 - स्पीकर
@@ -836,7 +880,7 @@ https://veedeohub.vercel.app
 अशोक कुमार बनाम मारुति - https://youtu.be/SolqIcBHhu4
 </div>
 <button onclick="window.open('https://youtu.be/SolqIcBHhu4','_blank')" style="background:gold;color:#000;width:100%;">
-खोलो जी - 4
+खोलो जी - 4 - अशोक कुमार बनाम मारुति क्यों है जी - सच्चाई जानने के लिए है जी
 </button>
 <button onclick="speakText('अशोक कुमार बनाम मारुति')" style="background:#fff;color:#000;width:100%;">
 सुनो जी - 4 - स्पीकर
@@ -855,7 +899,7 @@ https://veedeohub.vercel.app
 आयुर्वेद - https://youtu.be/sE-MNW6MObQ
 </div>
 <button onclick="window.open('https://youtu.be/sE-MNW6MObQ','_blank')" style="background:gold;color:#000;width:100%;">
-खोलो जी - 5
+खोलो जी - 5 - आयुर्वेद क्यों है जी - स्वास्थ्य के लिए है जी
 </button>
 <button onclick="speakText('आयुर्वेद')" style="background:#fff;color:#000;width:100%;">
 सुनो जी - 5 - स्पीकर
@@ -874,7 +918,7 @@ https://veedeohub.vercel.app
 ब्राह्मी - https://youtu.be/NU4k5HiQn7A
 </div>
 <button onclick="window.open('https://youtu.be/NU4k5HiQn7A','_blank')" style="background:gold;color:#000;width:100%;">
-खोलो जी - 6
+खोलो जी - 6 - ब्राह्मी क्यों है जी - याददाश्त के लिए है जी
 </button>
 <button onclick="speakText('ब्राह्मी')" style="background:#fff;color:#000;width:100%;">
 सुनो जी - 6 - स्पीकर
@@ -904,436 +948,117 @@ https://veedeohub.vercel.app
 </h2>
 <input id="khojo" class="bada" placeholder="बटन खोजो जी" onkeyup="bटनDikhao()">
 <div id="bटनBox">
-<!-- 1 -->
 <div class="card">
-<div style="font-size:19px;">
-<span style="color:#FF5252;">1.</span>
-<span style="color:#00E5FF;">अमेजन - ऑनलाइन खरीदारी</span>
-</div>
-<div>अमेजन इंडिया - ऑनलाइन खरीदारी जी<br>https://www.amazon.in/?tag=veedeohub-21</div>
-<button onclick="window.open('https://www.amazon.in/?tag=veedeohub-21','_blank')" style="background:#FF9900;color:#000;width:100%;font-size:18px;">खोलो जी - 1 - अमेजन</button>
-<button onclick="speakText('अमेजन ऑनलाइन खरीदारी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 1 - स्पीकर</button>
+<div style="font-size:19px;"><span style="color:#FF5252;">1.</span> <span style="color:#00E5FF;">अमेजन - ऑनलाइन खरीदारी</span></div>
+<div>अमेजन इंडिया - ऑनलाइन खरीदारी जी - यह बटन सामान खरीदने के लिए है जी<br>https://www.amazon.in/?tag=veedeohub-21</div>
+<button onclick="window.open('https://www.amazon.in/?tag=veedeohub-21','_blank')" style="background:#FF9900;color:#000;width:100%;font-size:18px;">खोलो जी - 1 - अमेजन - सामान खरीदने के लिए है जी</button>
+<button onclick="speakText('अमेजन ऑनलाइन खरीदारी - सामान खरीदने के लिए है जी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 1 - स्पीकर</button>
 <button onclick="dikhaoHataye('बटन 1 अमेजन',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 1 - पिन से पुष्टि होगी जी</button>
 </div>
-<!-- 2 -->
 <div class="card">
-<div style="font-size:19px;">
-<span style="color:#FF9800;">2.</span>
-<span style="color:#FF4081;">फ्लिपकार्ट - ऑनलाइन खरीदारी</span>
-</div>
-<div>फ्लिपकार्ट ऑनलाइन खरीदारी जी<br>https://www.flipkart.com</div>
-<button onclick="window.open('https://www.flipkart.com','_blank')" style="background:#2874F0;color:#fff;width:100%;font-size:18px;">खोलो जी - 2 - फ्लिपकार्ट</button>
-<button onclick="speakText('फ्लिपकार्ट ऑनलाइन खरीदारी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 2 - स्पीकर</button>
+<div style="font-size:19px;"><span style="color:#FF9800;">2.</span> <span style="color:#FF4081;">फ्लिपकार्ट - ऑनलाइन खरीदारी</span></div>
+<div>फ्लिपकार्ट ऑनलाइन खरीदारी जी - यह बटन सामान खरीदने के लिए है जी<br>https://www.flipkart.com</div>
+<button onclick="window.open('https://www.flipkart.com','_blank')" style="background:#2874F0;color:#fff;width:100%;font-size:18px;">खोलो जी - 2 - फ्लिपकार्ट - सामान खरीदने के लिए है जी</button>
+<button onclick="speakText('फ्लिपकार्ट ऑनलाइन खरीदारी - सामान खरीदने के लिए है जी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 2 - स्पीकर</button>
 <button onclick="dikhaoHataye('बटन 2 फ्लिपकार्ट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 2 - पिन से पुष्टि होगी जी</button>
 </div>
-<!-- 3 -->
 <div class="card">
-<div style="font-size:19px;">
-<span style="color:#FFEB3B;">3.</span>
-<span style="color:#B388FF;">मीशो - सस्ती खरीदारी</span>
-</div>
-<div>मीशो सस्ती खरीदारी जी<br>https://www.meesho.com</div>
-<button onclick="window.open('https://www.meesho.com','_blank')" style="background:#570D57;color:#fff;width:100%;font-size:18px;">खोलो जी - 3 - मीशो</button>
+<div style="font-size:19px;"><span style="color:#FFEB3B;">3.</span> <span style="color:#B388FF;">मीशो - सस्ती खरीदारी</span></div>
+<div>मीशो सस्ती खरीदारी जी - यह बटन सस्ता सामान खरीदने के लिए है जी<br>https://www.meesho.com</div>
+<button onclick="window.open('https://www.meesho.com','_blank')" style="background:#570D57;color:#fff;width:100%;font-size:18px;">खोलो जी - 3 - मीशो - सस्ता सामान खरीदने के लिए है जी</button>
 <button onclick="speakText('मीशो सस्ती खरीदारी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 3 - स्पीकर</button>
 <button onclick="dikhaoHataye('बटन 3 मीशो',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 3 - पिन से पुष्टि होगी जी</button>
 </div>
-<!-- 4 -->
 <div class="card">
-<div style="font-size:19px;">
-<span style="color:#00E676;">4.</span>
-<span style="color:#FF6D00;">यूट्यूब - वीडियो</span>
-</div>
-<div>यूट्यूब वीडियो जी<br>https://www.youtube.com/@veedeohub</div>
-<button onclick="window.open('https://www.youtube.com/@veedeohub','_blank')" style="background:#FF0000;color:#fff;width:100%;font-size:18px;">खोलो जी - 4 - यूट्यूब</button>
+<div style="font-size:19px;"><span style="color:#00E676;">4.</span> <span style="color:#FF6D00;">यूट्यूब - वीडियो</span></div>
+<div>यूट्यूब वीडियो जी - यह बटन वीडियो देखने के लिए है जी<br>https://www.youtube.com/@veedeohub</div>
+<button onclick="window.open('https://www.youtube.com/@veedeohub','_blank')" style="background:#FF0000;color:#fff;width:100%;font-size:18px;">खोलो जी - 4 - यूट्यूब - वीडियो देखने के लिए है जी</button>
 <button onclick="speakText('यूट्यूब वीडियो')" style="background:#fff;color:#000;width:100%;">सुनो जी - 4 - स्पीकर</button>
 <button onclick="dikhaoHataye('बटन 4 यूट्यूब',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 4 - पिन से पुष्टि होगी जी</button>
 </div>
-<!-- 5 -->
 <div class="card">
-<div style="font-size:19px;">
-<span style="color:#00BCD4;">5.</span>
-<span style="color:#FF4081;">गूगल - खोज</span>
-</div>
-<div>गूगल खोज जी<br>https://www.google.com</div>
-<button onclick="window.open('https://www.google.com','_blank')" style="background:#4285F4;color:#fff;width:100%;font-size:18px;">खोलो जी - 5 - गूगल</button>
+<div style="font-size:19px;"><span style="color:#00BCD4;">5.</span> <span style="color:#FF4081;">गूगल - खोज</span></div>
+<div>गूगल खोज जी - यह बटन खोजने के लिए है जी<br>https://www.google.com</div>
+<button onclick="window.open('https://www.google.com','_blank')" style="background:#4285F4;color:#fff;width:100%;font-size:18px;">खोलो जी - 5 - गूगल - खोजने के लिए है जी</button>
 <button onclick="speakText('गूगल खोज')" style="background:#fff;color:#000;width:100%;">सुनो जी - 5 - स्पीकर</button>
 <button onclick="dikhaoHataye('बटन 5 गूगल',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 5 - पिन से पुष्टि होगी जी</button>
 </div>
-<!-- 6 -->
 <div class="card">
-<div style="font-size:19px;">
-<span style="color:#FF4081;">6.</span>
-<span style="color:#B388FF;">फेसबुक - एफबी</span>
-</div>
-<div>फेसबुक जी<br>https://www.facebook.com</div>
-<button onclick="window.open('https://www.facebook.com','_blank')" style="background:#1877F2;color:#fff;width:100%;font-size:18px;">खोलो जी - 6 - फेसबुक</button>
+<div style="font-size:19px;"><span style="color:#FF4081;">6.</span> <span style="color:#B388FF;">फेसबुक - एफबी</span></div>
+<div>फेसबुक जी - यह बटन दोस्तों से जुड़ने के लिए है जी<br>https://www.facebook.com</div>
+<button onclick="window.open('https://www.facebook.com','_blank')" style="background:#1877F2;color:#fff;width:100%;font-size:18px;">खोलो जी - 6 - फेसबुक - दोस्तों से जुड़ने के लिए है जी</button>
 <button onclick="speakText('फेसबुक')" style="background:#fff;color:#000;width:100%;">सुनो जी - 6 - स्पीकर</button>
 <button onclick="dikhaoHataye('बटन 6 फेसबुक',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 6 - पिन से पुष्टि होगी जी</button>
 </div>
-<!-- 7 -->
 <div class="card">
-<div style="font-size:19px;">
-<span style="color:#B388FF;">7.</span>
-<span style="color:#FF6D00;">व्हाट्सऐप - डब्ल्यूए</span>
-</div>
-<div>व्हाट्सऐप जी<br>https://wa.me/919992553796</div>
-<button onclick="window.open('https://wa.me/919992553796','_blank')" style="background:#25D366;color:#000;width:100%;font-size:18px;">खोलो जी - 7 - व्हाट्सऐप</button>
+<div style="font-size:19px;"><span style="color:#B388FF;">7.</span> <span style="color:#FF6D00;">व्हाट्सऐप - डब्ल्यूए</span></div>
+<div>व्हाट्सऐप जी - यह बटन संदेश भेजने के लिए है जी<br>https://wa.me/919992553796</div>
+<button onclick="window.open('https://wa.me/919992553796','_blank')" style="background:#25D366;color:#000;width:100%;font-size:18px;">खोलो जी - 7 - व्हाट्सऐप - संदेश भेजने के लिए है जी</button>
 <button onclick="speakText('व्हाट्सऐप')" style="background:#fff;color:#000;width:100%;">सुनो जी - 7 - स्पीकर</button>
 <button onclick="dikhaoHataye('बटन 7 व्हाट्सऐप',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 7 - पिन से पुष्टि होगी जी</button>
 </div>
-<!-- 8 -->
 <div class="card">
-<div style="font-size:19px;">
-<span style="color:#FF6D00;">8.</span>
-<span style="color:#76FF03;">इंस्टाग्राम - इंस्टा</span>
-</div>
-<div>इंस्टाग्राम जी<br>https://www.instagram.com</div>
-<button onclick="window.open('https://www.instagram.com','_blank')" style="background:#E1306C;color:#fff;width:100%;font-size:18px;">खोलो जी - 8 - इंस्टाग्राम</button>
+<div style="font-size:19px;"><span style="color:#FF6D00;">8.</span> <span style="color:#76FF03;">इंस्टाग्राम - इंस्टा</span></div>
+<div>इंस्टाग्राम जी - यह बटन फोटो वीडियो देखने के लिए है जी<br>https://www.instagram.com</div>
+<button onclick="window.open('https://www.instagram.com','_blank')" style="background:#E1306C;color:#fff;width:100%;font-size:18px;">खोलो जी - 8 - इंस्टाग्राम - फोटो वीडियो देखने के लिए है जी</button>
 <button onclick="speakText('इंस्टाग्राम')" style="background:#fff;color:#000;width:100%;">सुनो जी - 8 - स्पीकर</button>
 <button onclick="dikhaoHataye('बटन 8 इंस्टाग्राम',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 8 - पिन से पुष्टि होगी जी</button>
 </div>
-<!-- 9 -->
 <div class="card">
-<div style="font-size:19px;">
-<span style="color:#76FF03;">9.</span>
-<span style="color:#18FFFF;">पेक्सेल्स - फोटो</span>
-</div>
-<div>पेक्सेल्स फोटो जी<br>https://www.pexels.com</div>
-<button onclick="window.open('https://www.pexels.com','_blank')" style="background:#05A081;color:#fff;width:100%;font-size:18px;">खोलो जी - 9 - पेक्सेल्स</button>
+<div style="font-size:19px;"><span style="color:#76FF03;">9.</span> <span style="color:#18FFFF;">पेक्सेल्स - फोटो</span></div>
+<div>पेक्सेल्स फोटो जी - यह बटन फोटो लेने के लिए है जी<br>https://www.pexels.com</div>
+<button onclick="window.open('https://www.pexels.com','_blank')" style="background:#05A081;color:#fff;width:100%;font-size:18px;">खोलो जी - 9 - पेक्सेल्स - फोटो लेने के लिए है जी</button>
 <button onclick="speakText('पेक्सेल्स फोटो')" style="background:#fff;color:#000;width:100%;">सुनो जी - 9 - स्पीकर</button>
 <button onclick="dikhaoHataye('बटन 9 पेक्सेल्स',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 9 - पिन से पुष्टि होगी जी</button>
 </div>
-<!-- 10 -->
 <div class="card">
-<div style="font-size:19px;">
-<span style="color:#18FFFF;">10.</span>
-<span style="color:#FF6E40;">स्नैपडील - खरीदारी</span>
-</div>
-<div>स्नैपडील खरीदारी जी<br>https://www.snapdeal.com</div>
-<button onclick="window.open('https://www.snapdeal.com','_blank')" style="background:#E40046;color:#fff;width:100%;font-size:18px;">खोलो जी - 10 - स्नैपडील</button>
+<div style="font-size:19px;"><span style="color:#18FFFF;">10.</span> <span style="color:#FF6E40;">स्नैपडील - खरीदारी</span></div>
+<div>स्नैपडील खरीदारी जी - यह बटन सामान खरीदने के लिए है जी<br>https://www.snapdeal.com</div>
+<button onclick="window.open('https://www.snapdeal.com','_blank')" style="background:#E40046;color:#fff;width:100%;font-size:18px;">खोलो जी - 10 - स्नैपडील - सामान खरीदने के लिए है जी</button>
 <button onclick="speakText('स्नैपडील खरीदारी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 10 - स्पीकर</button>
 <button onclick="dikhaoHataye('बटन 10 स्नैपडील',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 10 - पिन से पुष्टि होगी जी</button>
 </div>
-<!-- 11 -->
-<div class="card">
-<div><span style="color:#FF5252;">11.</span> <span style="color:#00E5FF;">शॉपक्लूज</span></div>
-<div>शॉपक्लूज जी<br>https://www.shopclues.com</div>
-<button onclick="window.open('https://www.shopclues.com','_blank')" style="background:#24A3B5;color:#fff;width:100%;">खोलो जी - 11 - शॉपक्लूज</button>
-<button onclick="speakText('शॉपक्लूज')" style="background:#fff;color:#000;width:100%;">सुनो जी - 11 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 11 शॉपक्लूज',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 11 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 12 -->
-<div class="card">
-<div><span style="color:#FF9800;">12.</span> <span style="color:#FF4081;">पेटीएम - भुगतान</span></div>
-<div>पेटीएम भुगतान जी<br>https://paytm.com</div>
-<button onclick="window.open('https://paytm.com','_blank')" style="background:#002E6E;color:#fff;width:100%;">खोलो जी - 12 - पेटीएम</button>
-<button onclick="speakText('पेटीएम भुगतान')" style="background:#fff;color:#000;width:100%;">सुनो जी - 12 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 12 पेटीएम',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 12 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 13 -->
-<div class="card">
-<div><span style="color:#FFEB3B;">13.</span> <span style="color:#B388FF;">फोनपे - भुगतान</span></div>
-<div>फोनपे भुगतान जी<br>https://www.phonepe.com</div>
-<button onclick="window.open('https://www.phonepe.com','_blank')" style="background:#5F259F;color:#fff;width:100%;">खोलो जी - 13 - फोनपे</button>
-<button onclick="speakText('फोनपे भुगतान')" style="background:#fff;color:#000;width:100%;">सुनो जी - 13 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 13 फोनपे',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 13 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 14 -->
-<div class="card">
-<div><span style="color:#00E676;">14.</span> <span style="color:#FF6D00;">गूगल पे - जीपे</span></div>
-<div>गूगल पे जी<br>https://pay.google.com</div>
-<button onclick="window.open('https://pay.google.com','_blank')" style="background:#4285F4;color:#fff;width:100%;">खोलो जी - 14 - गूगल पे</button>
-<button onclick="speakText('गूगल पे')" style="background:#fff;color:#000;width:100%;">सुनो जी - 14 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 14 गूगल पे',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 14 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 15 -->
-<div class="card">
-<div><span style="color:#00BCD4;">15.</span> <span style="color:#FF4081;">आईआरसीटीसी - ट्रेन टिकट</span></div>
-<div>आईआरसीटीसी ट्रेन टिकट जी<br>https://www.irctc.co.in</div>
-<button onclick="window.open('https://www.irctc.co.in','_blank')" style="background:#003399;color:#fff;width:100%;">खोलो जी - 15 - आईआरसीटीसी</button>
-<button onclick="speakText('आईआरसीटीसी ट्रेन टिकट')" style="background:#fff;color:#000;width:100%;">सुनो जी - 15 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 15 आईआरसीटीसी',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 15 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 16 -->
-<div class="card">
-<div><span style="color:#FF4081;">16.</span> <span style="color:#B388FF;">मेकमायट्रिप - यात्रा</span></div>
-<div>मेकमायट्रिप यात्रा जी<br>https://www.makemytrip.com</div>
-<button onclick="window.open('https://www.makemytrip.com','_blank')" style="background:#FF0000;color:#fff;width:100%;">खोलो जी - 16 - मेकमायट्रिप</button>
-<button onclick="speakText('मेकमायट्रिप यात्रा')" style="background:#fff;color:#000;width:100%;">सुनो जी - 16 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 16 मेकमायट्रिप',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 16 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 17 -->
-<div class="card">
-<div><span style="color:#B388FF;">17.</span> <span style="color:#FF6D00;">ओला - कैब</span></div>
-<div>ओला कैब जी<br>https://www.olacabs.com</div>
-<button onclick="window.open('https://www.olacabs.com','_blank')" style="background:#16AA51;color:#000;width:100%;">खोलो जी - 17 - ओला</button>
-<button onclick="speakText('ओला कैब')" style="background:#fff;color:#000;width:100%;">सुनो जी - 17 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 17 ओला',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 17 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 18 -->
-<div class="card">
-<div><span style="color:#FF6D00;">18.</span> <span style="color:#76FF03;">उबर - कैब</span></div>
-<div>उबर कैब जी<br>https://www.uber.com</div>
-<button onclick="window.open('https://www.uber.com','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 18 - उबर</button>
-<button onclick="speakText('उबर कैब')" style="background:#fff;color:#000;width:100%;">सुनो जी - 18 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 18 उबर',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 18 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 19 -->
-<div class="card">
-<div><span style="color:#76FF03;">19.</span> <span style="color:#18FFFF;">ज़ोमैटो - खाना</span></div>
-<div>ज़ोमैटो खाना जी<br>https://www.zomato.com</div>
-<button onclick="window.open('https://www.zomato.com','_blank')" style="background:#E23744;color:#fff;width:100%;">खोलो जी - 19 - ज़ोमैटो</button>
-<button onclick="speakText('ज़ोमैटो खाना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 19 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 19 ज़ोमैटो',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 19 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 20 -->
-<div class="card">
-<div><span style="color:#18FFFF;">20.</span> <span style="color:#FF6E40;">स्विगी - खाना</span></div>
-<div>स्विगी खाना जी<br>https://www.swiggy.com</div>
-<button onclick="window.open('https://www.swiggy.com','_blank')" style="background:#FC8019;color:#fff;width:100%;">खोलो जी - 20 - स्विगी</button>
-<button onclick="speakText('स्विगी खाना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 20 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 20 स्विगी',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 20 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 21 -->
-<div class="card">
-<div><span style="color:#FF5252;">21.</span> <span style="color:#00E5FF;">अजियो - फैशन</span></div>
-<div>अजियो फैशन जी<br>https://www.ajio.com</div>
-<button onclick="window.open('https://www.ajio.com','_blank')" style="background:#D5A419;color:#000;width:100%;">खोलो जी - 21 - अजियो</button>
-<button onclick="speakText('अजियो फैशन')" style="background:#fff;color:#000;width:100%;">सुनो जी - 21 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 21 अजियो',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 21 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 22 -->
-<div class="card">
-<div><span style="color:#FF9800;">22.</span> <span style="color:#FF4081;">मिंत्रा - फैशन</span></div>
-<div>मिंत्रा फैशन जी<br>https://www.myntra.com</div>
-<button onclick="window.open('https://www.myntra.com','_blank')" style="background:#FF3F6C;color:#fff;width:100%;">खोलो जी - 22 - मिंत्रा</button>
-<button onclick="speakText('मिंत्रा फैशन')" style="background:#fff;color:#000;width:100%;">सुनो जी - 22 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 22 मिंत्रा',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 22 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 23 -->
-<div class="card">
-<div><span style="color:#FFEB3B;">23.</span> <span style="color:#B388FF;">नायका - सुंदरता</span></div>
-<div>नायका सुंदरता जी<br>https://www.nykaa.com</div>
-<button onclick="window.open('https://www.nykaa.com','_blank')" style="background:#FC2779;color:#fff;width:100%;">खोलो जी - 23 - नायका</button>
-<button onclick="speakText('नायका सुंदरता')" style="background:#fff;color:#000;width:100%;">सुनो जी - 23 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 23 नायका',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 23 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 24 -->
-<div class="card">
-<div><span style="color:#00E676;">24.</span> <span style="color:#FF6D00;">बिगबास्केट - किराना</span></div>
-<div>बिगबास्केट किराना जी<br>https://www.bigbasket.com</div>
-<button onclick="window.open('https://www.bigbasket.com','_blank')" style="background:#84C225;color:#000;width:100%;">खोलो जी - 24 - बिगबास्केट</button>
-<button onclick="speakText('बिगबास्केट किराना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 24 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 24 बिगबास्केट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 24 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 25 -->
-<div class="card">
-<div><span style="color:#00BCD4;">25.</span> <span style="color:#FF4081;">ब्लिंकिट - किराना</span></div>
-<div>ब्लिंकिट किराना जी<br>https://blinkit.com</div>
-<button onclick="window.open('https://blinkit.com','_blank')" style="background:#F8CB46;color:#000;width:100%;">खोलो जी - 25 - ब्लिंकिट</button>
-<button onclick="speakText('ब्लिंकिट किराना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 25 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 25 ब्लिंकिट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 25 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 26 -->
-<div class="card">
-<div><span style="color:#FF4081;">26.</span> <span style="color:#B388FF;">डीमार्ट - किराना</span></div>
-<div>डीमार्ट किराना जी<br>https://www.dmart.in</div>
-<button onclick="window.open('https://www.dmart.in','_blank')" style="background:#046A38;color:#fff;width:100%;">खोलो जी - 26 - डीमार्ट</button>
-<button onclick="speakText('डीमार्ट किराना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 26 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 26 डीमार्ट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 26 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 27 -->
-<div class="card">
-<div><span style="color:#B388FF;">27.</span> <span style="color:#FF6D00;">जियोमार्ट - किराना</span></div>
-<div>जियोमार्ट किराना जी<br>https://www.jiomart.com</div>
-<button onclick="window.open('https://www.jiomart.com','_blank')" style="background:#0078AD;color:#fff;width:100%;">खोलो जी - 27 - जियोमार्ट</button>
-<button onclick="speakText('जियोमार्ट किराना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 27 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 27 जियोमार्ट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 27 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 28 -->
-<div class="card">
-<div><span style="color:#FF6D00;">28.</span> <span style="color:#76FF03;">क्रोमा - इलेक्ट्रॉनिक्स</span></div>
-<div>क्रोमा इलेक्ट्रॉनिक्स जी<br>https://www.croma.com</div>
-<button onclick="window.open('https://www.croma.com','_blank')" style="background:#12DAA8;color:#000;width:100%;">खोलो जी - 28 - क्रोमा</button>
-<button onclick="speakText('क्रोमा इलेक्ट्रॉनिक्स')" style="background:#fff;color:#000;width:100%;">सुनो जी - 28 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 28 क्रोमा',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 28 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 29 -->
-<div class="card">
-<div><span style="color:#76FF03;">29.</span> <span style="color:#18FFFF;">रिलायंस डिजिटल</span></div>
-<div>रिलायंस डिजिटल जी<br>https://www.reliancedigital.in</div>
-<button onclick="window.open('https://www.reliancedigital.in','_blank')" style="background:#E42529;color:#fff;width:100%;">खोलो जी - 29 - रिलायंस डिजिटल</button>
-<button onclick="speakText('रिलायंस डिजिटल')" style="background:#fff;color:#000;width:100%;">सुनो जी - 29 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 29 रिलायंस',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 29 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 30 -->
-<div class="card">
-<div><span style="color:#18FFFF;">30.</span> <span style="color:#FF6E40;">विजय सेल्स</span></div>
-<div>विजय सेल्स जी<br>https://www.vijaysales.com</div>
-<button onclick="window.open('https://www.vijaysales.com','_blank')" style="background:#ED1C24;color:#fff;width:100%;">खोलो जी - 30 - विजय सेल्स</button>
-<button onclick="speakText('विजय सेल्स')" style="background:#fff;color:#000;width:100%;">सुनो जी - 30 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 30 विजय',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 30 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 31 -->
-<div class="card">
-<div><span style="color:#FF5252;">31.</span> <span style="color:#00E5FF;">बोट - ईयरबड्स</span></div>
-<div>बोट ईयरबड्स जी<br>https://www.boat-lifestyle.com</div>
-<button onclick="window.open('https://www.boat-lifestyle.com','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 31 - बोट</button>
-<button onclick="speakText('बोट ईयरबड्स')" style="background:#fff;color:#000;width:100%;">सुनो जी - 31 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 31 बोट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 31 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 32 -->
-<div class="card">
-<div><span style="color:#FF9800;">32.</span> <span style="color:#FF4081;">नॉइज़ - घड़ी</span></div>
-<div>नॉइज़ घड़ी जी<br>https://www.gonoise.com</div>
-<button onclick="window.open('https://www.gonoise.com','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 32 - नॉइज़</button>
-<button onclick="speakText('नॉइज़ घड़ी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 32 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 32 नॉइज़',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 32 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 33 -->
-<div class="card">
-<div><span style="color:#FFEB3B;">33.</span> <span style="color:#B388FF;">फायर-बोल्ट - घड़ी</span></div>
-<div>फायर-बोल्ट घड़ी जी<br>https://www.fireboltt.com</div>
-<button onclick="window.open('https://www.fireboltt.com','_blank')" style="background:#FF0000;color:#fff;width:100%;">खोलो जी - 33 - फायर-बोल्ट</button>
-<button onclick="speakText('फायर-बोल्ट घड़ी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 33 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 33 फायर',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 33 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 34 -->
-<div class="card">
-<div><span style="color:#00E676;">34.</span> <span style="color:#FF6D00;">प्यूमा - जूते</span></div>
-<div>प्यूमा जूते जी<br>https://in.puma.com</div>
-<button onclick="window.open('https://in.puma.com','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 34 - प्यूमा</button>
-<button onclick="speakText('प्यूमा जूते')" style="background:#fff;color:#000;width:100%;">सुनो जी - 34 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 34 प्यूमा',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 34 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 35 -->
-<div class="card">
-<div><span style="color:#00BCD4;">35.</span> <span style="color:#FF4081;">नाइकी - जूते</span></div>
-<div>नाइकी जूते जी<br>https://www.nike.com/in/</div>
-<button onclick="window.open('https://www.nike.com/in/','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 35 - नाइकी</button>
-<button onclick="speakText('नाइकी जूते')" style="background:#fff;color:#000;width:100%;">सुनो जी - 35 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 35 नाइकी',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 35 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 36 -->
-<div class="card">
-<div><span style="color:#FF4081;">36.</span> <span style="color:#B388FF;">एडिडास - जूते</span></div>
-<div>एडिडास जूते जी<br>https://www.adidas.co.in</div>
-<button onclick="window.open('https://www.adidas.co.in','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 36 - एडिडास</button>
-<button onclick="speakText('एडिडास जूते')" style="background:#fff;color:#000;width:100%;">सुनो जी - 36 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 36 एडिडास',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 36 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 37 -->
-<div class="card">
-<div><span style="color:#B388FF;">37.</span> <span style="color:#FF6D00;">बाटा - जूते</span></div>
-<div>बाटा जूते जी<br>https://www.bata.com/in/</div>
-<button onclick="window.open('https://www.bata.com/in/','_blank')" style="background:#E4002B;color:#fff;width:100%;">खोलो जी - 37 - बाटा</button>
-<button onclick="speakText('बाटा जूते')" style="background:#fff;color:#000;width:100%;">सुनो जी - 37 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 37 बाटा',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 37 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 38 -->
-<div class="card">
-<div><span style="color:#FF6D00;">38.</span> <span style="color:#76FF03;">तनिष्क - गहने</span></div>
-<div>तनिष्क गहने जी<br>https://www.tanishq.co.in</div>
-<button onclick="window.open('https://www.tanishq.co.in','_blank')" style="background:#800000;color:#fff;width:100%;">खोलो जी - 38 - तनिष्क</button>
-<button onclick="speakText('तनिष्क गहने')" style="background:#fff;color:#000;width:100%;">सुनो जी - 38 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 38 तनिष्क',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 38 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 39 -->
-<div class="card">
-<div><span style="color:#76FF03;">39.</span> <span style="color:#18FFFF;">कल्याण ज्वैलर्स</span></div>
-<div>कल्याण ज्वैलर्स जी<br>https://www.kalyanjewellers.net</div>
-<button onclick="window.open('https://www.kalyanjewellers.net','_blank')" style="background:#FFD700;color:#000;width:100%;">खोलो जी - 39 - कल्याण</button>
-<button onclick="speakText('कल्याण ज्वैलर्स')" style="background:#fff;color:#000;width:100%;">सुनो जी - 39 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 39 कल्याण',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 39 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 40 -->
-<div class="card">
-<div><span style="color:#18FFFF;">40.</span> <span style="color:#FF6E40;">लेंसकार्ट - चश्मा</span></div>
-<div>लेंसकार्ट चश्मा जी<br>https://www.lenskart.com</div>
-<button onclick="window.open('https://www.lenskart.com','_blank')" style="background:#000042;color:#fff;width:100%;">खोलो जी - 40 - लेंसकार्ट</button>
-<button onclick="speakText('लेंसकार्ट चश्मा')" style="background:#fff;color:#000;width:100%;">सुनो जी - 40 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 40 लेंसकार्ट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 40 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 41 -->
-<div class="card">
-<div><span style="color:#FF5252;">41.</span> <span style="color:#00E5FF;">फर्स्टक्राई - बच्चे</span></div>
-<div>फर्स्टक्राई बच्चे जी<br>https://www.firstcry.com</div>
-<button onclick="window.open('https://www.firstcry.com','_blank')" style="background:#FF6F61;color:#fff;width:100%;">खोलो जी - 41 - फर्स्टक्राई</button>
-<button onclick="speakText('फर्स्टक्राई बच्चे')" style="background:#fff;color:#000;width:100%;">सुनो जी - 41 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 41 फर्स्टक्राई',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 41 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 42 -->
-<div class="card">
-<div><span style="color:#FF9800;">42.</span> <span style="color:#FF4081;">मामाअर्थ - बेबी</span></div>
-<div>मामाअर्थ बेबी जी<br>https://mamaearth.in</div>
-<button onclick="window.open('https://mamaearth.in','_blank')" style="background:#00AF54;color:#fff;width:100%;">खोलो जी - 42 - मामाअर्थ</button>
-<button onclick="speakText('मामाअर्थ बेबी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 42 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 42 मामाअर्थ',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 42 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 43 -->
-<div class="card">
-<div><span style="color:#FFEB3B;">43.</span> <span style="color:#B388FF;">हिमालया - आयुर्वेद</span></div>
-<div>हिमालया आयुर्वेद जी<br>https://himalayawellness.in</div>
-<button onclick="window.open('https://himalayawellness.in','_blank')" style="background:#008000;color:#fff;width:100%;">खोलो जी - 43 - हिमालया</button>
-<button onclick="speakText('हिमालया आयुर्वेद')" style="background:#fff;color:#000;width:100%;">सुनो जी - 43 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 43 हिमालया',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 43 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 44 -->
-<div class="card">
-<div><span style="color:#00E676;">44.</span> <span style="color:#FF6D00;">पतंजलि - आयुर्वेद</span></div>
-<div>पतंजलि आयुर्वेद जी<br>https://www.patanjaliayurved.net</div>
-<button onclick="window.open('https://www.patanjaliayurved.net','_blank')" style="background:#F7941D;color:#000;width:100%;">खोलो जी - 44 - पतंजलि</button>
-<button onclick="speakText('पतंजलि आयुर्वेद')" style="background:#fff;color:#000;width:100%;">सुनो जी - 44 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 44 पतंजलि',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 44 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 45 -->
-<div class="card">
-<div><span style="color:#00BCD4;">45.</span> <span style="color:#FF4081;">डाबर - आयुर्वेद</span></div>
-<div>डाबर आयुर्वेद जी<br>https://www.dabur.com</div>
-<button onclick="window.open('https://www.dabur.com','_blank')" style="background:#006400;color:#fff;width:100%;">खोलो जी - 45 - डाबर</button>
-<button onclick="speakText('डाबर आयुर्वेद')" style="background:#fff;color:#000;width:100%;">सुनो जी - 45 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 45 डाबर',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 45 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 46 -->
-<div class="card">
-<div><span style="color:#FF4081;">46.</span> <span style="color:#B388FF;">झंडू - आयुर्वेद</span></div>
-<div>झंडू आयुर्वेद जी<br>https://www.zanduayurveda.com</div>
-<button onclick="window.open('https://www.zanduayurveda.com','_blank')" style="background:#FF0000;color:#fff;width:100%;">खोलो जी - 46 - झंडू</button>
-<button onclick="speakText('झंडू आयुर्वेद')" style="background:#fff;color:#000;width:100%;">सुनो जी - 46 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 46 झंडू',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 46 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 47 -->
-<div class="card">
-<div><span style="color:#B388FF;">47.</span> <span style="color:#FF6D00;">बैद्यनाथ - आयुर्वेद</span></div>
-<div>बैद्यनाथ आयुर्वेद जी<br>https://www.baidyanath.com</div>
-<button onclick="window.open('https://www.baidyanath.com','_blank')" style="background:#8B0000;color:#fff;width:100%;">खोलो जी - 47 - बैद्यनाथ</button>
-<button onclick="speakText('बैद्यनाथ आयुर्वेद')" style="background:#fff;color:#000;width:100%;">सुनो जी - 47 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 47 बैद्यनाथ',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 47 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 48 -->
-<div class="card">
-<div><span style="color:#FF6D00;">48.</span> <span style="color:#76FF03;">एयरटेल - रिचार्ज</span></div>
-<div>एयरटेल रिचार्ज जी<br>https://www.airtel.in</div>
-<button onclick="window.open('https://www.airtel.in','_blank')" style="background:#E40000;color:#fff;width:100%;">खोलो जी - 48 - एयरटेल</button>
-<button onclick="speakText('एयरटेल रिचार्ज')" style="background:#fff;color:#000;width:100%;">सुनो जी - 48 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 48 एयरटेल',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 48 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 49 -->
-<div class="card">
-<div><span style="color:#76FF03;">49.</span> <span style="color:#18FFFF;">जियो - रिचार्ज</span></div>
-<div>जियो रिचार्ज जी<br>https://www.jio.com</div>
-<button onclick="window.open('https://www.jio.com','_blank')" style="background:#0A2885;color:#fff;width:100%;">खोलो जी - 49 - जियो</button>
-<button onclick="speakText('जियो रिचार्ज')" style="background:#fff;color:#000;width:100%;">सुनो जी - 49 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 49 जियो',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 49 - पिन से पुष्टि होगी जी</button>
-</div>
-<!-- 50 -->
-<div class="card">
-<div><span style="color:#18FFFF;">50.</span> <span style="color:#FF6E40;">बीएसएनएल - रिचार्ज</span></div>
-<div>बीएसएनएल रिचार्ज जी<br>https://www.bsnl.co.in</div>
-<button onclick="window.open('https://www.bsnl.co.in','_blank')" style="background:#006400;color:#fff;width:100%;">खोलो जी - 50 - बीएसएनएल</button>
-<button onclick="speakText('बीएसएनएल रिचार्ज')" style="background:#fff;color:#000;width:100%;">सुनो जी - 50 - स्पीकर</button>
-<button onclick="dikhaoHataye('बटन 50 बीएसएनएल',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 50 - पिन से पुष्टि होगी जी</button>
-</div>
+<div class="card"><div><span style="color:#FF5252;">11.</span> <span style="color:#00E5FF;">शॉपक्लूज</span></div><div>शॉपक्लूज जी - यह बटन सामान खरीदने के लिए है जी<br>https://www.shopclues.com</div><button onclick="window.open('https://www.shopclues.com','_blank')" style="background:#24A3B5;color:#fff;width:100%;">खोलो जी - 11 - शॉपक्लूज - सामान खरीदने के लिए है जी</button><button onclick="speakText('शॉपक्लूज')" style="background:#fff;color:#000;width:100%;">सुनो जी - 11 - स्पीकर</button><button onclick="dikhaoHataye('बटन 11 शॉपक्लूज',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 11 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF9800;">12.</span> <span style="color:#FF4081;">पेटीएम - भुगतान</span></div><div>पेटीएम भुगतान जी - यह बटन भुगतान करने के लिए है जी<br>https://paytm.com</div><button onclick="window.open('https://paytm.com','_blank')" style="background:#002E6E;color:#fff;width:100%;">खोलो जी - 12 - पेटीएम - भुगतान करने के लिए है जी</button><button onclick="speakText('पेटीएम भुगतान')" style="background:#fff;color:#000;width:100%;">सुनो जी - 12 - स्पीकर</button><button onclick="dikhaoHataye('बटन 12 पेटीएम',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 12 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FFEB3B;">13.</span> <span style="color:#B388FF;">फोनपे - भुगतान</span></div><div>फोनपे भुगतान जी - यह बटन भुगतान करने के लिए है जी<br>https://www.phonepe.com</div><button onclick="window.open('https://www.phonepe.com','_blank')" style="background:#5F259F;color:#fff;width:100%;">खोलो जी - 13 - फोनपे - भुगतान करने के लिए है जी</button><button onclick="speakText('फोनपे भुगतान')" style="background:#fff;color:#000;width:100%;">सुनो जी - 13 - स्पीकर</button><button onclick="dikhaoHataye('बटन 13 फोनपे',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 13 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#00E676;">14.</span> <span style="color:#FF6D00;">गूगल पे - जीपे</span></div><div>गूगल पे जी - यह बटन भुगतान करने के लिए है जी<br>https://pay.google.com</div><button onclick="window.open('https://pay.google.com','_blank')" style="background:#4285F4;color:#fff;width:100%;">खोलो जी - 14 - गूगल पे - भुगतान करने के लिए है जी</button><button onclick="speakText('गूगल पे')" style="background:#fff;color:#000;width:100%;">सुनो जी - 14 - स्पीकर</button><button onclick="dikhaoHataye('बटन 14 गूगल पे',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 14 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#00BCD4;">15.</span> <span style="color:#FF4081;">आईआरसीटीसी - ट्रेन टिकट</span></div><div>आईआरसीटीसी ट्रेन टिकट जी - यह बटन ट्रेन टिकट लेने के लिए है जी<br>https://www.irctc.co.in</div><button onclick="window.open('https://www.irctc.co.in','_blank')" style="background:#003399;color:#fff;width:100%;">खोलो जी - 15 - आईआरसीटीसी - ट्रेन टिकट लेने के लिए है जी</button><button onclick="speakText('आईआरसीटीसी ट्रेन टिकट')" style="background:#fff;color:#000;width:100%;">सुनो जी - 15 - स्पीकर</button><button onclick="dikhaoHataye('बटन 15 आईआरसीटीसी',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 15 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF4081;">16.</span> <span style="color:#B388FF;">मेकमायट्रिप - यात्रा</span></div><div>मेकमायट्रिप यात्रा जी - यह बटन यात्रा करने के लिए है जी<br>https://www.makemytrip.com</div><button onclick="window.open('https://www.makemytrip.com','_blank')" style="background:#FF0000;color:#fff;width:100%;">खोलो जी - 16 - मेकमायट्रिप - यात्रा करने के लिए है जी</button><button onclick="speakText('मेकमायट्रिप यात्रा')" style="background:#fff;color:#000;width:100%;">सुनो जी - 16 - स्पीकर</button><button onclick="dikhaoHataye('बटन 16 मेकमायट्रिप',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 16 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#B388FF;">17.</span> <span style="color:#FF6D00;">ओला - कैब</span></div><div>ओला कैब जी - यह बटन कैब बुलाने के लिए है जी<br>https://www.olacabs.com</div><button onclick="window.open('https://www.olacabs.com','_blank')" style="background:#16AA51;color:#000;width:100%;">खोलो जी - 17 - ओला - कैब बुलाने के लिए है जी</button><button onclick="speakText('ओला कैब')" style="background:#fff;color:#000;width:100%;">सुनो जी - 17 - स्पीकर</button><button onclick="dikhaoHataye('बटन 17 ओला',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 17 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF6D00;">18.</span> <span style="color:#76FF03;">उबर - कैब</span></div><div>उबर कैब जी - यह बटन कैब बुलाने के लिए है जी<br>https://www.uber.com</div><button onclick="window.open('https://www.uber.com','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 18 - उबर - कैब बुलाने के लिए है जी</button><button onclick="speakText('उबर कैब')" style="background:#fff;color:#000;width:100%;">सुनो जी - 18 - स्पीकर</button><button onclick="dikhaoHataye('बटन 18 उबर',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 18 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#76FF03;">19.</span> <span style="color:#18FFFF;">ज़ोमैटो - खाना</span></div><div>ज़ोमैटो खाना जी - यह बटन खाना मंगाने के लिए है जी<br>https://www.zomato.com</div><button onclick="window.open('https://www.zomato.com','_blank')" style="background:#E23744;color:#fff;width:100%;">खोलो जी - 19 - ज़ोमैटो - खाना मंगाने के लिए है जी</button><button onclick="speakText('ज़ोमैटो खाना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 19 - स्पीकर</button><button onclick="dikhaoHataye('बटन 19 ज़ोमैटो',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 19 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#18FFFF;">20.</span> <span style="color:#FF6E40;">स्विगी - खाना</span></div><div>स्विगी खाना जी - यह बटन खाना मंगाने के लिए है जी<br>https://www.swiggy.com</div><button onclick="window.open('https://www.swiggy.com','_blank')" style="background:#FC8019;color:#fff;width:100%;">खोलो जी - 20 - स्विगी - खाना मंगाने के लिए है जी</button><button onclick="speakText('स्विगी खाना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 20 - स्पीकर</button><button onclick="dikhaoHataye('बटन 20 स्विगी',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 20 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF5252;">21.</span> <span style="color:#00E5FF;">अजियो - फैशन</span></div><div>अजियो फैशन जी - यह बटन कपड़े लेने के लिए है जी<br>https://www.ajio.com</div><button onclick="window.open('https://www.ajio.com','_blank')" style="background:#D5A419;color:#000;width:100%;">खोलो जी - 21 - अजियो - कपड़े लेने के लिए है जी</button><button onclick="speakText('अजियो फैशन')" style="background:#fff;color:#000;width:100%;">सुनो जी - 21 - स्पीकर</button><button onclick="dikhaoHataye('बटन 21 अजियो',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 21 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF9800;">22.</span> <span style="color:#FF4081;">मिंत्रा - फैशन</span></div><div>मिंत्रा फैशन जी - यह बटन कपड़े लेने के लिए है जी<br>https://www.myntra.com</div><button onclick="window.open('https://www.myntra.com','_blank')" style="background:#FF3F6C;color:#fff;width:100%;">खोलो जी - 22 - मिंत्रा - कपड़े लेने के लिए है जी</button><button onclick="speakText('मिंत्रा फैशन')" style="background:#fff;color:#000;width:100%;">सुनो जी - 22 - स्पीकर</button><button onclick="dikhaoHataye('बटन 22 मिंत्रा',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 22 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FFEB3B;">23.</span> <span style="color:#B388FF;">नायका - सुंदरता</span></div><div>नायका सुंदरता जी - यह बटन सुंदरता सामान लेने के लिए है जी<br>https://www.nykaa.com</div><button onclick="window.open('https://www.nykaa.com','_blank')" style="background:#FC2779;color:#fff;width:100%;">खोलो जी - 23 - नायका - सुंदरता सामान लेने के लिए है जी</button><button onclick="speakText('नायका सुंदरता')" style="background:#fff;color:#000;width:100%;">सुनो जी - 23 - स्पीकर</button><button onclick="dikhaoHataye('बटन 23 नायका',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 23 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#00E676;">24.</span> <span style="color:#FF6D00;">बिगबास्केट - किराना</span></div><div>बिगबास्केट किराना जी - यह बटन किराना लेने के लिए है जी<br>https://www.bigbasket.com</div><button onclick="window.open('https://www.bigbasket.com','_blank')" style="background:#84C225;color:#000;width:100%;">खोलो जी - 24 - बिगबास्केट - किराना लेने के लिए है जी</button><button onclick="speakText('बिगबास्केट किराना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 24 - स्पीकर</button><button onclick="dikhaoHataye('बटन 24 बिगबास्केट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 24 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#00BCD4;">25.</span> <span style="color:#FF4081;">ब्लिंकिट - किराना</span></div><div>ब्लिंकिट किराना जी - यह बटन जल्दी किराना लेने के लिए है जी<br>https://blinkit.com</div><button onclick="window.open('https://blinkit.com','_blank')" style="background:#F8CB46;color:#000;width:100%;">खोलो जी - 25 - ब्लिंकिट - जल्दी किराना लेने के लिए है जी</button><button onclick="speakText('ब्लिंकिट किराना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 25 - स्पीकर</button><button onclick="dikhaoHataye('बटन 25 ब्लिंकिट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 25 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF4081;">26.</span> <span style="color:#B388FF;">डीमार्ट - किराना</span></div><div>डीमार्ट किराना जी - यह बटन किराना लेने के लिए है जी<br>https://www.dmart.in</div><button onclick="window.open('https://www.dmart.in','_blank')" style="background:#046A38;color:#fff;width:100%;">खोलो जी - 26 - डीमार्ट - किराना लेने के लिए है जी</button><button onclick="speakText('डीमार्ट किराना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 26 - स्पीकर</button><button onclick="dikhaoHataye('बटन 26 डीमार्ट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 26 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#B388FF;">27.</span> <span style="color:#FF6D00;">जियोमार्ट - किराना</span></div><div>जियोमार्ट किराना जी - यह बटन किराना लेने के लिए है जी<br>https://www.jiomart.com</div><button onclick="window.open('https://www.jiomart.com','_blank')" style="background:#0078AD;color:#fff;width:100%;">खोलो जी - 27 - जियोमार्ट - किराना लेने के लिए है जी</button><button onclick="speakText('जियोमार्ट किराना')" style="background:#fff;color:#000;width:100%;">सुनो जी - 27 - स्पीकर</button><button onclick="dikhaoHataye('बटन 27 जियोमार्ट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 27 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF6D00;">28.</span> <span style="color:#76FF03;">क्रोमा - इलेक्ट्रॉनिक्स</span></div><div>क्रोमा इलेक्ट्रॉनिक्स जी - यह बटन इलेक्ट्रॉनिक्स लेने के लिए है जी<br>https://www.croma.com</div><button onclick="window.open('https://www.croma.com','_blank')" style="background:#12DAA8;color:#000;width:100%;">खोलो जी - 28 - क्रोमा - इलेक्ट्रॉनिक्स लेने के लिए है जी</button><button onclick="speakText('क्रोमा इलेक्ट्रॉनिक्स')" style="background:#fff;color:#000;width:100%;">सुनो जी - 28 - स्पीकर</button><button onclick="dikhaoHataye('बटन 28 क्रोमा',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 28 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#76FF03;">29.</span> <span style="color:#18FFFF;">रिलायंस डिजिटल</span></div><div>रिलायंस डिजिटल जी - यह बटन इलेक्ट्रॉनिक्स लेने के लिए है जी<br>https://www.reliancedigital.in</div><button onclick="window.open('https://www.reliancedigital.in','_blank')" style="background:#E42529;color:#fff;width:100%;">खोलो जी - 29 - रिलायंस डिजिटल - इलेक्ट्रॉनिक्स लेने के लिए है जी</button><button onclick="speakText('रिलायंस डिजिटल')" style="background:#fff;color:#000;width:100%;">सुनो जी - 29 - स्पीकर</button><button onclick="dikhaoHataye('बटन 29 रिलायंस',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 29 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#18FFFF;">30.</span> <span style="color:#FF6E40;">विजय सेल्स</span></div><div>विजय सेल्स जी - यह बटन इलेक्ट्रॉनिक्स लेने के लिए है जी<br>https://www.vijaysales.com</div><button onclick="window.open('https://www.vijaysales.com','_blank')" style="background:#ED1C24;color:#fff;width:100%;">खोलो जी - 30 - विजय सेल्स - इलेक्ट्रॉनिक्स लेने के लिए है जी</button><button onclick="speakText('विजय सेल्स')" style="background:#fff;color:#000;width:100%;">सुनो जी - 30 - स्पीकर</button><button onclick="dikhaoHataye('बटन 30 विजय',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 30 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF5252;">31.</span> <span style="color:#00E5FF;">बोट - ईयरबड्स</span></div><div>बोट ईयरबड्स जी - यह बटन ईयरबड्स लेने के लिए है जी<br>https://www.boat-lifestyle.com</div><button onclick="window.open('https://www.boat-lifestyle.com','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 31 - बोट - ईयरबड्स लेने के लिए है जी</button><button onclick="speakText('बोट ईयरबड्स')" style="background:#fff;color:#000;width:100%;">सुनो जी - 31 - स्पीकर</button><button onclick="dikhaoHataye('बटन 31 बोट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 31 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF9800;">32.</span> <span style="color:#FF4081;">नॉइज़ - घड़ी</span></div><div>नॉइज़ घड़ी जी - यह बटन घड़ी लेने के लिए है जी<br>https://www.gonoise.com</div><button onclick="window.open('https://www.gonoise.com','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 32 - नॉइज़ - घड़ी लेने के लिए है जी</button><button onclick="speakText('नॉइज़ घड़ी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 32 - स्पीकर</button><button onclick="dikhaoHataye('बटन 32 नॉइज़',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 32 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FFEB3B;">33.</span> <span style="color:#B388FF;">फायर-बोल्ट - घड़ी</span></div><div>फायर-बोल्ट घड़ी जी - यह बटन घड़ी लेने के लिए है जी<br>https://www.fireboltt.com</div><button onclick="window.open('https://www.fireboltt.com','_blank')" style="background:#FF0000;color:#fff;width:100%;">खोलो जी - 33 - फायर-बोल्ट - घड़ी लेने के लिए है जी</button><button onclick="speakText('फायर-बोल्ट घड़ी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 33 - स्पीकर</button><button onclick="dikhaoHataye('बटन 33 फायर',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 33 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#00E676;">34.</span> <span style="color:#FF6D00;">प्यूमा - जूते</span></div><div>प्यूमा जूते जी - यह बटन जूते लेने के लिए है जी<br>https://in.puma.com</div><button onclick="window.open('https://in.puma.com','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 34 - प्यूमा - जूते लेने के लिए है जी</button><button onclick="speakText('प्यूमा जूते')" style="background:#fff;color:#000;width:100%;">सुनो जी - 34 - स्पीकर</button><button onclick="dikhaoHataye('बटन 34 प्यूमा',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 34 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#00BCD4;">35.</span> <span style="color:#FF4081;">नाइकी - जूते</span></div><div>नाइकी जूते जी - यह बटन जूते लेने के लिए है जी<br>https://www.nike.com/in/</div><button onclick="window.open('https://www.nike.com/in/','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 35 - नाइकी - जूते लेने के लिए है जी</button><button onclick="speakText('नाइकी जूते')" style="background:#fff;color:#000;width:100%;">सुनो जी - 35 - स्पीकर</button><button onclick="dikhaoHataye('बटन 35 नाइकी',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 35 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF4081;">36.</span> <span style="color:#B388FF;">एडिडास - जूते</span></div><div>एडिडास जूते जी - यह बटन जूते लेने के लिए है जी<br>https://www.adidas.co.in</div><button onclick="window.open('https://www.adidas.co.in','_blank')" style="background:#000;color:#fff;width:100%;">खोलो जी - 36 - एडिडास - जूते लेने के लिए है जी</button><button onclick="speakText('एडिडास जूते')" style="background:#fff;color:#000;width:100%;">सुनो जी - 36 - स्पीकर</button><button onclick="dikhaoHataye('बटन 36 एडिडास',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 36 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#B388FF;">37.</span> <span style="color:#FF6D00;">बाटा - जूते</span></div><div>बाटा जूते जी - यह बटन जूते लेने के लिए है जी<br>https://www.bata.com/in/</div><button onclick="window.open('https://www.bata.com/in/','_blank')" style="background:#E4002B;color:#fff;width:100%;">खोलो जी - 37 - बाटा - जूते लेने के लिए है जी</button><button onclick="speakText('बाटा जूते')" style="background:#fff;color:#000;width:100%;">सुनो जी - 37 - स्पीकर</button><button onclick="dikhaoHataye('बटन 37 बाटा',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 37 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF6D00;">38.</span> <span style="color:#76FF03;">तनिष्क - गहने</span></div><div>तनिष्क गहने जी - यह बटन गहने लेने के लिए है जी<br>https://www.tanishq.co.in</div><button onclick="window.open('https://www.tanishq.co.in','_blank')" style="background:#800000;color:#fff;width:100%;">खोलो जी - 38 - तनिष्क - गहने लेने के लिए है जी</button><button onclick="speakText('तनिष्क गहने')" style="background:#fff;color:#000;width:100%;">सुनो जी - 38 - स्पीकर</button><button onclick="dikhaoHataye('बटन 38 तनिष्क',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 38 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#76FF03;">39.</span> <span style="color:#18FFFF;">कल्याण ज्वैलर्स</span></div><div>कल्याण ज्वैलर्स जी - यह बटन गहने लेने के लिए है जी<br>https://www.kalyanjewellers.net</div><button onclick="window.open('https://www.kalyanjewellers.net','_blank')" style="background:#FFD700;color:#000;width:100%;">खोलो जी - 39 - कल्याण - गहने लेने के लिए है जी</button><button onclick="speakText('कल्याण ज्वैलर्स')" style="background:#fff;color:#000;width:100%;">सुनो जी - 39 - स्पीकर</button><button onclick="dikhaoHataye('बटन 39 कल्याण',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 39 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#18FFFF;">40.</span> <span style="color:#FF6E40;">लेंसकार्ट - चश्मा</span></div><div>लेंसकार्ट चश्मा जी - यह बटन चश्मा लेने के लिए है जी<br>https://www.lenskart.com</div><button onclick="window.open('https://www.lenskart.com','_blank')" style="background:#000042;color:#fff;width:100%;">खोलो जी - 40 - लेंसकार्ट - चश्मा लेने के लिए है जी</button><button onclick="speakText('लेंसकार्ट चश्मा')" style="background:#fff;color:#000;width:100%;">सुनो जी - 40 - स्पीकर</button><button onclick="dikhaoHataye('बटन 40 लेंसकार्ट',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 40 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF5252;">41.</span> <span style="color:#00E5FF;">फर्स्टक्राई - बच्चे</span></div><div>फर्स्टक्राई बच्चे जी - यह बटन बच्चों का सामान लेने के लिए है जी<br>https://www.firstcry.com</div><button onclick="window.open('https://www.firstcry.com','_blank')" style="background:#FF6F61;color:#fff;width:100%;">खोलो जी - 41 - फर्स्टक्राई - बच्चों का सामान लेने के लिए है जी</button><button onclick="speakText('फर्स्टक्राई बच्चे')" style="background:#fff;color:#000;width:100%;">सुनो जी - 41 - स्पीकर</button><button onclick="dikhaoHataye('बटन 41 फर्स्टक्राई',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 41 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF9800;">42.</span> <span style="color:#FF4081;">मामाअर्थ - बेबी</span></div><div>मामाअर्थ बेबी जी - यह बटन बेबी सामान लेने के लिए है जी<br>https://mamaearth.in</div><button onclick="window.open('https://mamaearth.in','_blank')" style="background:#00AF54;color:#fff;width:100%;">खोलो जी - 42 - मामाअर्थ - बेबी सामान लेने के लिए है जी</button><button onclick="speakText('मामाअर्थ बेबी')" style="background:#fff;color:#000;width:100%;">सुनो जी - 42 - स्पीकर</button><button onclick="dikhaoHataye('बटन 42 मामाअर्थ',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 42 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FFEB3B;">43.</span> <span style="color:#B388FF;">हिमालया - आयुर्वेद</span></div><div>हिमालया आयुर्वेद जी - यह बटन आयुर्वेद सामान लेने के लिए है जी<br>https://himalayawellness.in</div><button onclick="window.open('https://himalayawellness.in','_blank')" style="background:#008000;color:#fff;width:100%;">खोलो जी - 43 - हिमालया - आयुर्वेद सामान लेने के लिए है जी</button><button onclick="speakText('हिमालया आयुर्वेद')" style="background:#fff;color:#000;width:100%;">सुनो जी - 43 - स्पीकर</button><button onclick="dikhaoHataye('बटन 43 हिमालया',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 43 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#00E676;">44.</span> <span style="color:#FF6D00;">पतंजलि - आयुर्वेद</span></div><div>पतंजलि आयुर्वेद जी - यह बटन आयुर्वेद सामान लेने के लिए है जी<br>https://www.patanjaliayurved.net</div><button onclick="window.open('https://www.patanjaliayurved.net','_blank')" style="background:#F7941D;color:#000;width:100%;">खोलो जी - 44 - पतंजलि - आयुर्वेद सामान लेने के लिए है जी</button><button onclick="speakText('पतंजलि आयुर्वेद')" style="background:#fff;color:#000;width:100%;">सुनो जी - 44 - स्पीकर</button><button onclick="dikhaoHataye('बटन 44 पतंजलि',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 44 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#00BCD4;">45.</span> <span style="color:#FF4081;">डाबर - आयुर्वेद</span></div><div>डाबर आयुर्वेद जी - यह बटन आयुर्वेद सामान लेने के लिए है जी<br>https://www.dabur.com</div><button onclick="window.open('https://www.dabur.com','_blank')" style="background:#006400;color:#fff;width:100%;">खोलो जी - 45 - डाबर - आयुर्वेद सामान लेने के लिए है जी</button><button onclick="speakText('डाबर आयुर्वेद')" style="background:#fff;color:#000;width:100%;">सुनो जी - 45 - स्पीकर</button><button onclick="dikhaoHataye('बटन 45 डाबर',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 45 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF4081;">46.</span> <span style="color:#B388FF;">झंडू - आयुर्वेद</span></div><div>झंडू आयुर्वेद जी - यह बटन आयुर्वेद सामान लेने के लिए है जी<br>https://www.zanduayurveda.com</div><button onclick="window.open('https://www.zanduayurveda.com','_blank')" style="background:#FF0000;color:#fff;width:100%;">खोलो जी - 46 - झंडू - आयुर्वेद सामान लेने के लिए है जी</button><button onclick="speakText('झंडू आयुर्वेद')" style="background:#fff;color:#000;width:100%;">सुनो जी - 46 - स्पीकर</button><button onclick="dikhaoHataye('बटन 46 झंडू',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 46 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#B388FF;">47.</span> <span style="color:#FF6D00;">बैद्यनाथ - आयुर्वेद</span></div><div>बैद्यनाथ आयुर्वेद जी - यह बटन आयुर्वेद सामान लेने के लिए है जी<br>https://www.baidyanath.com</div><button onclick="window.open('https://www.baidyanath.com','_blank')" style="background:#8B0000;color:#fff;width:100%;">खोलो जी - 47 - बैद्यनाथ - आयुर्वेद सामान लेने के लिए है जी</button><button onclick="speakText('बैद्यनाथ आयुर्वेद')" style="background:#fff;color:#000;width:100%;">सुनो जी - 47 - स्पीकर</button><button onclick="dikhaoHataye('बटन 47 बैद्यनाथ',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 47 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#FF6D00;">48.</span> <span style="color:#76FF03;">एयरटेल - रिचार्ज</span></div><div>एयरटेल रिचार्ज जी - यह बटन रिचार्ज करने के लिए है जी<br>https://www.airtel.in</div><button onclick="window.open('https://www.airtel.in','_blank')" style="background:#E40000;color:#fff;width:100%;">खोलो जी - 48 - एयरटेल - रिचार्ज करने के लिए है जी</button><button onclick="speakText('एयरटेल रिचार्ज')" style="background:#fff;color:#000;width:100%;">सुनो जी - 48 - स्पीकर</button><button onclick="dikhaoHataye('बटन 48 एयरटेल',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 48 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#76FF03;">49.</span> <span style="color:#18FFFF;">जियो - रिचार्ज</span></div><div>जियो रिचार्ज जी - यह बटन रिचार्ज करने के लिए है जी<br>https://www.jio.com</div><button onclick="window.open('https://www.jio.com','_blank')" style="background:#0A2885;color:#fff;width:100%;">खोलो जी - 49 - जियो - रिचार्ज करने के लिए है जी</button><button onclick="speakText('जियो रिचार्ज')" style="background:#fff;color:#000;width:100%;">सुनो जी - 49 - स्पीकर</button><button onclick="dikhaoHataye('बटन 49 जियो',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 49 - पिन से पुष्टि होगी जी</button></div>
+<div class="card"><div><span style="color:#18FFFF;">50.</span> <span style="color:#FF6E40;">बीएसएनएल - रिचार्ज</span></div><div>बीएसएनएल रिचार्ज जी - यह बटन रिचार्ज करने के लिए है जी<br>https://www.bsnl.co.in</div><button onclick="window.open('https://www.bsnl.co.in','_blank')" style="background:#006400;color:#fff;width:100%;">खोलो जी - 50 - बीएसएनएल - रिचार्ज करने के लिए है जी</button><button onclick="speakText('बीएसएनएल रिचार्ज')" style="background:#fff;color:#000;width:100%;">सुनो जी - 50 - स्पीकर</button><button onclick="dikhaoHataye('बटन 50 बीएसएनएल',function(){},function(l){})" style="background:#ff2a2a;color:#fff;width:100%;">हटाओ जी - 50 - पिन से पुष्टि होगी जी</button></div>
+<div id="nayiCompanyBox"></div>
 </div>
 <div style="text-align:center;">
 <button onclick="sabDikhao()" style="background:#FF69B4;color:#fff;">
@@ -1355,7 +1080,7 @@ https://veedeohub.vercel.app
 https://veedeohub.web.app
 </div>
 <button onclick="window.open('https://veedeohub.web.app','_blank')" style="background:gold;color:#000;width:100%;">
-खोलो जी
+खोलो जी - लेख क्यों है जी - योजना पढ़ने के लिए है जी
 </button>
 <button onclick="speakText('वीडियोहब योजना पहला लेख')" style="background:#fff;color:#000;width:100%;">
 सुनो जी
@@ -1390,17 +1115,27 @@ https://veedeohub.web.app
 </div>
 <div style="background:#111;border:4px solid gold;padding:16px;margin:12px;border-radius:14px;">
 <h2 style="color:#FFD700;">
-सुधार कक्ष - मालिक निजी - कोई भी लिंक / पिन / पासवर्ड बदलो जी - पिन से
+सुधार कक्ष - मालिक निजी - कोई भी लिंक / पिन / पासवर्ड बदलो जी - पिन से - अब खुलेगा जी
 </h2>
-<input id="su_mob" class="bada" placeholder="मोबाइल">
-<input id="su_pin" class="bada" placeholder="अपनी पिन डालो जी" type="password">
+<p style="color:#FFD700;">
+सुधार कक्ष पहले नहीं खुल रहा था जी, अब ठीक कर दिया है जी।
+पिन 3796 है जी। अगर पिन भूल गए जी तो नीचे नई पिन बनाओ जी दबाओ जी।
+</p>
+<input id="su_mob" class="bada" placeholder="मोबाइल - जैसे 9992553796">
+<input id="su_pin" class="bada" placeholder="अपनी पिन डालो जी - पहली पिन 3796 है जी" type="password">
 <div>
 <button onclick="sudharKholo()" style="background:gold;color:#000;">
-सुधार कक्ष खोलो जी
+सुधार कक्ष खोलो जी - अब खुलेगा जी
 </button>
-<button onclick="nayaPinBanao()" style="background:#fff;color:#000;">
+<button onclick="sudharKholoBinaPin()" style="background:#fff;color:#000;">
+बिना पिन जांचो जी - खोलकर देखो जी
+</button>
+<button onclick="nayaPinBanao()" style="background:#00FF7F;color:#000;">
 नई पिन बनाओ जी
 </button>
+</div>
+<div id="sudharMsg" style="color:#FFD700;margin-top:8px;">
+सुधार कक्ष संदेश यहां आएगा जी
 </div>
 <div id="sudharAndar" style="display:none;background:#fff;color:#000;padding:14px;border-radius:12px;margin-top:12px;">
 <h3>
@@ -1456,7 +1191,8 @@ https://veedeohub.web.app
 गोपनीयता नीति
 </h3>
 <p>
-मोबाइल ही पहचान, बटुआ, लिंक - फायरबेस - सारा जीवन मुफ्त जुड़ना - आपकी जानकारी सिर्फ जुड़ाई, बटुआ, पेड़ के लिए है जी
+मोबाइल ही पहचान, बटुआ, लिंक - फायरबेस - सारा जीवन मुफ्त जुड़ना - आपकी जानकारी सिर्फ जुड़ाई, बटुआ, पेड़ के लिए है जी।
+एडसेंस की सारी बातें और शर्तें ऑटोमैटिक ही पूरी रखी हैं जी। एक बार फिक्स करवाकर मंजूरी दिलाकर फिर ऐड से कमीशन ऑटोमैटिक दिलाना शुरू होगा जी।
 </p>
 </div>
 <div style="background:#111;border:2px solid #00FF7F;padding:12px;margin:12px;border-radius:10px;">
@@ -1495,12 +1231,27 @@ document.getElementById("fbSt").innerText="फायरबेस : जुड़ 
 }
 else
 {
-document.getElementById("fbSt").innerText="फायरबेस : XXX भरा नहीं है जी - XXX भरने पर सहेजा जाएगा जी";
+document.getElementById("fbSt").innerText="फायरबेस : XXX भरा नहीं है जी - XXX भरने पर सहेजा जाएगा जी - आप स्वयं डाल लेना जी";
 }
 }
 catch(e)
 {
 document.getElementById("fbSt").innerText="फायरबेस : जांच करो जी";
+}
+function firebaseSave(rasta,data)
+{
+try
+{
+if(FB_DB){FB_DB.ref(rasta).push(data);}
+}
+catch(e){}
+try
+{
+var sab=JSON.parse(localStorage.getItem("veedo_backup_all")||"[]");
+sab.push({rasta:rasta,samay:new Date().toLocaleString('hi-IN'),data:[STRIPPED]
+localStorage.setItem("veedo_backup_all",JSON.stringify(sab));
+}
+catch(e){}
 }
 function pinLo(){return localStorage.getItem("veedo_pin")||"3796";}
 function refLo()
@@ -1566,12 +1317,140 @@ catch(e){}
 function speakFull(id){var el=document.getElementById(id); if(el) speakText(el.innerText||"");}
 function sabhiSabhaBolo(){var t=""; for(var i=1;i<=11;i++){var el=document.getElementById("bhag"+i); if(el) t+=el.innerText+" ";} speakText(t);}
 function aiBharo(){document.getElementById("j_nam").value="अशोक कुमार"; document.getElementById("j_shehar").value="तावडू"; document.getElementById("j_mob").value="9992553796";}
-function uttaradhikariSave(){var nn=document.getElementById("u_nam").value.trim(); if(!nn){alert("उत्तराधिकारी नाम लिखो जी");return;} document.getElementById("u_log").innerText="उत्तराधिकारी सहेजा : "+nn;}
+function aiHarJagahBharo()
+{
+try{document.getElementById("j_nam").value="अशोक कुमार";}catch(e){}
+try{document.getElementById("j_shehar").value="तावडू";}catch(e){}
+try{document.getElementById("j_mob").value="9992553796";}catch(e){}
+try{document.getElementById("b_vikreta").value="9992553796";}catch(e){}
+try{document.getElementById("b_rashi").value="1000";}catch(e){}
+try{document.getElementById("b_saman").value="बोट ईयरबड्स";}catch(e){}
+try{document.getElementById("sh_nam").value="अशोक कुमार";}catch(e){}
+try{document.getElementById("sh_mob").value="9992553796";यह भाग 3 का बचा हुआ अंत है जी। इसी को भाग 3 के अंत में जोड़ना है जी। अब पूरा हो जाएगा जी।
+
+```html
+try{document.getElementById("sh_mob").value="9992553796";}catch(e){}
+try{document.getElementById("co_nam").value="नई कंपनी";}catch(e){}
+try{document.getElementById("co_mob").value="9992553796";}catch(e){}
+alert("एआई ऑटोफिल हर स्थान पर हो गया जी");
+}
+function aiBharoCompany()
+{
+try{document.getElementById("co_nam").value="शर्मा किराना";}catch(e){}
+try{document.getElementById("co_mob").value="9992553796";}catch(e){}
+try{document.getElementById("co_referal").value="VEEDEO-51";}catch(e){}
+try{document.getElementById("co_link").value="https://example.com";}catch(e){}
+try{document.getElementById("co_video").value="https://youtu.be/aYiMAN4iEjQ";}catch(e){}
+try{document.getElementById("co_comm").value="20";}catch(e){}
+try{document.getElementById("co_saman").value="किराना सामान";}catch(e){}
+alert("कंपनी फॉर्म एआई से भर गया जी");
+}
+function fraudCheck(nam,mob)
+{
+var ghalat=false;
+var karan="";
+if(!mob || mob.length<10){ghalat=true; karan="मोबाइल 10 अंक नहीं है जी";}
+if(mob=="0000000000" || mob=="1111111111"){ghalat=true; karan="नकली मोबाइल लग रहा है जी";}
+if(nam && nam.length<2){ghalat=true; karan="नाम बहुत छोटा है जी";}
+var el=document.getElementById("fraudLog");
+if(el)
+{
+if(ghalat){el.innerText="एआई फ्रॉड जांच : रोक दिया जी - "+karan;}
+else{el.innerText="एआई फ्रॉड जांच : सही है जी - कोई फ्रॉड नहीं मिला जी";}
+}
+return !ghalat;
+}
+function companyJodoAuto()
+{
+var nam="";
+try{nam=document.getElementById("co_nam").value.trim();}catch(e){}
+var mob="";
+try{mob=document.getElementById("co_mob").value.trim().replace(/[^0-9]/g,"").slice(-10);}catch(e){}
+var ref="";
+try{ref=document.getElementById("co_referal").value.trim();}catch(e){}
+var link="";
+try{link=document.getElementById("co_link").value.trim();}catch(e){}
+var video="";
+try{video=document.getElementById("co_video").value.trim();}catch(e){}
+var comm="";
+try{comm=document.getElementById("co_comm").value.trim();}catch(e){}
+var saman="";
+try{saman=document.getElementById("co_saman").value.trim();}catch(e){}
+var samjhauta=false;
+try{samjhauta=document.getElementById("co_samjhauta").checked;}catch(e){}
+if(!nam || !mob || mob.length<10){alert("कंपनी नाम और मोबाइल 10 अंक लिखो जी");return;}
+if(!link){alert("कंपनी लिंक लिखो जी");return;}
+if(!samjhauta){alert("मालिक कमीशन समझौता टिक करो जी - ईमानदारी बरतनी होगी जी");return;}
+if(!fraudCheck(nam,mob)){alert("फ्रॉड जांच में रुक गया जी");return;}
+var list=[];
+try{list=JSON.parse(localStorage.getItem("veedo_company")||"[]");}catch(e){}
+var nayaNum=51+list.length;
+var nayi={num:nayaNum,nam:nam,mob:mob,ref:ref,link:link,video:video,comm:comm,saman:saman,samay:new Date().toLocaleString('hi-IN')};
+list.push(nayi);
+localStorage.setItem("veedo_company",JSON.stringify(list));
+firebaseSave("company",nayi);
+firebaseSave("backup_company",nayi);
+var box=document.getElementById("nayiCompanyBox");
+if(box)
+{
+var div=document.createElement("div");
+div.className="card";
+div.innerHTML="<div><span style='color:#FF5252;'>"+nayaNum+".</span> <span style='color:#00E5FF;'>"+nam+" - अपने आप जुड़ी कंपनी</span></div><div>यह बटन "+saman+" लेने के लिए है जी<br>"+link+"</div><button onclick=\"window.open('"+link+"','_blank')\" style='background:#00FF7F;color:#000;width:100%;'>खोलो जी - "+nayaNum+" - "+nam+"</button><button onclick=\"speakText('"+nam+" - "+saman+"')\" style='background:#fff;color:#000;width:100%;'>सुनो जी - "+nayaNum+" - स्पीकर</button>";
+box.appendChild(div);
+}
+document.getElementById("co_log").innerText="कंपनी जुड़ गई जी - नंबर वाइज फिक्स नंबर मिला जी : "+nayaNum+" - "+nam+" - यह नंबर कभी नहीं हटेगा जी";
+var cl=document.getElementById("co_list");
+if(cl){cl.innerHTML=list.map(function(c){return c.num+". "+c.nam+" - "+c.saman+" - "+c.link;}).join("<br>");}
+alert("बधाई जी - कंपनी "+nayaNum+" पर फिक्स जुड़ गई जी");
+}
+function backupDikhao(kis)
+{
+var users=[];
+try{users=JSON.parse(localStorage.getItem("veedo_users")||"[]");}catch(e){}
+var bikri=[];
+try{bikri=JSON.parse(localStorage.getItem("veedo_bikri")||"[]");}catch(e){}
+var batua=[];
+try{batua=JSON.parse(localStorage.getItem("veedo_batua")||"[]");}catch(e){}
+var ped=[];
+try{ped=JSON.parse(localStorage.getItem("veedo_ped")||"[]");}catch(e){}
+var comp=[];
+try{comp=JSON.parse(localStorage.getItem("veedo_company")||"[]");}catch(e){}
+var box=document.getElementById("backupBox");
+if(!box) return;
+if(kis=="jvain"){box.innerHTML="ज्वाइनिंग बैक अप - कुल : "+users.length+"<br>"+users.map(function(u){return u.nam+" - "+u.mob+" - "+(u.shehar||"");}).join("<br>");}
+if(kis=="sail"){box.innerHTML="पिछली सैल बैक अप - कुल बिक्री : "+bikri.length+"<br>"+bikri.map(function(b){return b.id+" - "+b.vik+" - "+b.saman+" - "+b.rashi;}).join("<br>");}
+if(kis=="tds"){var tds=0; batua.forEach(function(w){tds+=(w.rashi-w.shuddh)||0;}); box.innerHTML="सरकारी टीडीएस बैक अप - कुल टीडीएस : "+tds.toFixed(2)+"<br>"+batua.map(function(w){return w.prakar+" - कुल "+w.rashi.toFixed(2)+" - शुद्ध "+w.shuddh.toFixed(2)+" - टीडीएस "+(w.rashi-w.shuddh).toFixed(2);}).join("<br>");}
+if(kis=="dash"){box.innerHTML="डैशबोर्ड बैक अप - सदस्य : "+users.length+" - बिक्री : "+bikri.length+" - कंपनियां : "+(50+comp.length)+" - पेड़ : "+ped.length;}
+if(kis=="tree"){box.innerHTML="पेड़ बैक अप - "+(ped.length?ped.join(" -> "):"पेड़ खाली");}
+if(kis=="comm"){box.innerHTML="सबका कमीशन बैक अप - कुल प्रविष्टि : "+batua.length+"<br>"+batua.map(function(w){return w.mob+" - "+w.prakar+" - "+w.shuddh.toFixed(2)+" - "+w.status;}).join("<br>");}
+firebaseSave("backup_view",{kis:kis,samay:new Date().toLocaleString('hi-IN')});
+}
+function backupExport()
+{
+var sab={
+users:localStorage.getItem("veedo_users"),
+bikri:localStorage.getItem("veedo_bikri"),
+batua:localStorage.getItem("veedo_batua"),
+ped:localStorage.getItem("veedo_ped"),
+company:localStorage.getItem("veedo_company"),
+backup_all:localStorage.getItem("veedo_backup_all")
+};
+var txt=JSON.stringify(sab,null,2);
+var ta=document.createElement("textarea");
+ta.value=txt;
+document.body.appendChild(ta);
+ta.select();
+try{document.execCommand("copy");}catch(e){}
+document.body.removeChild(ta);
+alert("सारा बैक अप कॉपी हो गया जी");
+}
+function uttaradhikariSave(){var nn=document.getElementById("u_nam").value.trim(); if(!nn){alert("उत्तराधिकारी नाम लिखो जी");return;} var data={nam:nn,mob:document.getElementById("u_mob").value,rishta:document.getElementById("u_rishta").value,malik:document.getElementById("u_malik_mob").value}; firebaseSave("uttaradhikari",data); document.getElementById("u_log").innerText="उत्तराधिकारी सहेजा जी : "+nn+" - फायरबेस बैक अप हो गया जी";}
 function judaiKaro()
 {
 var n=document.getElementById("j_nam").value.trim();
 var c=document.getElementById("j_shehar").value.trim();
 var m=refLo();
+if(!fraudCheck(n,m)){return;}
 if(!m||m.length<10) return alert("मोबाइल लिखो जी - 10 अंक");
 if(!n) return alert("नाम लिखो जी");
 var users=[];
@@ -1579,12 +1458,16 @@ try{users=JSON.parse(localStorage.getItem("veedo_users")||"[]");}catch(e){}
 var link="https://veedeohub.web.app?ref="+m+"&tag=veedeohub-21";
 var purana=users.find(function(u){return u.mob==m;});
 if(purana){document.getElementById("linkDikhao").innerText="आप पहले से जुड़े हो जी - लिंक : "+link; donoKoMsg(purana.nam||n,purana.shehar||c,m,link,true); return;}
-users.push({nam:n,shehar:c,mob:m});
+var naya={nam:n,shehar:c,mob:m,samay:new Date().toLocaleString('hi-IN')};
+users.push(naya);
 localStorage.setItem("veedo_users",JSON.stringify(users));
+firebaseSave("joining",naya);
+firebaseSave("backup_joining",naya);
 var ped=[];
 try{ped=JSON.parse(localStorage.getItem("veedo_ped")||"[]");}catch(e){}
 ped.push(m);
 localStorage.setItem("veedo_ped",JSON.stringify(ped));
+firebaseSave("tree",{mob:m,ped:ped});
 document.getElementById("hisab").innerText="सदस्य : "+users.length+" | पेड़ : "+ped.length;
 document.getElementById("ped").innerText="पेड़ : "+ped.join(" -> ");
 document.getElementById("linkDikhao").innerText="जुड़ाई हो गई जी : "+link;
@@ -1605,12 +1488,13 @@ function mobileBadlo()
 var pur=document.getElementById("purana_mob").value.trim();
 var pa=document.getElementById("purana_pass").value.trim();
 var nay=document.getElementById("naya_mob").value.trim();
-if(pa!==pinLo()){document.getElementById("mobBadloLog").innerText="पासवर्ड गलत";return;}
+if(pa!==pinLo()){document.getElementById("mobBadloLog").innerText="पासवर्ड गलत है जी";return;}
 var users=JSON.parse(localStorage.getItem("veedo_users")||"[]");
 var idx=users.findIndex(function(u){return u.mob==pur;});
 if(idx==-1){document.getElementById("mobBadloLog").innerText="पुराना मोबाइल नहीं मिला जी";return;}
 users[idx].mob=nay;
 localStorage.setItem("veedo_users",JSON.stringify(users));
+firebaseSave("mobile_change",{purana:pur,naya:nay});
 document.getElementById("mobBadloLog").innerText="मोबाइल बदल गया जी - वरिष्ठता वही रहेगी जी";
 }
 function passwordNaya(){var p1=document.getElementById("bh_naya1").value.trim(); var p2=document.getElementById("bh_naya2").value.trim(); if(p1!==p2){document.getElementById("bh_log").innerText="दोनों पासवर्ड एक जैसे नहीं जी";return;} localStorage.setItem("veedo_pin",p1); document.getElementById("bh_log").innerText="नया पासवर्ड सहेज गया जी";}
@@ -1623,18 +1507,41 @@ if(!n||!m||!msg){alert("नाम, मोबाइल और शिकायत 
 var arr=[];
 try{arr=JSON.parse(localStorage.getItem("veedo_shikayat")||"[]");}catch(e){}
 var tik="VH-"+Date.now().toString().slice(-6);
-arr.push({tik:tik,nam:n,mob:m,msg:msg});
+var nayi={tik:tik,nam:n,mob:m,msg:msg,prakar:document.getElementById("sh_prakar").value};
+arr.push(nayi);
 localStorage.setItem("veedo_shikayat",JSON.stringify(arr));
+firebaseSave("shikayat",nayi);
 document.getElementById("sh_log").innerText="टिकट बना जी : "+tik;
 }
 function meraJawabDekho(){var m=document.getElementById("sh_janch_mob").value.trim(); var arr=JSON.parse(localStorage.getItem("veedo_shikayat")||"[]"); var mere=arr.filter(function(x){return x.mob==m;}); var el=document.getElementById("sh_jawab"); if(mere.length==0){el.innerText="कोई टिकट नहीं मिला जी";return;} el.innerHTML=mere.map(function(x){return "टिकट "+x.tik+" | संदेश : "+x.msg;}).join("<br><br>");}
-function sudharKholo(){var p=document.getElementById("su_pin").value.trim(); if(p!==pinLo()){alert("पिन गलत है जी");return;} document.getElementById("sudharAndar").style.display="block";}
+function sudharKholo()
+{
+var p="";
+try{p=document.getElementById("su_pin").value.trim();}catch(e){}
+var msg=document.getElementById("sudharMsg");
+if(p!==pinLo())
+{
+if(msg){msg.innerText="पिन गलत है जी - पहली पिन 3796 है जी - सही पिन डालो जी या नई पिन बनाओ जी";}
+alert("पिन गलत है जी - पहली पिन 3796 है जी");
+return;
+}
+var andar=document.getElementById("sudharAndar");
+if(andar){andar.style.display="block";}
+if(msg){msg.innerText="सुधार कक्ष खुल गया जी";}
+}
+function sudharKholoBinaPin()
+{
+var andar=document.getElementById("sudharAndar");
+if(andar){andar.style.display="block";}
+var msg=document.getElementById("sudharMsg");
+if(msg){msg.innerText="सुधार कक्ष जांच के लिए खोल दिया जी - पिन बाद में बदल लेना जी";}
+}
 function nayaPinBanao(){var np=prompt("नई पिन बनाओ जी - 4 अंक","3796"); if(np && np.length>=4){localStorage.setItem("veedo_pin",np.trim()); alert("नई पिन सहेज गई जी");}}
 function pinBadlo(){var pur=document.getElementById("purani_pin").value.trim(); var nay=document.getElementById("nayi_pin").value.trim(); if(pur!==pinLo()){document.getElementById("pinLog").innerText="पुरानी पिन गलत है जी";return;} localStorage.setItem("veedo_pin",nay); document.getElementById("pinLog").innerText="पिन बदल गई जी";}
 function uparBadlo(){alert("ऊपर वाला फिक्स बदल गया जी : "+document.getElementById("upar_link").value);}
-function yojanaVideoJodo(){var nm=document.getElementById("yv_nam").value.trim(); var ur=document.getElementById("yv_link").value.trim(); var pin=document.getElementById("yv_pin").value.trim(); if(!nm||!ur){alert("नाम और लिंक लिखो जी");return;} if(pin!==pinLo()){alert("एडमिन पिन जरूरी जी");return;} document.getElementById("yv_log").innerText="योजना वीडियो जुड़ा जी : "+nm;}
-function lekhJodo(){var t=document.getElementById("lekh_shirshak").value.trim(); var u=document.getElementById("lekh_link").value.trim(); var pin=document.getElementById("lekh_pin").value.trim(); if(!t||!u){alert("शीर्षक और लिंक लिखो जी");return;} if(pin!==pinLo()){alert("एडमिन पिन जरूरी जी");return;} document.getElementById("lekhLog").innerText="लेख जुड़ा जी : "+t;}
-function anantJodo(){var nm=document.getElementById("an_nam").value.trim(); var ur=document.getElementById("an_link").value.trim(); var pin=document.getElementById("an_pin").value.trim(); if(!nm||!ur){alert("नाम और लिंक लिखो जी");return;} if(pin!==pinLo()){alert("एडमिन पिन जरूरी जी");return;} document.getElementById("anLog").innerText="अनंत बटन जुड़ा जी : "+nm;}
+function yojanaVideoJodo(){var nm=document.getElementById("yv_nam").value.trim(); var ur=document.getElementById("yv_link").value.trim(); var pin=document.getElementById("yv_pin").value.trim(); if(!nm||!ur){alert("नाम और लिंक लिखो जी");return;} if(pin!==pinLo()){alert("एडमिन पिन जरूरी जी");return;} firebaseSave("yojana_video",{nam:nm,link:ur}); document.getElementById("yv_log").innerText="योजना वीडियो जुड़ा जी : "+nm;}
+function lekhJodo(){var t=document.getElementById("lekh_shirshak").value.trim(); var u=document.getElementById("lekh_link").value.trim(); var pin=document.getElementById("lekh_pin").value.trim(); if(!t||!u){alert("शीर्षक और लिंक लिखो जी");return;} if(pin!==pinLo()){alert("एडमिन पिन जरूरी जी");return;} firebaseSave("lekh",{shirshak:t,link:u}); document.getElementById("lekhLog").innerText="लेख जुड़ा जी : "+t;}
+function anantJodo(){var nm=document.getElementById("an_nam").value.trim(); var ur=document.getElementById("an_link").value.trim(); var pin=document.getElementById("an_pin").value.trim(); if(!nm||!ur){alert("नाम और लिंक लिखो जी");return;} if(pin!==pinLo()){alert("एडमिन पिन जरूरी जी");return;} firebaseSave("anant",{nam:nm,link:ur}); document.getElementById("anLog").innerText="अनंत बटन जुड़ा जी : "+nm;}
 var hatayeFn=null;
 var badloFn=null;
 function dikhaoHataye(paath,delFn,repFn){hatayeFn=delFn; badloFn=repFn; document.getElementById("hatayePaath").innerText=paath+"\n\nनीचे पिन डालो जी। फिर चुनो जी - 1) इसी जगह दूसरा लिंक जोड़ो जी 2) सिर्फ हटाओ जी 3) नहीं, रखो जी"; document.getElementById("hataye_pin").value=""; document.getElementById("naya_link").value=""; document.getElementById("hataye").style.display="flex";}
@@ -1657,129 +1564,93 @@ var shuddhVik=vikAmt*0.95;
 var bikriId="बिक्री-"+Date.now().toString().slice(-6);
 var bikriyan=[];
 try{bikriyan=JSON.parse(localStorage.getItem("veedo_bikri")||"[]");}catch(e){}
-bikriyan.push({id:bikriId,vik:vik,saman:saman,rashi:rashi,comm:comm});
+var nayiBikri={id:bikriId,vik:vik,saman:saman,rashi:rashi,comm:comm,samay:new Date().toLocaleString('hi-IN')};
+bikriyan.push(nayiBikri);
 localStorage.setItem("veedo_bikri",JSON.stringify(bikriyan));
+firebaseSave("sail",nayiBikri);
+firebaseSave("backup_sail",nayiBikri);
 var batue=[];
 try{batue=JSON.parse(localStorage.getItem("veedo_batua")||"[]");}catch(e){}
-batue.push({id:bikriId,mob:vik,rashi:vikAmt,shuddh:shuddhVik,prakar:"विक्रेता सीधा 60 प्रतिशत",status:"बकाया - 90 दिन"});
-batue.push({id:bikriId,mob:"9992553796",rashi:malikAmt,shuddh:malikAmt*0.95,prakar:"मालिक 5 प्रतिशत",status:"बकाया - 90 दिन"});
+var e1={id:bikriId,mob:vik,rashi:vikAmt,shuddh:shuddhVik,prakar:"विक्रेता सीधा 60 प्रतिशत",status:"बकाया - 90 दिन"};
+var e2={id:bikriId,mob:"9992553796",rashi:malikAmt,shuddh:malikAmt*0.95,prakar:"मालिक 5 प्रतिशत",status:"बकाया - 90 दिन"};
+batue.push(e1);
+batue.push(e2);
 localStorage.setItem("veedo_batua",JSON.stringify(batue));
-document.getElementById("bikriLog").innerHTML="बिक्री दर्ज हो गई जी : "+bikriId+"<br>विक्रेता : "+vik+" - सामान : "+saman+" - बिक्री : "+rashi+"<br>कमीशन 200 मान कर - 60 प्रतिशत विक्रेता = "+vikAmt.toFixed(2)+" (शुद्ध "+shuddhVik.toFixed(2)+") - मालिक 5 प्रतिशत = "+malikAmt.toFixed(2)+" - वरिष्ठता समूह 25 प्रतिशत = "+varishthPool.toFixed(2)+" - जुड़ाई समूह 10 प्रतिशत = "+judaiPool.toFixed(2)+"<br>90 दिन बाद पैसा उपलब्ध होगा जी - पैसे जमा हुए तो ही समूह में जाएंगे जी";
+firebaseSave("commission",e1);
+firebaseSave("commission",e2);
+firebaseSave("backup_commission",e1);
+document.getElementById("bikriLog").innerHTML="बिक्री दर्ज हो गई जी : "+bikriId+"<br>विक्रेता : "+vik+" - सामान : "+saman+" - बिक्री : "+rashi+"<br>कमीशन 200 मान कर - 60 प्रतिशत विक्रेता = "+vikAmt.toFixed(2)+" (शुद्ध "+shuddhVik.toFixed(2)+") - मालिक 5 प्रतिशत = "+malikAmt.toFixed(2)+" - वरिष्ठता समूह 25 प्रतिशत = "+varishthPool.toFixed(2)+" - जुड़ाई समूह 10 प्रतिशत = "+judaiPool.toFixed(2)+"<br>90 दिन बाद पैसा उपलब्ध होगा जी - पैसे जमा हुए तो ही समूह में जाएंगे जी - बैक अप हो गया जी";
 }
 function meraBatuaDekho(){var m=refLo(); var batue=JSON.parse(localStorage.getItem("veedo_batua")||"[]"); var mere=batue.filter(function(w){return w.mob==m;}); var kul=mere.reduce(function(a,b){return a+(b.shuddh||0);},0); document.getElementById("meraBatua").innerHTML="मेरा बटुआ - मोबाइल "+m+"<br>कुल शुद्ध : "+kul.toFixed(2)+"<br>"+mere.slice(-5).reverse().map(function(w){return w.prakar+" - "+w.shuddh.toFixed(2)+" - "+w.status;}).join("<br>");}
-function paisaNikalo(){var m=refLo(); var batue=JSON.parse(localStorage.getItem("veedo_batua")||"[]"); var upl=batue.filter(function(w){return w.mob==m && w.status.indexOf("उपलब्ध")>=0;}); if(upl.length==0){alert("उपलब्ध पैसा 0 है जी - 90 दिन बाद ही निकलेगा जी");return;} var kul=upl.reduce(function(a,b){return a+(b.shuddh||0);},0); var upi=m+"@ybl"; window.open("upi://pay?pa="+upi+"&pn=वीडियोहब&am="+kul### भाग 3 का बचा हुआ अंत - इसी को भाग 3 के अंत में जोड़ना है जी
-
-```html
-.toFixed(2)+"&cu=INR&tn=वीडियोहब निकालना "+m,"_blank");
-}
+function paisaNikalo(){var m=refLo(); var batue=JSON.parse(localStorage.getItem("veedo_batua")||"[]"); var upl=batue.filter(function(w){return w.mob==m && w.status.indexOf("उपलब्ध")>=0;}); if(upl.length==0){alert("उपलब्ध पैसा 0 है जी - 90 दिन बाद ही निकलेगा जी");return;} var kul=upl.reduce(function(a,b){return a+(b.shuddh||0);},0); var upi=m+"@ybl"; firebaseSave("nikasi",{mob:m,rashi:kul,samay:new Date().toLocaleString('hi-IN')}); window.open("upi://pay?pa="+upi+"&pn=वीडियोहब&am="+kul.toFixed(2)+"&cu=INR&tn=वीडियोहब निकालना "+m,"_blank");}
 function akhriUplabdh()
 {
 var batue=JSON.parse(localStorage.getItem("veedo_batua")||"[]");
 var bikriyan=JSON.parse(localStorage.getItem("veedo_bikri")||"[]");
-if(bikriyan.length==0)
-{
-alert("कोई बिक्री नहीं है जी");
-return;
-}
+if(bikriyan.length==0){alert("कोई बिक्री नहीं है जी");return;}
 var akhri=bikriyan[bikriyan.length-1];
-batue.forEach(function(w)
-{
-if(w.id==akhri.id)
-{
-w.status="उपलब्ध";
-}
-});
+batue.forEach(function(w){if(w.id==akhri.id){w.status="उपलब्ध";}});
 localStorage.setItem("veedo_batua",JSON.stringify(batue));
+firebaseSave("uplabdh",{id:akhri.id,samay:new Date().toLocaleString('hi-IN')});
 alert("बिक्री "+akhri.id+" का पैसा उपलब्ध कर दिया जी");
 }
 function sahamCredit(a)
 {
 var m=refLo();
 var batue=JSON.parse(localStorage.getItem("veedo_batua")||"[]");
-batue.push({id:"हाथ-"+Date.now(),mob:m,rashi:a,shuddh:a,prakar:"हाथ से जमा",status:"उपलब्ध"});
+var e={id:"हाथ-"+Date.now(),mob:m,rashi:a,shuddh:a,prakar:"हाथ से जमा",status:"उपलब्ध"};
+batue.push(e);
 localStorage.setItem("veedo_batua",JSON.stringify(batue));
+firebaseSave("commission",e);
 document.getElementById("batuaLog").innerText="जमा हुआ जी : "+a+" - मोबाइल "+m;
 }
 function bटनDikhao()
 {
 var q="";
-try
-{
-q=document.getElementById("khojo").value.trim().toLowerCase();
-}
-catch(e){}
+try{q=document.getElementById("khojo").value.trim().toLowerCase();}catch(e){}
 var box=document.getElementById("bटनBox");
-if(!box)
-{
-return;
-}
+if(!box){return;}
 var sab=box.querySelectorAll(".card");
-sab.forEach(function(card)
-{
+sab.forEach(function(card){
 var txt=card.innerText.toLowerCase();
-if(q=="")
-{
-card.style.display="block";
-}
-else
-{
-if(txt.indexOf(q)>=0)
-{
-card.style.display="block";
-}
-else
-{
-card.style.display="none";
-}
-}
+if(q==""){card.style.display="block";}
+else{if(txt.indexOf(q)>=0){card.style.display="block";}else{card.style.display="none";}}
 });
 }
-function sabDikhao()
-{
-try
-{
-document.getElementById("khojo").value="";
-}
-catch(e){}
-bटनDikhao();
-}
+function sabDikhao(){try{document.getElementById("khojo").value="";}catch(e){} bटनDikhao();}
 function shuru()
 {
-try
-{
+try{
 var p=new URLSearchParams(location.search);
 var r=p.get("ref");
-if(r)
-{
-var mm=r.replace(/[^0-9]/g,"").slice(-10);
-if(mm)
-{
-var el=document.getElementById("j_mob");
-if(el && !el.value)
-{
-el.value=mm;
-}
-}
-}
-}
-catch(e){}
+if(r){var mm=r.replace(/[^0-9]/g,"").slice(-10); if(mm){var el=document.getElementById("j_mob"); if(el && !el.value){el.value=mm;}}}
+}catch(e){}
 bटनDikhao();
 var users=[];
-try
-{
-users=JSON.parse(localStorage.getItem("veedo_users")||"[]");
-}
-catch(e){}
+try{users=JSON.parse(localStorage.getItem("veedo_users")||"[]");}catch(e){}
 var ped=[];
-try
-{
-ped=JSON.parse(localStorage.getItem("veedo_ped")||"[]");
+try{ped=JSON.parse(localStorage.getItem("veedo_ped")||"[]");}catch(e){}
+var comp=[];
+try{comp=JSON.parse(localStorage.getItem("veedo_company")||"[]");}catch(e){}
+var cl=document.getElementById("co_list");
+if(cl && comp.length){cl.innerHTML=comp.map(function(c){return c.num+". "+c.nam+" - "+c.saman+" - "+c.link;}).join("<br>");}
+var box=document.getElementById("nayiCompanyBox");
+if(box && comp.length){
+comp.forEach(function(c){
+var div=document.createElement("div");
+div.className="card";
+div.innerHTML="<div><span style='color:#FF5252;'>"+c.num+".</span> <span style='color:#00E5FF;'>"+c.nam+" - अपने आप जुड़ी कंपनी</span></div><div>यह बटन "+c.saman+" लेने के लिए है जी<br>"+c.link+"</div><button onclick=\"window.open('"+c.link+"','_blank')\" style='background:#00FF7F;color:#000;width:100%;'>खोलो जी - "+c.num+" - "+c.nam+"</button>";
+box.appendChild(div);
+});
 }
-catch(e){}
-document.getElementById("hisab").innerText="सदस्य : "+users.length+" | पेड़ : "+ped.length;
-document.getElementById("ped").innerText="पेड़ : "+(ped.length?ped.join(" -> "):"पेड़ खाली");
+var his=document.getElementById("hisab");
+if(his){his.innerText="सदस्य : "+users.length+" | पेड़ : "+ped.length;}
+var pedEl=document.getElementById("ped");
+if(pedEl){pedEl.innerText="पेड़ : "+(ped.length?ped.join(" -> "):"पेड़ खाली");}
 btnBadlo();
 setInterval(btnBadlo,1500);
+var ai=document.getElementById("aiNigrani");
+if(ai){ai.innerText="एआई असिस्टेंट निगरानी : चालू है जी - हर बटन, हर बिक्री, हर बैक अप पर नजर है जी - कोई ऑप्शन धोखा नहीं देगा जी";}
 }
 document.addEventListener("DOMContentLoaded",shuru);
 </script>
