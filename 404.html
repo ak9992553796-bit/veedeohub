@@ -1,10 +1,10 @@
-<!-- संस्करण 4, ताला लगा हुआ, अंक अंग्रेजी 1, 2, 3, लेख पूरे, काटे नहीं हैं जी -->
+<!-- संस्करण 4, ताला लगा हुआ, अंक अंग्रेजी 1, 2, 3, लेख पूरे -->
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>वीडियोहब लाइव, संस्करण 4, ताला लगा हुआ</title>
+<title>वीडियोहब लाइव, संस्करण 4</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous"></script>
 <style>
 body{margin:0;background:#050505;color:#FFD700;font-family:system-ui,sans-serif;padding-bottom:20px}
@@ -24,8 +24,8 @@ button{font-weight:900;padding:13px 16px;margin:5px;border-radius:12px;cursor:po
 <body>
 <div class="nayaPehchan">संस्करण 4, ताला लगा हुआ, अंक अंग्रेजी 1, 2, 3, लेख पूरे जी</div>
 <div class="badlavBox">
-<div style="font-size:20px;color:#00FF7F;">इस बार ताला लगा हुआ सुधार जी, दोबारा नहीं बदलेगा जी</div>
-<div>1. अंक अब हमेशा अंग्रेजी में हैं जी, 1, 2, 3, 4, 5, 50, 51, 100 जी, हिंदी अंक अब नहीं हैं जी</div>
+<div style="font-size:20px;color:#00FF7F;">ताला लगा हुआ सुधार जी</div>
+<div>1. अंक अब हमेशा अंग्रेजी में हैं जी, 1, 2, 3, 4, 5, 50, 51, 100 जी</div>
 <div>2. लेख काटे नहीं हैं जी, सभा के 11 भाग, याद पुस्तक, योजना के सारे लेख पूरे हैं जी</div>
 <div>3. सुधार कक्ष सिर्फ पिन से ही खुलेगा जी, बिना पिन वाला बटन नहीं है जी</div>
 <div>4. 50 कंपनियां वही हैं जी, 51 से नई कंपनियां अपने आप जुड़ेंगी जी</div>
@@ -308,7 +308,7 @@ if(!localStorage.getItem("veedo_pin")) localStorage.setItem("veedo_pin","3796");
 var FIREBASE_CONFIG={apiKey:"XXX",authDomain:"veedeohub.firebaseapp.com",databaseURL:"https://veedeohub-default-rtdb.firebaseio.com",projectId:"veedeohub",storageBucket:"veedeohub.appspot.com",messagingSenderId:"XXX",appId:"XXX"};
 var FB_DB=null;
 try{if(window.firebase && FIREBASE_CONFIG.apiKey.indexOf("XXX")<0){firebase.initializeApp(FIREBASE_CONFIG);FB_DB=firebase.database();document.getElementById("fbSt").innerText="फायरबेस, जुड़ गया जी";}else{document.getElementById("fbSt").innerText="फायरबेस, XXX भरा नहीं है जी, XXX भरने पर सहेजा जाएगा जी, आप स्वयं डाल लेना जी";}}catch(e){document.getElementById("fbSt").innerText="फायरबेस, जांच करो जी";}
-function firebaseSave(rasta,data){try{if(FB_DB){FB_DB.ref(rasta).push(data);}}catch(e){}try{var sab=JSON.parse(localStorage.getItem("veedo_backup_all")||"[]");sab.push({rasta:rasta,samay:new Date().toLocaleString('hi-IN'),data:[STRIPPED]"veedo_backup_all",JSON.stringify(sab));}catch(e){}}
+function firebaseSave(rasta,data){try{if(FB_DB){FB_DB.ref(rasta).push(data);}}catch(e){}try{var sab=JSON.parse(localStorage.getItem("veedo_backup_all")||"[]");sab.push({rasta:rasta,samay:new Date().toLocaleString('hi-IN'),data:[STRIPPED]"veedo_backup_all",[STRIPPED]
 function pinLo(){return localStorage.getItem("veedo_pin")||"3796";}
 function refLo(){var m="";try{m=document.getElementById("j_mob").value||"";}catch(e){}if(!m){try{var p=new URLSearchParams(location.search);m=p.get("ref")||"";}catch(e){}}if(!m) m="9992553796";return m.replace(/[^0-9]/g,"")||"9992553796";}
 var RANG=["#FF5252","#FF9800","#FFEB3B","#00E676","#00BCD4","#FF4081","#B388FF","#FF6D00","#76FF03","#18FFFF","#FF6E40","#E040FB"];
