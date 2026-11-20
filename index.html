@@ -232,4 +232,9 @@ function sudharHatayiDikhao(){var h=getLS("veedo_hatayi",[]);if(el("suHatayiLog"
 function sudharCompanyJodo(){var nm=(el("su_co_name").value||"").trim();var mb=(el("su_co_mob").value||"").replace(/[^0-9]/g,"");if(nm.length<2||mb.length!==10){alert("कंपनी नाम + 10 अंक मोबाइल लिखो जी");return;}if(!confirm("कंपनी जोड़नी है जी, स्वीकृति दे रहे हो जी?"))return;var arr=getComps();var num=63+arr.length;arr.push({num:num,nam:nm,mob:mb,ref:el("su_co_link").value||"",pcomm:el("su_co_comm").value||"",acomm:el("su_co_adcomm").value||""});setLS("veedo_companies",arr);if(el("suCoLog2"))el("suCoLog2").innerText="कंपनी जुड़ गई जी, नंबर "+num+" जी";companyListDikhao();}
 function sudharSabhaDikhao(){var idx=Number(el("su_sabha_no").value||0);if(el("su_sabha_text"))el("su_sabha_text").value=SABHA[idx]||"";if(el("suSabhaLog"))el("suSabhaLog").innerText="सभा भाग "+(idx+1)+" दिख रहा है जी";}
 function sudharSabhaBachao(){var idx=Number(el("su_sabha_no").value||0);SABHA[idx]=el("su_sabha_text").value||SABHA[idx];if(el("suSabhaLog"))el("suSabhaLog").innerText="सभा भाग "+(idx+1)+" बच गया जी";sabhaBanao();}
-try{sabhaBanao();guideBanao(guideListBanao(),1);bTanDikhao();companyListDikhao();blogDikhao();videoDikhao();anantDikhao();hatayiIdDikhao();pedDikhao();}catch(e){}</script></body></html>
+try{sabhaBanao();guideBanao(guideListBanao(),1);bTanDikhao();companyListDikhao();blogDikhao();videoDikhao();anantDikhao();hatayiIdDikhao();pedDikhao();}catch(e){}</script>
+<script>
+function testBolo(){alert('टेस्ट चल गया जी'); try{var u=new SpeechSynthesisUtterance('नमस्ते जी, स्पीकर चल गया जी'); u.lang='hi-IN'; speechSynthesis.speak(u);}catch(e){} }
+document.addEventListener('DOMContentLoaded', function(){ var b=document.createElement('button'); b.textContent='टेस्ट बटन दबाओ जी'; b.style.cssText='background:#FFD700;color:#000;padding:14px;width:100%;font-weight:900;font-size:20px;'; b.onclick=testBolo; document.body.insertBefore(b, document.body.firstChild); });
+</script>
+</body></html>
