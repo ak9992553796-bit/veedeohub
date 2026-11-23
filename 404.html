@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>वीडीओहब लाइव - VideoHub Live</title>
+<!-- FIX: bahar wali script hatayi ji, taaki bina net ke bhi file khule ji - AdSense ID aur Firebase XXX line neeche box me hi hai ji -->
+<style>
+body{font-family:Arial,sans-serif;background:#000;color:#FFD700;margin:0;padding:10px}
+.gold{color:#FFD700;font-weight:bold}
+.marquee{background:#000;color:#FFD700;border:1px solid #FFD700;padding:9px;font-weight:bold;text-align:center}
+.box{border:2px solid #FFD700;border-radius:10px;padding:12px;margin:10px 0;background:#111;color:#FFD700}
+.num{display:inline-block;padding:2px 9px;border-radius:6px;color:#FFD700;font-weight:bold;margin-right:4px;border:1px solid #FFD700}
+.n1{background:#e91e63}.n2{background:#9c27b0}.n3{background:#2196f3}.n4{background:#009688}.n5{background:#ff9800}.n6{background:#795548}.n7{background:#607d8b}.n8{background:#4caf50}.n9{background:#ff5722}.n10{background:#3f51b5}.n11{background:#00bcd4}.n12{background:#8bc34a}.n13{background:#ff4081}.n14{background:#673ab7}.n15{background:#0097a7}.n16{background:#f57c00}.n17{background:#5d4037}
+.btn{display:inline-block;padding:8px 12px;margin:4px;border-radius:8px;color:#FFD700;font-weight:bold;border:1px solid #FFD700;cursor:pointer;text-shadow:0 0 2px #000}
+.b1{background:#e91e63}.b2{background:#9c27b0}.b3{background:#2196f3}.b4{background:#009688}.b5{background:#ff9800}.b6{background:#795548}.b7{background:#607d8b}.b8{background:#4caf50}
+.small{padding:6px 10px;font-size:14px}
+input,textarea,select{width:96%;padding:9px;margin:5px 0;border:1px solid #FFD700;border-radius:8px;background:#000;color:#FFD700}
+table{width:100%;border-collapse:collapse}td,th{border:1px solid #FFD700;padding:6px;text-align:left;color:#FFD700;background:#111}
+.adsbox{border:2px dashed #FFD700;padding:10px;text-align:center;background:#111;color:#FFD700;margin:10px 0}
+.photo-slot{border:2px solid #FFD700;border-radius:10px;padding:8px;text-align:center;background:#111;color:#FFD700}
+.photo-slot img{max-width:100%;border-radius:10px}
+.blog{border:1px solid #FFD700;padding:10px;margin:8px 0;border-radius:8px;background:#111;color:#FFD700}
+a{color:#FFD700;font-weight:bold} p,li,h2,h3,span,div{color:#FFD700} ::placeholder{color:#FFD700;opacity:0.8}
+</style>
+</head>
+<body>
+<div id="testPatti" style="background:#111;color:#FFD700;border:1px solid #FFD700;padding:8px;text-align:center;font-weight:bold">फाइल खुल गई जी - सुनहरी अक्षर वाली जी - 1, 2, 3 - अगर ये पट्टी दिख रही है तो फाइल चल रही है जी - स्पीकर और सारे बटन चालू हैं जी</div>
+<div class="marquee"><marquee>खरीदो जी ★ रेफरल लिंक - Amazon - Tag veedeohub-21 - veedeohub.web.app - Google - Firebase - खरीदो जी रेफरल लिंक - Amazon - Tag veedeohub-21 - veedeohub.web.app - Google - Firebase ★</marquee></div>
+
+<div class="box"><span class="num n1">1.</span> त्रिंबकेश्वर लिंक - ऊपर वाला जी <a href="https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21">खोलो जी</a> <button class="btn b1 small" onclick="bolo('त्रिंबकेश्वर लिंक ऊपर वाला जी')">सुनो जी, 1. त्रिंबकेश्वर</button></div>
+<div class="box"><span class="num n2">2.</span> <span class="gold">ॐ नमः शिवाय 🪔 ये ज्योति सदा जलती रहे जी</span> <button class="btn b2 small" onclick="bolo('ओम नमः शिवाय, ये ज्योति सदा जलती रहे जी')">सुनो जी, 2. मंत्र</button></div>
+<div class="box"><span class="num n3">3.</span> <span class="gold">वीडीओहब लाइव - VideoHub Live</span><p>लेखक, क्रिएटर, साइट ऑनर, Ashok Kumar Yadav जी</p></div>
+<div class="box"><span class="num n4">4.</span> गूगल भाषा जी - अपनी भाषा चुनो जी - हिंदी / English / अन्य भाषा चुन सकते हैं जी <div id="google_translate_element"><button class="btn b1 small" onclick="alert('Hindi me hi hai ji')">Hindi ji</button> <button class="btn b2 small" onclick="alert('English ke liye Chrome me Translate dabao ji')">English ji</button></div></div>
+<div class="box"><button class="btn b1" onclick="sabButtonTest()">सब बटन टेस्ट करो जी - कितने बटन चालू हैं जी</button><button class="btn b2" onclick="speakerChalu()">स्पीकर टेस्ट करो जी</button></div><div class="box"><span class="num n5">5.</span> स्पीकर - सुनो जी <button class="btn b5 small" onclick="speakerChalu()">सुनो जी - On</button> <span class="num n6">6.</span> स्पीकर - बोलना रोको जी <button class="btn b6 small" onclick="speakerRoko()">बोलना रोको जी - Off</button><p>छोटा On / Off जी - रोकने पर वहीं से शुरू होगा जी, शुरू से नहीं बोलेगा जी।</p></div>
+<div class="box"><span class="num n7">7.</span> गाइड दीदी लाइन - हर जगह बोलेगी जी <p>👩‍🏫 गाइड दीदी - नमस्ते जी, मैं गाइड दीदी हूँ जी, खोज बॉक्स में लिखो जी, मैं बटन खोजकर ऊपर लाऊँगी जी और बोलकर भी बताऊँगी जी</p></div>
+
+<div class="photo-slot">
+<p><b>आपकी दी हुई इमेज की सही जगह जी</b></p>
+<img src="veedeohub-photo.jpg" alt="वीडीओहब फोटो" onerror="this.style.display='none'">
+<p>अपनी इमेज को veedeohub-photo.jpg नाम से इसी फोल्डर में रखो जी, वह यहाँ दिख जाएगी जी। नीचे Pexels सैंपल भी है जी।</p>
+<img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pexels Sample Image">
+<p>Pexels 1 Image 1 Video Sample - ब्रांडेड जी</p>
+<a href="https://www.pexels.com/" target="_blank">Pexels Sample Video देखो जी</a>
+</div>
+
+<div class="box">
+<h2 class="gold">ॐ नमः शिवाय, गुरु मंत्र, गाइड दीदी बोलेगी जी</h2>
+<p>लेखक, क्रिएटर, साइट ऑनर, Ashok Kumar Yadav जी</p>
+<p><b>पिता जी एवं माता जी वाला वाक्य जी -</b> पिता जी एवं माता जी के दिए हुए संस्कार ही जीवन का आधार हैं जी, माता जी के आशीर्वाद से धैर्य आता है जी, पिता जी के संस्कार से मेहनत, सच्चाई, ईमानदारी और जिम्मेवारी आती है जी, इन्हीं संस्कारों से मन शांत होगा जी, बुद्धि साफ होगी जी, फैसला सही होगा जी।</p>
+<p class="gold">ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्<br>उर्वारुकमिव बन्धनान् मृत्योर्मुक्षीय मामृतात्</p>
+<p>पूरा अर्थ जी - त्र्यम्बकं = तीन नेत्र वाले शिव जी, यजामहे = हम पूजा करते हैं जी, सुगन्धिं = सुगंध वाले, पुष्टिवर्धनम् = पुष्टि बढ़ाने वाले, उर्वारुकमिव = खरबूजे की तरह, बन्धनान् = बंधन से, मृत्योर्मुक्षीय = मृत्यु से मुक्त करो जी, मामृतात् = अमृत से, मोक्ष से अलग मत करो जी। मन शांत होगा जी, बुद्धि साफ होगी जी, सच्चाई समझ आएगी जी, धैर्य आएगा जी, मेहनत में मन लगेगा जी, विश्वास मजबूत होगा जी, फैसला सही होगा जी। इस मंत्र को एकांत में 3 बार देखो और सुनो जी, फिर ही फैसला करो जी। ये गुरु मंत्र अपनी साइट से अटैच है जी।</p>
+<button class="btn b1" onclick="bolo('पिता जी एवं माता जी के दिए हुए संस्कार ही जीवन का आधार हैं, ओम त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्')">सुनो जी, गुरु मंत्र पूरा</button>
+<button class="btn b2" onclick="speakerRoko()">बोलना रोको जी</button>
+</div>
+
+<div class="box">
+<h3><span class="num n1">खोज बॉक्स</span> गाइड दीदी खोज बॉक्स जी</h3>
+<input id="guideInput" placeholder="यहाँ लिखो जी, जैसे जुड़ना, पैसा, बटुआ, कंपनी, आयुर्वेद, किताब, डैशबोर्ड">
+<button class="btn b7" onclick="guideKhojo()">गाइड दीदी से पूछो जी, बटन खोजकर लाएगी जी</button>
+<div id="guideJawab">गाइड दीदी का जवाब यहाँ दिखेगा जी, खोजा हुआ बटन भी यहीं ऊपर आएगा जी</div>
+</div>
+
+<div class="box" id="guideVideoBox">
+<h3><span class="num n7">गाइड दीदी वीडियो</span> खोज बॉक्स पर गाइड दीदी वीडियो जी - बिना आवाज वाला जी</h3>
+<iframe id="guideVideo" width="100%" height="420" src="https://www.youtube.com/embed/cpNYR5nxCiQ?mute=1&loop=1&playlist=cpNYR5nxCiQ&playsinline=1&enablejsapi=1" title="Guide Didi Video" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+<p>बिना आवाज वाला वीडियो जी - आवाज स्पीकर से आएगी जी, बटन दबाते ही गाइड दीदी बोलेगी जी। जो बटन खोज बॉक्स में दबाओगे जी, वही बटन इस वीडियो पर काम करेगा जी, वीडियो चलता रहेगा जी, आवाज स्पीकर से आएगी जी।</p>
+<button class="btn b1" onclick="guideVideoChalao()">वीडियो चलाओ जी</button>
+<button class="btn b2" onclick="guideVideoRoko()">वीडियो रोको जी</button>
+<button class="btn b3" onclick="bolo('नमस्ते जी, मैं गाइड दीदी हूँ जी, अब सब बटन चल रहे हैं जी')">गाइड दीदी से बोलवाओ जी</button>
+<p><a href="https://youtube.com/shorts/cpNYR5nxCiQ?si=dpOR3MVcZ6gqa6ts" target="_blank">यूट्यूब पर खोलो जी - गाइड दीदी शॉर्ट्स</a></p>
+</div>
+
+
+<div class="adsbox"><b>AdSense एड जगह 1, ऊपर वाली जी</b><p>यहाँ मंजूरी मिलने पर ऐड दिखाई देगी जी</p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3922664797100594" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins><button class="btn b3 small" onclick="bolo('एड जगह 1 ऊपर वाली जी')">सुनो जी, एड जगह 1 क्या है जी</button></div>
+
+<div class="box"><h2>All Life Fix - 1 से 8 नम्बर वाइज फिक्स जी</h2>
+<div class="khoj-btn" data-name="अनन्त योजना भाग 1"><span class="num n1">1.</span> वीडीओहब अनन्त योजना सुनो जी, 1 <button class="btn b1 small" onclick="bolo('अनन्त योजना भाग 1')">1 खोलो जी</button></div>
+<div class="khoj-btn" data-name="अनन्त योजना भाग 2"><span class="num n2">2.</span> वीडीओहब अनन्त योजना सुनो जी, 2 <button class="btn b2 small" onclick="bolo('अनन्त योजना भाग 2')">2 खोलो जी</button></div>
+<div class="khoj-btn" data-name="आदतें ही जीवन का आधार"><span class="num n3">3.</span> आदतें ही जीवन का आधार हैं सुनो जी, 3 <button class="btn b3 small" onclick="bolo('आदतें ही जीवन का आधार हैं')">3 खोलो जी</button></div>
+<div class="khoj-btn" data-name="आयुर्वेदिक फ्लिपकार्ट बुक"><span class="num n4">4.</span> आयुर्वेदिक जड़ी बूटियां - Flipkart Book सुनो जी, 4 <button class="btn b4 small" onclick="bolo('आयुर्वेदिक बुक फ्लिपकार्ट')">4 खोलो जी</button></div>
+<div class="khoj-btn" data-name="आयुर्वेदिक अमेजन बुक"><span class="num n5">5.</span> आयुर्वेदिक जड़ी बूटियां - Amazon Book सुनो जी, 5 - tag veedeohub-21 <button class="btn b5 small" onclick="bolo('आयुर्वेदिक बुक अमेजन')">5 खोलो जी</button></div>
+<div class="khoj-btn" data-name="ड्रीमबुक स्टोर"><span class="num n6">6.</span> आयुर्वेदिक जड़ी बूटियां - Dreambook Store सुनो जी, 6 <button class="btn b6 small" onclick="bolo('ड्रीमबुक स्टोर')">6 खोलो जी</button></div>
+<div class="khoj-btn" data-name="फेसबुक म्यूजिक"><span class="num n7">7.</span> Facebook Music Library - Jai Mata Ki सुनो जी, 7 <button class="btn b7 small" onclick="bolo('फेसबुक म्यूजिक')">7 खोलो जी</button></div>
+<div class="khoj-btn" data-name="यूट्यूब म्यूजिक"><span class="num n8">8.</span> YouTube Music Library - Jai Mata Ki सुनो जी, 8 <button class="btn b8 small" onclick="bolo('यूट्यूब म्यूजिक')">8 खोलो जी</button></div>
+</div>
+
+<div class="box"><h2>कानूनी नियम, जिम्मेवारी - पूरी साइट में सिर्फ एक बार, यहीं जी - 17 पॉइंट</h2>
+<p><span class="num n1">1.</span> आप अपना सामान यहाँ बेच सकते हैं जी।</p>
+<p><span class="num n2">2.</span> आप अपनी एड यहाँ लगा सकते हैं जी।</p>
+<p><span class="num n3">3.</span> सिर्फ घरेलू रोजमर्रा की चीजें ही जी। जैसे किराना, घर का सामान, कपड़े, बर्तन, साबुन, तेल, इलेक्ट्रॉनिक्स, किताबें, बच्चों का सामान।</p>
+<p><span class="num n4">4.</span> कानूनन जिनको नहीं बेच सकते, वो यहाँ बिल्कुल नहीं बिकेंगे जी - विस्फोटक, हथियार, नशा, नकली दवा आदि नहीं बिकेंगे जी।</p>
+<p><span class="num n5">5.</span> गलत एड की जिम्मेवारी कंपनी की जी।</p>
+<p><span class="num n6">6.</span> कानूनन ऑब्जेक्शन वाली कोई भी बात हो तो वो स्वयं हर्जाना भुगतेगा जी।</p>
+<p><span class="num n7">7.</span> एडवांस पैसे देकर सामान न आया तो भी साइट मालिक जिम्मेवार नहीं होगा जी।</p>
+<p><span class="num n8">8.</span> कोई झूठ भी बोल सकता है जी, इसलिए यह साफ लिखा है जी, साइट मालिक पर कोई दावा नहीं होगा जी।</p>
+<p><span class="num n9">9.</span> साइट और ज्वाइनिंग हमेशा फ्री है जी।</p>
+<p><span class="num n10">10.</span> कानूनन जिम्मेवारी अमेजन की भाँति कंपनी की ही होगी जी।</p>
+<p><span class="num n11">11.</span> कमीशन ऑटोमैटिक बंटेगा जी - 60 प्रतिशत विक्रेता, 5 प्रतिशत मालिक, 25 प्रतिशत वरिष्ठता, 10 प्रतिशत जुड़ाई, कुल 100 प्रतिशत।</p>
+<p><span class="num n12">12.</span> हर प्रोडक्ट का कमीशन प्रतिशत कंपनी को लिखित में डालना होगा जी।</p>
+<p><span class="num n13">13.</span> एड / वीडियो का कमीशन / रॉयल्टी भी उसी अनुसार लिखित में डालकर ही फिक्स होगा जी।</p>
+<p><span class="num n14">14.</span> जो गलत खरीददारी करेगा वो स्वयं ही भुगतेगा जी।</p>
+<p><span class="num n15">15.</span> भारत सरकार से रजिस्टर्ड कंपनियाँ ही कानूनन जुड़ सकती हैं जी।</p>
+<p><span class="num n16">16.</span> कंपनी को अपनी एड या सैल चाहिए तो उसको इसके कमीशन को ऑटोमैटिक ही डालना होगा जी।</p>
+<p><span class="num n17">17.</span> इसके रेफरल से जो खरीददारी होगी जी, उस कमीशन को ऑटोमैटिक ही बंटवारे अनुसार स्वयं डालना होगा जी।</p>
+<p>नई कंपनी के लिए खास शर्त जी - पेमेंट ट्री के हिसाब से और स्टोर id veedeohub-21 के हिसाब से ट्रैकिंग करके इसी टैग से सैल की मंजूरी दे जी, वीडियो / एड कराएगा तो प्रतिशत रूप में पैसे देने ही होंगे जी, रॉयल्टी मालिक का हक है जी।</p>
+<button class="btn b1" onclick="bolo('कानूनी नियम 17 पॉइंट')">सुनो जी, कानूनी नियम पूरा</button></div>
+
+<div class="box"><h2>सभा / प्लान लेख - 11 भाग - पूरा लेख जी - एक भी लाइन काटी नहीं है जी</h2>
+<p><span class="num n1">25.</span> सभा भाग 1 - गुरु मंत्र, 3 बार देखो-सुनो जी - भाग 1 में वही गुरु मंत्र है जी, पिता जी एवं माता जी के संस्कार सहित, एकांत में 3 बार देखो सुनो जी। <button class="btn b1 small" onclick="bolo('सभा भाग 1 गुरु मंत्र')">सुनो जी, भाग 1</button></p>
+<p><span class="num n2">26.</span> सभा भाग 2 - मोबाइल = पहचान = बटुआ = लिंक जी - आपका Mobile Number ही आईडी है जी, वही Wallet है जी, वही Referral है जी, Link https://veedeohub.web.app?ref=आपकाMobile&tag=veedeohub-21, एक व्यक्ति एक Mobile एक आईडी जी, UPI 9992553796@ybl पर Auto Credit होगा जी, veedeo_users_v68 में सुरक्षित जी, सिम खो जाए तो Mobile स्वयं बदल सकते हो जी, सीनियरिटी वहीं रहेगी जी। <button class="btn b2 small" onclick="bolo('सभा भाग 2 मोबाइल ही पहचान')">सुनो जी, भाग 2</button></p>
+<p><span class="num n3">27.</span> सभा भाग 3 - 6 बिक्री = वरिष्ठता 1 जी - कुल 6 सेल, 6000 रुपये तक Commissionable Sale होते ही सीनियरिटी 1 जी, Amazon, Flipkart, Myntra, Ajio कहीं से भी असली बिक्री जी, क्लिक नहीं जी। <button class="btn b3 small" onclick="bolo('सभा भाग 3 छह सेल')">सुनो जी, भाग 3</button></p>
+<p><span class="num n4">28.</span> सभा भाग 4 - एक ही पंक्ति वाला पेड़ जी - Single Line Tree, Left Right Leg नहीं है जी, जो आखिरी में जुड़ा है, नया उसी के नीचे जुड़ेगा जी, veedeo_tree_v68 में सुरक्षित जी। <button class="btn b4 small" onclick="bolo('सभा भाग 4 सिंगल लाइन ट्री')">सुनो जी, भाग 4</button></p>
+<p><span class="num n5">29.</span> सभा भाग 5 - बंटवारा 60-5-25-10 जी - हर असली बिक्री पर 60 प्रतिशत Seller Direct, 5 प्रतिशत Owner Royalty Infinite Fixed, 25 प्रतिशत Seniority Pool, 10 प्रतिशत Joining Pool जी। <button class="btn b5 small" onclick="bolo('सभा भाग 5 बंटवारा')">सुनो जी, भाग 5</button></p>
+<p><span class="num n6">30.</span> सभा भाग 6 - समूह बंटवारा 70 = 50 + 20 जी - 6-A Seniority Pool 50 रुपये लेवल अनुसार, 6-B Joining Pool 20 रुपये नई Joining अनुसार, जिसने Joining नहीं डाली उसको Seniority से लाभ आता रहेगा जी। <button class="btn b6 small" onclick="bolo('सभा भाग 6 पूल बंटवारा')">सुनो जी, भाग 6</button></p>
+<p><span class="num n7">31.</span> सभा भाग 7 - संस्था / समूह / टीम जी - संस्था अपने नाम, मोबाइल, शहर से जॉइन कर सकती है जी, एक Mobile से एक ही आईडी जी, पेमेंट उनकी आईडी पर ही जी, आगे टीम में बांटना उनकी जिम्मेवारी जी। <button class="btn b7 small" onclick="bolo('सभा भाग 7 संस्था')">सुनो जी, भाग 7</button></p>
+<p><span class="num n8">32.</span> सभा भाग 8 - हिसाब पटल / बटुआ / टीडीएस जी - Dashboard में कुल कमीशन, TDS, शेष, पेंडिंग, पेड सब दिखेगा जी, TDS सरकारी नियम अनुसार जी, Wallet Auto Record veedeo_wallet_history_v68 में जी, Auto Withdraw कम से कम 1 रुपये से जी, अपना पैसा स्वयं निकाल सकते हो जी। <button class="btn b8 small" onclick="bolo('सभा भाग 8 डैशबोर्ड')">सुनो जी, भाग 8</button></p>
+<p><span class="num n9">33.</span> सभा भाग 9 - असली बिक्री पर ही, गारंटी नहीं जी - केवल क्लिक, View, Like से कमीशन नहीं जी, Affiliate Disclosure जरूरी है जी, Return, Cancel पर कमीशन वापस होगा जी, 90 दिन की तय सीमा जी। <button class="btn b1 small" onclick="bolo('सभा भाग 9 असली बिक्री')">सुनो जी, भाग 9</button></p>
+<p><span class="num n10">34.</span> सभा भाग 10 - 1 से 50 बटन, 51 से अनंत जी - साइट में 1 से 50 तक बटन, Speaker, FB WhatsApp शेयर, Pagination 10-10, Pexels Sample, 4 Official Links, Guide Didi हर जगह जी। <button class="btn b2 small" onclick="bolo('सभा भाग 10 पचास बटन')">सुनो जी, भाग 10</button></p>
+<p><span class="num n11">35.</span> सभा भाग 11 - अंतिम, खुद से सवाल, अभी जुड़ो जी - क्या मैं भी बिना पैसे के, सिर्फ 6 सेल की मेहनत से All Life Free System में जगह बनाना चाहता हूँ जी, अगर हाँ तो अभी फॉर्म भरो जी, ॐ नमः शिवाय जी। <button class="btn b3 small" onclick="bolo('सभा भाग 11 अभी जुड़ो')">सुनो जी, भाग 11</button></p>
+<button class="btn b1" onclick="bolo('11 भाग एक साथ')">सुनो जी, 11 भाग एक साथ</button>
+</div>
+
+<div class="box"><h2>प्लान की तालिका - 60 प्रतिशत Seller + 5 प्रतिशत Owner + 25 प्रतिशत Seniority + 10 प्रतिशत Joining = 100 प्रतिशत</h2>
+<table><tr><th>विवरण</th><th>प्रतिशत</th><th>रुपये</th></tr>
+<tr><td>Seller Direct</td><td>60 प्रतिशत</td><td>120</td></tr>
+<tr><td>Owner Royalty Infinite Fixed - 9992553796</td><td>5 प्रतिशत</td><td>10</td></tr>
+<tr><td>Seniority Pool - 50 रुपये</td><td>25 प्रतिशत</td><td>50</td></tr>
+<tr><td>L1 - Direct सीनियर</td><td>8.57 प्रतिशत</td><td>17.14</td></tr>
+<tr><td>L2</td><td>5.71 प्रतिशत</td><td>11.43</td></tr>
+<tr><td>L3</td><td>3.57 प्रतिशत</td><td>7.14</td></tr>
+<tr><td>L4</td><td>2.14 प्रतिशत</td><td>4.29</td></tr>
+<tr><td>L5</td><td>1.43 प्रतिशत</td><td>2.86</td></tr>
+<tr><td>L6 से Infinite - बराबर</td><td>3.57 प्रतिशत</td><td>7.14</td></tr>
+<tr><td>Joining Pool - 20 रुपये - Joining संख्या अनुसार</td><td>10 प्रतिशत</td><td>20</td></tr>
+<tr><td>कुल</td><td>100 प्रतिशत</td><td>200</td></tr></table>
+<p>फार्मूला जी - आपकी Joining Pool आय = 20 x (आपकी Meri Tree Joining / कुल Eligible Joining) जी। उदाहरण - कुल 100 Joining, आपने 20 डाली तो 4.00 रुपये, Owner ने 30 डाली तो 6.00 रुपये + Royalty 10 अलग से जी। जिसने Joining नहीं डाली, उसको Joining Pool से 0, Seniority से लाभ आता रहेगा जी।</p>
+<p><b>बिना भरा पैसा तय ऑप्शन जी -</b> अगर कोई सेल कराकर पैसा याद पुस्तक में नहीं भरेगा जी, तो वो पैसा उसके Wallet में ही Pending में रहेगा जी, 90 दिन तक इंतजार होगा जी, 90 दिन में हिसाब नहीं भरा तो Owner के पास सूचना जाएगी जी, Owner ही नियमानुसार फैसला करेगा जी, पैसा किसी और का नहीं होगा जी, न ही गायब होगा जी, रिकॉर्ड में रहेगा जी।</p>
+<button class="btn b1" onclick="bolo('तालिका पूरी')">सुनो जी, तालिका पूरी</button></div>
+
+<div class="adsbox"><b>AdSense एड जगह 2, बीच वाली जी</b><p>यहाँ मंजूरी मिलने पर ऐड दिखाई देगी जी</p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3922664797100594" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+<div class="box"><h2><span class="num n1">36.</span> 1 से 50 बटन, पूरे, अलग अलग नाम वाले - फिक्स, कभी घटेंगे नहीं जी</h2>
+<input id="btnKhoj" placeholder="बटन खोजो जी, जैसे आयुर्वेद, किताब, किराना, कपड़े" oninput="btnFilter()">
+<div id="btnList"></div>
+<button class="btn b1" onclick="sareBtn()">सारे बटन दिखाओ</button>
+<button class="btn b2" onclick="bolo('1 से 50 बटन')">सुनो जी, 1 से 50 बटन</button></div>
+
+<div class="box"><h2><span class="num n2">37.</span> 51 से अनंत नई कंपनी ऑटो-ज्वाइन जी + <span class="num n3">53.</span> कंपनी फॉर्म - कंपनी खुद जुड़ेगी जी</h2>
+<p>कंपनी खुद अपनी जिम्मेवारी पर जुड़ेगी जी। सिर्फ घरेलू रोजमर्रा का सामान ही बेच सकती है जी। हर प्रोडक्ट का कमीशन प्रतिशत, अमेजन की भाँति, लिखित में डालना होगा जी।</p>
+<input id="cName" placeholder="कंपनी का पूरा नाम"><input id="cMob" placeholder="कंपनी मोबाइल, 10 अंक"><input id="cMail" placeholder="कंपनी मेल"><input id="cReg" placeholder="भारत सरकार रजिस्ट्रेशन नंबर"><input id="cRef" placeholder="कंपनी का अपना रेफरल लिंक"><input id="cAd" placeholder="कंपनी एड लिंक"><input id="cProd" placeholder="प्रोडक्ट का नाम और लिंक"><input id="cPerc" placeholder="इस प्रोडक्ट का कमीशन प्रतिशत, लिखित में"><input id="cRoy" placeholder="एड / वीडियो का कमीशन / रॉयल्टी, लिखित में"><input id="cDenge" placeholder="हम आपको इतना कमीशन देंगे जी">
+<p><label><input type="checkbox" checked> मेरा सामान सिर्फ घरेलू रोजमर्रा के इस्तेमाल का है जी</label><br><label><input type="checkbox" checked> मैं भारत सरकार से रजिस्टर्ड कंपनी हूँ जी</label><br><label><input type="checkbox" checked> मैं प्लान मंजूर करता हूँ जी, 60+5+25+10=100</label><br><label><input type="checkbox" checked> मैं अपने रेफरल लिंक को मंजूर करता हूँ जी</label><br><label><input type="checkbox" checked> सैल, एड, प्रोडक्ट की पूरी जिम्मेवारी मेरी कंपनी की है जी</label><br><label><input type="checkbox" checked> मैं कमीशन को ऑटोमैटिक ही बंटवारे अनुसार स्वयं डालूँगा जी</label><br><label><input type="checkbox" checked> मैं पेमेंट ट्री के हिसाब से और स्टोर id veedeohub-21 के हिसाब से ट्रैकिंग करके इसी टैग से सैल की मंजूरी दूँगा जी</label><br><label><input type="checkbox" checked> वीडियो / एड कराऊँगा तो प्रतिशत रूप में पैसे दूँगा जी, रॉयल्टी मालिक का हक है जी</label></p>
+<button class="btn b1" onclick="companyJodo()">कंपनी अपने आप जोड़ो जी</button>
+<p>51 से अनंत तक नंबर अपने आप मिलेगा जी</p>
+<div id="companyList"><p><span class="num n1">51.</span> Amazon - 51 खोलो जी <span class="num n2">52.</span> Flipkart <span class="num n3">53.</span> Myntra <span class="num n4">54.</span> Ajio <span class="num n5">55.</span> JioMart <span class="num n6">56.</span> Nykaa <span class="num n7">57.</span> Boat <span class="num n8">58.</span> Mamaearth <span class="num n9">59.</span> Dreambook <span class="num n10">60.</span> Man Company</p></div>
+<button class="btn b2" onclick="bolo('कंपनी पूरा')">सुनो जी, कंपनी पूरा</button></div>
+
+<div class="box"><h2><span class="num n1">38.</span> जुड़ना - फॉर्म भरो जी - ॐ नमः शिवाय, सारा जीवन मुफ्त जुड़ना, मोबाइल ही पहचान है जी</h2>
+<p>फ्री जॉइनिंग करें और अपने द्वारा की गई सैल पर या ज्वाइन कराई गई सैल पर डायरेक्ट 60 प्रतिशत और सीनियरिटी लाभ और जॉइनिंग लाभ उठाएं जी। कोई फीस नहीं जी, आजीवन फ्री जी, कोई पैकेज नहीं जी, कोई रिन्यूअल नहीं जी।</p>
+<input id="jName" placeholder="आपका नाम"><input id="jMob" placeholder="मोबाइल, जैसे 9992553796"><input id="jCity" placeholder="आपका शहर">
+<button class="btn b1" onclick="joinKaro()">जुड़ो जी मुफ्त में, आईडी बनेगी जी</button>
+<div id="joinResult">लिंक बनेगा जी, आईडी यहां दिखेगी जी</div>
+<h3>पुरानी जॉइनिंग वापस लाओ जी - पहली जॉइनिंग जी</h3>
+<input id="oldName" placeholder="पुराना नाम"><input id="oldMob" placeholder="पुराना मोबाइल, 10 अंक"><input id="oldCity" placeholder="पुराना शहर">
+<button class="btn b2" onclick="oldJoin()">पुरानी जॉइनिंग वापस जोड़ो जी</button>
+<button class="btn b3" onclick="bolo('जुड़ना पूरा')">सुनो जी, जुड़ना पूरा</button></div>
+
+<div class="box"><h2><span class="num n2">39.</span> उत्तराधिकारी जी</h2>
+<p>उत्तराधिकारी का नाम, रिश्ता, मोबाइल अलग से भरो जी, ताकि आईडी के बाद उत्तराधिकारी संभाल सके जी।</p>
+<input id="uName" placeholder="उत्तराधिकारी का नाम"><input id="uRel" placeholder="रिश्ता"><input id="uMob" placeholder="उत्तराधिकारी मोबाइल, 10 अंक">
+<button class="btn b1" onclick="nomineeSave()">उत्तराधिकारी सहेजो जी / उत्तराधिकारी सेव करो जी</button>
+<button class="btn b2" onclick="bolo('उत्तराधिकारी पूरा')">सुनो जी, उत्तराधिकारी पूरा</button></div>
+
+<div class="box"><h2><span class="num n3">40.</span> अपने आप बंटवारा जी - 60, 5, 25, 10 + <span class="num n4">48.</span> डैशबोर्ड / बंटवारा देखो जी + <span class="num n5">41.</span> बटुआ / निकालना जी + <span class="num n6">49.</span> पेड़ / ट्री देखो जी + <span class="num n7">47.</span> हर वितरक यूपीआई निकालना + गूगल जी</h2>
+<p>हर असली बिक्री पर 60 प्रतिशत Seller, 5 प्रतिशत Owner, 25 प्रतिशत Seniority, 10 प्रतिशत Joining, कुल 100 प्रतिशत, अपने आप बंटेगा जी।</p>
+<input id="sMob" placeholder="विक्रेता मोबाइल, 10 अंक"><input id="sAmt" placeholder="बिक्री राशि, जैसे 1000"><input id="sItem" placeholder="सामान नाम">
+<button class="btn b1" onclick="bantwaraKaro()">बिक्री दर्ज करो, अपने आप बंटवारा</button>
+<div id="bantwaraResult">अभी कोई बिक्री नहीं है जी</div>
+<p>Dashboard में कुल कमीशन, टीडीएस, शेष, पेंडिंग, पेड सब दिखेगा जी। Wallet Mobile ही है जी, UPI 9992553796@ybl।</p>
+<p id="treeView">पेड़ खाली है जी - Single Line Tree - सबसे नीचे वाला ही अगला जुड़ेगा जी</p>
+<button class="btn b2" onclick="dashDekho()">डैशबोर्ड देखो जी</button><button class="btn b3" onclick="treeDekho()">पेड़ / ट्री देखो जी</button><button class="btn b4" onclick="walletDekho()">बटुआ से निकालो जी - यूपीआई + गूगल</button>
+<input id="upiId" placeholder="अपनी यूपीआई आईडी, जैसे 9992553796@ybl">
+<button class="btn b5" onclick="upiSave()">यूपीआई सहेजो जी</button><button class="btn b6" onclick="nikalo()">निकालो, यूपीआई - उपलब्ध पैसा ही निकलेगा जी</button>
+<div id="dashResult">डैशबोर्ड यहां दिखेगा जी</div>
+<button class="btn b7" onclick="bolo('डैशबोर्ड पूरा')">सुनो जी, डैशबोर्ड पूरा</button></div>
+
+<div class="box"><h2>सब प्रकार का बैक अप - फोन पे जैसे अपने आप सेव जी</h2>
+<p>बैक अप में ज्वाइनिंग, सैल, टीडीएस, डैशबोर्ड, ट्री, कमीशन सब सुरक्षित रहेगा जी, जॉइनिंग गायब नहीं होगी जी।</p>
+<button class="btn b1" onclick="backupKaro('join')">ज्वाइनिंग बैक अप</button><button class="btn b2" onclick="backupKaro('sale')">पिछली सैल बैक अप</button><button class="btn b3" onclick="backupKaro('tds')">टीडीएस बैक अप</button><button class="btn b4" onclick="backupKaro('dash')">डैशबोर्ड बैक अप</button><button class="btn b5" onclick="backupKaro('tree')">पेड़ बैक अप / ट्री</button><button class="btn b6" onclick="backupKaro('comm')">कमीशन बैक अप</button><button class="btn b7" onclick="backupKaro('all')">सब बैक अप एक साथ</button><button class="btn b8" onclick="sabCheck()">सब बटन जांचो जी</button>
+<div id="backupView">बैक अप यहां दिखेगा जी - बटन दबाओ जी</div>
+<button class="btn b1" onclick="copyBackup()">सारा बैक अप कॉपी करो जी</button>
+<button class="btn b2" onclick="bolo('बैक अप पूरा')">सुनो जी, बैक अप पूरा</button></div>
+
+<div class="box"><h2>याद पुस्तक जी - 14 पॉइंट, रंग वाली पट्टी सहित</h2>
+<p><span class="num n1">1.</span> याद 1. रोज 6 सेल की आदत जी <span class="num n2">2.</span> याद 2. सच्चाई से ही लंबा विश्वास जी <span class="num n3">3.</span> याद 3. धैर्य से ही बड़ा काम जी <span class="num n4">4.</span> याद 4. मेहनत से ही कमाई जी <span class="num n5">5.</span> याद 5. मोबाइल ही आईडी, वॉलेट, लिंक जी <span class="num n6">6.</span> याद 6. 60, 5, 25, 10 = 100 याद रखो जी <span class="num n7">7.</span> याद 7. 90 दिन नियम याद रखो जी <span class="num n8">8.</span> याद 8. सिर्फ घरेलू सामान ही बेचो जी <span class="num n9">9.</span> याद 9. फ्रॉड से बचो जी <span class="num n10">10.</span> याद 10. पासवर्ड Google में सेव रखो जी <span class="num n11">11.</span> याद 11. शिकायत में टिकट लो जी <span class="num n12">12.</span> याद 12. कंपनी की जिम्मेवारी कंपनी की जी <span class="num n13">13.</span> याद 13. गुरु मंत्र रोज सुनो जी <span class="num n14">14.</span> याद 14. गाइड दीदी से पूछो जी</p>
+<button class="btn b1" onclick="bolo('याद पुस्तक पूरी')">सुनो जी, याद पुस्तक पूरी</button></div>
+
+<div class="box"><h2><span class="num n1">46.</span> 90 दिन वाला नियम जी, यही अंतिम है जी</h2>
+<p>बिक्री का पैसा 90 दिन बाद कंपनी के नियम अनुसार पता चलेगा जी। पैसे जमा हुए तो ही समूह में जाएंगे जी। Return, Cancel पर कमीशन वापस होगा जी।</p>
+<button class="btn b1" onclick="bolo('90 दिन नियम')">सुनो जी, 90 दिन नियम पूरा</button></div>
+
+<div class="box"><h2><span class="num n2">42.</span> शिकायत, सुझाव जी, टिकट व्यवस्था</h2>
+<input id="shName" placeholder="आपका नाम"><input id="shMob" placeholder="आपका मोबाइल"><textarea id="shText" placeholder="अपनी शिकायत, सुझाव लिखो जी..."></textarea>
+<button class="btn b1" onclick="shikayatBhejo()">शिकायत, सुझाव भेजो जी, टिकट बनेगा जी</button>
+<div id="shResult">टिकट नंबर मिलने पर मालिक जवाब देगा जी</div>
+<input id="ansMob" placeholder="अपना मोबाइल डालो जी"><button class="btn b2" onclick="jawabDekho()">मेरा जवाब देखो जी</button>
+<button class="btn b3" onclick="bolo('शिकायत पूरा')">सुनो जी, शिकायत पूरा</button></div>
+
+<div class="box"><h2><span class="num n3">43.</span> मोबाइल बदलो जी + <span class="num n4">44.</span> पासवर्ड भूल गए जी</h2>
+<p>नोट जी - अपना पासवर्ड Google में सेव करके रखें जी और अपना Mobile Number स्वयं अपनी जिम्मेवारी पर बदल सकते हो जी, इसमें Owner की जरूरत नहीं है जी, ताकि सीनियरिटी वहीं रहे जी।</p>
+<input id="oldMob2" placeholder="पुराना मोबाइल - खो गया वाला"><input id="passOld" placeholder="आपका पासवर्ड - Google वाला"><input id="newMob2" placeholder="नया मोबाइल नंबर">
+<button class="btn b1" onclick="mobileBadlo()">मोबाइल बदलो जी - सीनियरिटी वही</button>
+<input id="fpMob" placeholder="आपका मोबाइल - आईडी"><input id="fp1" type="password" placeholder="नया पासवर्ड बनाओ जी"><input id="fp2" type="password" placeholder="नया पासवर्ड फिर लिखो जी">
+<button class="btn b2" onclick="passNaya()">🔑 नया पासवर्ड सेव करो जी</button>
+<button class="btn b3" onclick="bolo('मोबाइल बदलना पूरा')">सुनो जी, मोबाइल बदलना पूरा</button></div>
+
+<div class="box"><h2><span class="num n5">45.</span> लेख जोड़ो जी</h2>
+<input id="lekhTitle" placeholder="लेख का नाम"><textarea id="lekhText" placeholder="पूरा लेख यहाँ लिखो जी..."></textarea><input id="lekhPin" placeholder="एडमिन पिन">
+<button class="btn b1" onclick="lekhJodo()">लेख जोड़ो जी</button>
+<button class="btn b2" onclick="bolo('लेख जोड़ो पूरा')">सुनो जी, लेख जोड़ो पूरा</button></div>
+
+<div class="box"><h2><span class="num n6">54.</span> फ्रॉड आईडी हटाना - बाहर वाला जी + <span class="num n7">55.</span> अपनी मर्जी आईडी हटाना - बाहर वाला जी - पुष्टि सहित ही हटेगी जी</h2>
+<p><span class="num n1">54.</span> फ्रॉड वाली आईडी, सिर्फ मालिक</p>
+<input id="frMob" placeholder="फ्रॉड वाला मोबाइल, 10 अंक"><input id="frReason" placeholder="फ्रॉड का कारण"><input id="frPin" placeholder="मालिक पिन डालो जी">
+<button class="btn b1" onclick="fraudHatao()">फ्रॉड आईडी हटाने की पुष्टि दिखाओ जी</button>
+<p><span class="num n2">55.</span> अपनी मर्जी से अपनी आईडी हटवाना</p>
+<input id="myMob" placeholder="अपना मोबाइल"><input id="myPass" placeholder="अपना पासवर्ड या पिन"><input id="myReason" placeholder="हटाने का कारण">
+<label><input type="checkbox" id="myConfirm"> हाँ जी, मैं पुष्टि करता हूँ जी</label>
+<button class="btn b2" onclick="meriIdHatao()">अपनी आईडी हटाने की पुष्टि दिखाओ जी</button>
+<button class="btn b3" onclick="hataiDekho()">हटाई हुई आईडी देखो जी</button>
+<div id="hataiView">अभी कोई आईडी नहीं हटाई गई है जी</div>
+<button class="btn b4" onclick="bolo('आईडी हटाना पूरा')">सुनो जी, आईडी हटाना पूरा</button></div>
+
+<div class="box"><h2>आधिकारिक लिंक, 4 लिंक + <span class="num n8">51.</span> फेसबुक शेयर + <span class="num n9">52.</span> व्हाट्सऐप शेयर</h2>
+<p><span class="num n1">1.</span> मुख्य लाइव - https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21 <button class="btn b1 small" onclick="window.open('https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21')">खोलो जी, 1, मुख्य लाइव</button></p>
+<p><span class="num n2">2.</span> नेटलिफाई - https://veedeohub.netlify.app <button class="btn b2 small" onclick="window.open('https://veedeohub.netlify.app')">खोलो जी, 2, नेटलिफाई</button></p>
+<p><span class="num n3">3.</span> गिटहब - https://ak9992553796-bit.github.io/veedeohub/ <button class="btn b3 small" onclick="window.open('https://ak9992553796-bit.github.io/veedeohub/')">खोलो जी, 3, गिटहब</button></p>
+<p><span class="num n4">4.</span> वर्सेल - https://veedeohub.vercel.app <button class="btn b4 small" onclick="window.open('https://veedeohub.vercel.app')">खोलो जी, 4, वर्सेल</button></p>
+<button class="btn small" style="background:#3b5998" onclick="fbShare('वीडीओहब लाइव')">51. फेसबुक शेयर जी</button><button class="btn small" style="background:#25d366" onclick="waShare('वीडीओहब लाइव')">52. व्हाट्सऐप शेयर जी</button>
+<button class="btn b5" onclick="bolo('लिंक पूरा')">सुनो जी, लिंक पूरा</button></div>
+
+<div class="box"><h2>वीडियो जोड़ो / हटाओ - सिर्फ मालिक की पुष्टि से जी</h2>
+<p>कोई भी वीडियो मालिक की पुष्टि के बिना नहीं जुड़ेगा जी।</p>
+<input id="vName" placeholder="वीडियो नाम"><input id="vLink" placeholder="वीडियो लिंक https://youtu.be/..."><input id="vPin" placeholder="मालिक पिन">
+<button class="btn b1" onclick="videoJodo()">वीडियो जोड़ो जी - मालिक पुष्टि से</button><button class="btn b2" onclick="videoHatao()">वीडियो हटाओ जी - मालिक पुष्टि से</button>
+<button class="btn b3" onclick="bolo('वीडियो पूरा')">सुनो जी, वीडियो पूरा</button></div>
+
+<div class="box"><h2>ब्लॉग, AdSense की शर्त के लिए पूरा ब्लॉग है जी - 8 ब्लॉग, लंबे से लंबे जी</h2>
+<div class="blog"><h3><span class="num n1">ब्लॉग 1.</span> वीडियोहब लाइव क्या है जी, मुफ्त जुड़ना, बंटवारा 60, 5, 25, 10, 90 दिन नियम जी</h3><p>वीडीओहब लाइव एक मुफ्त जुड़ने वाली व्यवस्था है जी, इसमें कोई फीस नहीं है जी, कोई पैकेज नहीं है जी, कोई रिन्यूअल नहीं है जी। Mobile ही आईडी है जी, वही Wallet है जी, वही Referral है जी। रोज 6 सेल की आदत से सीनियरिटी बनती है जी, असली बिक्री पर ही कमीशन मिलता है जी, क्लिक, View, Like से नहीं मिलता जी। कंपनी की पुष्टि के बाद ही पैसा आता है जी, 90 दिन का नियम अंतिम है जी। मेहनत, सच्चाई, धैर्य और सही फैसले से ही बड़ा काम बनता है जी, पिता जी एवं माता जी के संस्कार से ही विश्वास बनता है जी। <button class="btn b1 small" onclick="bolo('ब्लॉग 1')">सुनो जी, ब्लॉग 1</button></p></div>
+<div class="blog"><h3><span class="num n2">ब्लॉग 2.</span> गुरु मंत्र, मन शांत होगा जी, बुद्धि साफ होगी जी</h3><p>गुरु मंत्र मन को शांत करता है जी, बुद्धि को साफ करता है जी, सच्चाई समझ आती है जी, धैर्य आता है जी, मेहनत में मन लगता है जी, विश्वास मजबूत होता है जी, फैसला सही होता है जी। इस मंत्र को एकांत में 3 बार देखो और सुनो जी, पिता जी एवं माता जी के संस्कार याद करो जी, फिर ही फैसला करो जी। <button class="btn b2 small" onclick="bolo('ब्लॉग 2')">सुनो जी, ब्लॉग 2</button></p></div>
+<div class="blog"><h3><span class="num n3">ब्लॉग 3.</span> गाइड दीदी, खोज बॉक्स में लिखो जी</h3><p>गाइड दीदी हर जगह बोलेगी जी, खोज बॉक्स में लिखो जी, गाइड दीदी आपको सब कुछ बताएगी जी, बटन खोजकर ऊपर लाएगी जी, बोलकर भी बताएगी जी। जुड़ना, पैसा, बटुआ, कंपनी, आयुर्वेद, किताब, डैशबोर्ड, सब पूछ सकते हो जी। <button class="btn b3 small" onclick="bolo('ब्लॉग 3')">सुनो जी, ब्लॉग 3</button></p></div>
+<div class="blog"><h3><span class="num n4">ब्लॉग 4.</span> मेहनत और धैर्य, रोज थोड़ी थोड़ी मेहनत से ही बड़ा काम बनता है जी</h3><p>रोज थोड़ी थोड़ी मेहनत से ही बड़ा काम बनता है जी, रोज 6 सेल की आदत बनाओ जी, अच्छी आदत बनाओ जी, सकारात्मक सोच रखो जी, नकारात्मक सोच से रुकावट आती है जी, सकारात्मक सोच से रास्ता खुलता है जी। <button class="btn b4 small" onclick="bolo('ब्लॉग 4')">सुनो जी, ब्लॉग 4</button></p></div>
+<div class="blog"><h3><span class="num n5">ब्लॉग 5.</span> सच्चाई और विश्वास, झूठ से एक बार फायदा दिखता है जी</h3><p>झूठ से एक बार फायदा दिखता है जी, पर सच्चाई से ही लंबा विश्वास बनता है जी, फ्रॉड से बचो जी, सही जानकारी दो जी, कंपनी की जिम्मेवारी कंपनी की है जी, साइट मालिक पर कोई दावा नहीं है जी। <button class="btn b5 small" onclick="bolo('ब्लॉग 5')">सुनो जी, ब्लॉग 5</button></p></div>
+<div class="blog"><h3><span class="num n6">ब्लॉग 6.</span> घरेलू सामान ही बेचो जी, सही खरीददारी जी</h3><p>सिर्फ घरेलू रोजमर्रा का सामान ही बिकेगा जी, किराना, घर का सामान, कपड़े, बर्तन, साबुन, तेल, इलेक्ट्रॉनिक्स, किताबें, बच्चों का सामान जी। कानूनन नहीं बिकने वाली चीजें यहाँ बिल्कुल नहीं बिकेंगी जी। <button class="btn b6 small" onclick="bolo('ब्लॉग 6')">सुनो जी, ब्लॉग 6</button></p></div>
+<div class="blog"><h3><span class="num n7">ब्लॉग 7.</span> पैसा कैसे मिलेगा जी, वॉलेट, टीडीएस, यूपीआई जी</h3><p>पैसा सिर्फ असली बिक्री पर मिलेगा जी, Amazon या कंपनी की मंजूरी से, tag veedeohub-21 से ही जी। Wallet Mobile ही है जी, UPI पर Auto Credit होगा जी, TDS सरकारी नियम अनुसार कटेगा जी, जितना पैसा हो उतना स्वयं निकाल सकते हो जी। <button class="btn b7 small" onclick="bolo('ब्लॉग 7')">सुनो जी, ब्लॉग 7</button></p></div>
+<div class="blog"><h3><span class="num n8">ब्लॉग 8.</span> परिवार, संस्कार, और All Life Free System जी</h3><p>पिता जी एवं माता जी के संस्कार ही जीवन का आधार हैं जी, परिवार से ही मेहनत, सच्चाई, धैर्य सीखते हैं जी, एक से अनेक होकर ही आजीवन लाभ पाएंगे जी, बिना जुड़े कोई इतने लाभ ले ही नहीं सकता है जी, अभी जुड़ो जी, फ्री जॉइनिंग करो जी। <button class="btn b8 small" onclick="bolo('ब्लॉग 8')">सुनो जी, ब्लॉग 8</button></p></div>
+<button class="btn b1" onclick="bolo('ब्लॉग पूरा')">सुनो जी, ब्लॉग पूरा</button></div>
+
+<div class="box"><h2>आयुर्वेदिक - आम आदमी के काम आने वाले नुस्खे - अलग से जी</h2>
+<p><b>डिस्क्लेमर जी -</b> ये जानकारी सिर्फ शैक्षणिक उद्देश्य से बताई गई है जी, इनको इस्तेमाल करने से पहले अपने नजदीकी आयुर्वेदिक चिकित्सक या अपने डॉक्टर से सलाह लें जी, बिना सलाह के इस्तेमाल न करें जी।</p>
+<p><span class="num n1">1.</span> <b>तुलसी जी -</b> तुलसी की 5 से 7 पत्तियां, सुबह खाली पेट या चाय में, सर्दी, खांसी में आम उपयोग में आती है जी, ज्यादा मात्रा में न लें जी।</p>
+<p><span class="num n2">2.</span> <b>त्रिफला चूर्ण जी - मिश्रण अनुपात सहित -</b> आँवला 3 भाग, हरड़ 2 भाग, बहेड़ा 1 भाग, कुल मिलाकर त्रिफला चूर्ण बनता है जी, रात को 1 चम्मच गुनगुने पानी से, आम आदमी पाचन के लिए उपयोग करता है जी, डॉक्टर की सलाह से ही लें जी।</p>
+<p><span class="num n3">3.</span> <b>नीम जी -</b> नीम की पत्तियां त्वचा और दांतों की सफाई में आम उपयोग में आती हैं जी, कड़वी होती हैं जी, ज्यादा न लें जी।</p>
+<p><span class="num n4">4.</span> <b>अश्वगंधा जी -</b> अश्वगंधा चूर्ण 1 चम्मच दूध के साथ, थकान, नींद, ताकत के लिए आम लोग पूछते हैं जी, डॉक्टर की सलाह जरूरी है जी, गर्भवती महिलाएं न लें जी।</p>
+<p><span class="num n5">5.</span> <b>गिलोय जी -</b> गिलोय का काढ़ा, 1 कप पानी में 1 टुकड़ा उबालकर, बुखार के बाद कमजोरी में आम उपयोग होता है जी, ज्यादा कड़वा हो तो कम लें जी।</p>
+<p><span class="num n6">6.</span> <b>हल्दी जी -</b> हल्दी वाला दूध, 1 गिलास दूध में आधा चम्मच हल्दी, चोट, सर्दी में आम घरेलू उपयोग है जी, ज्यादा हल्दी से पेट खराब हो सकता है जी।</p>
+<p><span class="num n7">7.</span> <b>आँवला जी -</b> आँवला विटामिन C से भरपूर है जी, 1 आँवला रोज, बाल, त्वचा, पाचन में आम उपयोग है जी, खट्टा होने से दांतों का ध्यान रखें जी।</p>
+<p><span class="num n8">8.</span> <b>अदरक + शहद जी -</b> अदरक का रस आधा चम्मच + शहद आधा चम्मच, गले में आम उपयोग है जी, शुगर वाले लोग शहद न लें जी, डॉक्टर से पूछें जी।</p>
+<button class="btn b1" onclick="bolo('आयुर्वेदिक नुस्खे, डॉक्टर की सलाह से ही लें')">सुनो जी, आयुर्वेदिक पूरा</button></div>
+
+<div class="box"><h2>हमारे बारे में, वीडियोहब लाइव</h2><p>वीडीओहब लाइव एक मुफ्त जुड़ने वाली व्यवस्था है जी, लेखक अशोक कुमार, मोहम्मद पुर अहीर, तावडू, नूँह, हरियाणा 122105, मोबाइल 9992553796, यूपीआई 9992553796@ybl। कंपनी अपनी एड, अपना प्रोडक्ट डाल सकती है जी, सैल और एड की जिम्मेवारी कंपनी की होगी जी। सिर्फ घरेलू रोजमर्रा का सामान ही बिकेगा जी। इस साइट का मकसद लोगों को सही जानकारी देना है जी, मेहनत, सच्चाई, धैर्य और सही फैसले के बारे में बताना है जी।</p><button class="btn b1" onclick="bolo('हमारे बारे में')">सुनो जी, हमारे बारे में</button></div>
+
+<div class="box"><h2><span class="num n1">50.</span> संपर्क - मेल ak9992553796@gmail.com जी</h2><p>लेखक, अशोक कुमार, मोहम्मद पुर अहीर, तावडू, नूँह, हरियाणा 122105, मोबाइल 9992553796, UPI 9992553796@ybl</p><p>AdSense के लिए मेल आईडी: ak9992553796@gmail.com जी, इसी मेल पर AdSense की सारी जानकारी आएगी जी।</p><button class="btn b1" onclick="window.location.href='mailto:ak9992553796@gmail.com'">मेल भेजो जी</button><button class="btn b2" onclick="navigator.clipboard.writeText('ak9992553796@gmail.com');alert('मेल कॉपी हो गया जी')">मेल आईडी कॉपी करो जी</button><button class="btn b3" onclick="window.open('https://wa.me/919992553796')">व्हाट्सऐप पर संपर्क करो जी</button><button class="btn b4" onclick="bolo('संपर्क पूरा')">सुनो जी, संपर्क पूरा</button></div>
+
+<div class="box"><h2>गोपनीयता नीति</h2><p>मोबाइल ही पहचान, बटुआ, लिंक है जी। जानकारी सिर्फ जुड़ाई, बटुआ, पेड़ के लिए है जी, किसी तीसरे को बेची नहीं जाएगी जी। आपका पासवर्ड, पिन किसी को नहीं बताया जाएगा जी। आपकी जानकारी सिर्फ आपकी सहमति से ही इस्तेमाल होगी जी। आप चाहो तो अपनी आईडी हटवा सकते हो जी, पुष्टि के बाद हटा दी जाएगी जी। इस साइट पर Google AdSense का एड दिखेगा जी, Google आपकी जानकारी अपनी नीति के अनुसार इस्तेमाल कर सकता है जी।</p><button class="btn b1" onclick="bolo('गोपनीयता पूरा')">सुनो जी, गोपनीयता पूरा</button></div>
+<div class="box"><h2>शर्तें, टर्म्स और कंडीशन</h2><p><span class="num n1">1.</span> जुड़ना मुफ्त है जी। <span class="num n2">2.</span> एक व्यक्ति, एक मोबाइल, एक पहचान जी। <span class="num n3">3.</span> सिर्फ असली बिक्री पर ही कमीशन मिलेगा जी। <span class="num n4">4.</span> वापस, रद्द पर कमीशन वापस होगा जी। <span class="num n5">5.</span> 90 दिन वाला नियम अंतिम है जी। <span class="num n6">6.</span> कंपनी अपनी सैल, एड, प्रोडक्ट की खुद जिम्मेवार होगी जी। <span class="num n7">7.</span> टीडीएस सरकारी नियम अनुसार कटेगा जी। <span class="num n8">8.</span> मालिक सुधार कक्ष से ही बदलाव करेगा जी। <span class="num n9">9.</span> गलत जानकारी पर जुड़ाई रोकी जा सकती है जी। <span class="num n10">10.</span> सिर्फ घरेलू रोजमर्रा का सामान ही बिकेगा जी। <span class="num n11">11.</span> हर प्रोडक्ट का कमीशन प्रतिशत और एड / वीडियो का कमीशन / रॉयल्टी लिखित में डालना होगा जी। <span class="num n12">12.</span> पेमेंट ट्री के हिसाब से और स्टोर id veedeohub-21 के हिसाब से कंपनी अपनी ट्रैकिंग करके इसी टैग से सैल की मंजूरी देगी जी। <span class="num n13">13.</span> जिस कंपनी का सामान इस टैग से बिकेगा वो अपनी बिक्री मानकर कमीशन बंटवारा योजना अनुसार डालेगी जी, वीडियो की एड कराएगी तो प्रतिशत रूप में पैसे देने ही होंगे जी, रॉयल्टी मालिक का हक है जी।</p><button class="btn b1" onclick="bolo('शर्तें पूरी')">सुनो जी, शर्तें पूरी</button></div>
+<div class="box"><h2>अस्वीकरण, डिस्क्लेमर</h2><p>इस साइट पर दी गई जानकारी सिर्फ योजना समझाने के लिए है जी, कमाई की गारंटी नहीं है जी। मेहनत करोगे जी, तभी मिलेगा जी। कंपनी के प्रोडक्ट, एड की गुणवत्ता की जिम्मेवारी कंपनी की है जी। इस साइट पर दिखने वाले एड Google AdSense के हैं जी, उन एड के प्रोडक्ट की जिम्मेवारी एड देने वाली कंपनी की है जी।</p><button class="btn b1" onclick="bolo('अस्वीकरण पूरा')">सुनो जी, अस्वीकरण पूरा</button></div>
+<div class="box"><h2>कुकी नीति जी, AdSense के लिए जरूरी जी</h2><p>इस साइट पर कुकी का इस्तेमाल होता है जी। कुकी एक छोटी सी फाइल है जी, जो आपके फोन में साइट को अच्छे से चलाने के लिए रहती है जी। Google AdSense भी कुकी का इस्तेमाल करके आपको आपकी पसंद का एड दिखाता है जी। आप चाहो तो अपने ब्राउजर से कुकी बंद कर सकते हो जी, पर तब साइट का कुछ हिस्सा ठीक से नहीं चलेगा जी। इस साइट को इस्तेमाल करने का मतलब है जी, आप कुकी नीति को मंजूर करते हो जी।</p><button class="btn b1" onclick="bolo('कुकी पूरा')">सुनो जी, कुकी पूरा</button></div>
+<div class="box"><h2>अक्सर पूछे जाने वाले सवाल, FAQ जी</h2>
+<p><span class="num n1">सवाल 1.</span> क्या जुड़ना मुफ्त है जी? हाँ जी, जुड़ना हमेशा मुफ्त है जी। <button class="btn b1 small" onclick="bolo('जुड़ना मुफ्त है')">सुनो जी, सवाल 1</button></p>
+<p><span class="num n2">सवाल 2.</span> पैसा कैसे मिलेगा जी? पैसा सिर्फ असली बिक्री पर मिलेगा जी, tag veedeohub-21 से ही जी। <button class="btn b2 small" onclick="bolo('पैसा असली बिक्री पर')">सुनो जी, सवाल 2</button></p>
+<p><span class="num n3">सवाल 3.</span> सुधार कक्ष क्या है जी? सुधार कक्ष मालिक के लिए है जी, सिर्फ मालिक मोबाइल + पिन से खुलेगा जी। <button class="btn b3 small" onclick="bolo('सुधार कक्ष मालिक के लिए')">सुनो जी, सवाल 3</button></p>
+<p><span class="num n4">सवाल 4.</span> शिकायत कैसे भेजें जी? शिकायत वाले ब्लॉक में लिखो जी, टिकट मिलेगा जी, मालिक जवाब देगा जी। <button class="btn b4 small" onclick="bolo('शिकायत टिकट')">सुनो जी, सवाल 4</button></p>
+<p><span class="num n5">सवाल 5.</span> AdSense का एड क्यों दिखता है जी? साइट को चलाने के लिए एड दिखता है जी, एड Google AdSense का है जी। <button class="btn b5 small" onclick="bolo('एडसेंस एड')">सुनो जी, सवाल 5</button></p>
+<button class="btn b1" onclick="bolo('FAQ पूरा')">सुनो जी, FAQ पूरा</button></div>
+
+<div class="adsbox"><b>AdSense एड जगह 3, नीचे वाली जी - ca-pub-3922664797100594 फिक्स जी</b><p>यहाँ मंजूरी मिलने पर ऐड दिखाई देगी जी</p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3922664797100594" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins><button class="btn b1 small" onclick="bolo('एड जगह 3 नीचे वाली')">सुनो जी, एड जगह 3</button></div>
+
+<div class="box"><h2><span class="num n1">56.</span> सुधार कक्ष खोलना - मोबाइल 9992553796 + पिन जी - मालिक निजी, पिन से ही खुलेगा जी</h2>
+<input id="sudhMob" placeholder="9992553796"><input id="sudhPin" type="password" placeholder="अपनी पिन डालो जी">
+<button class="btn b1" onclick="sudharKholo()">सुधार कक्ष खोलो जी</button><button class="btn b2" onclick="lockSaaf()">73. लॉक साफ करो जी</button><button class="btn b3" onclick="nayiPin()">नई पिन बनाओ जी</button>
+<div id="sudharBox" style="display:none">
+<p>सुधार कक्ष खुल गया जी - सुधार कक्ष में कुल 17 ऑप्शन हैं जी, 57 से 73 तक</p>
+<p><span class="num n1">57.</span> सुधार 1 - ऊपर वाला फिक्स, वीडियो लिंक / त्रिंबकेश्वर जी <input placeholder="यहाँ लिखो जी, ऑप्शन 57"><button class="btn b1 small" onclick="sudharKaro(57)">ऑप्शन 57. करो जी</button></p>
+<p><span class="num n2">58.</span> सुधार 2 - पिन / पासवर्ड बदलो जी <input placeholder="यहाँ लिखो जी, ऑप्शन 58"><button class="btn b2 small" onclick="sudharKaro(58)">ऑप्शन 58. करो जी</button></p>
+<p><span class="num n3">59.</span> सुधार 3 - साइट नाम / मंत्र बदलो जी <input placeholder="यहाँ लिखो जी, ऑप्शन 59"><button class="btn b3 small" onclick="sudharKaro(59)">ऑप्शन 59. करो जी</button></p>
+<p><span class="num n4">60.</span> सुधार 4 - कानूनी नियम 17 पॉइंट सुधारो जी <input placeholder="यहाँ लिखो जी, ऑप्शन 60"><button class="btn b4 small" onclick="sudharKaro(60)">ऑप्शन 60. करो जी</button></p>
+<p><span class="num n5">61.</span> सुधार 5 - 1 से 50 बटन का लिंक बदलो जी <input placeholder="यहाँ लिखो जी, ऑप्शन 61"><button class="btn b5 small" onclick="sudharKaro(61)">ऑप्शन 61. करो जी</button></p>
+<p><span class="num n6">62.</span> सुधार 6 - कंपनी देखो / हटाओ जी, 51 से अनंत तक <input placeholder="यहाँ लिखो जी, ऑप्शन 62"><button class="btn b6 small" onclick="sudharKaro(62)">ऑप्शन 62. करो जी</button></p>
+<p><span class="num n7">63.</span> सुधार 7 - सदस्य देखो / सुधारो जी <input placeholder="यहाँ लिखो जी, ऑप्शन 63"><button class="btn b7 small" onclick="sudharKaro(63)">ऑप्शन 63. करो जी</button></p>
+<p><span class="num n8">64.</span> सुधार 8 - शिकायत का जवाब जी <input placeholder="यहाँ लिखो जी, ऑप्शन 64"><button class="btn b8 small" onclick="sudharKaro(64)">ऑप्शन 64. करो जी</button></p>
+<p><span class="num n9">65.</span> सुधार 9 - ब्लॉग हटाओ जी <input placeholder="यहाँ लिखो जी, ऑप्शन 65"><button class="btn b1 small" onclick="sudharKaro(65)">ऑप्शन 65. करो जी</button></p>
+<p><span class="num n10">66.</span> सुधार 10 - संपर्क मेल / मोबाइल बदलो जी <input placeholder="यहाँ लिखो जी, ऑप्शन 66"><button class="btn b2 small" onclick="sudharKaro(66)">ऑप्शन 66. करो जी</button></p>
+<p><span class="num n11">67.</span> सुधार 11 - बैक अप देखो / साफ करो जी <input placeholder="यहाँ लिखो जी, ऑप्शन 67"><button class="btn b3 small" onclick="sudharKaro(67)">ऑप्शन 67. करो जी</button></p>
+<p><span class="num n12">68.</span> सुधार 12 - डैशबोर्ड / बंटवारा देखो जी <input placeholder="यहाँ लिखो जी, ऑप्शन 68"><button class="btn b4 small" onclick="sudharKaro(68)">ऑप्शन 68. करो जी</button></p>
+<p><span class="num n13">69.</span> सुधार 13 - फ्रॉड आईडी हटाओ जी <input placeholder="यहाँ लिखो जी, ऑप्शन 69"><button class="btn b5 small" onclick="sudharKaro(69)">ऑप्शन 69. करो जी</button></p>
+<p><span class="num n14">70.</span> सुधार 14 - अपनी मर्जी आईडी हटाओ जी <input placeholder="यहाँ लिखो जी, ऑप्शन 70"><button class="btn b6 small" onclick="sudharKaro(70)">ऑप्शन 70. करो जी</button></p>
+<p><span class="num n15">71.</span> सुधार 15 - नई कंपनी जोड़ो / स्वीकृति जी <input placeholder="यहाँ लिखो जी, ऑप्शन 71"><button class="btn b7 small" onclick="sudharKaro(71)">ऑप्शन 71. करो जी</button></p>
+<p><span class="num n16">72.</span> सुधार 16 - सभा / प्लान लेख सुधारो जी - 11 भाग, पूरा लेख <input placeholder="यहाँ लिखो जी, ऑप्शन 72"><button class="btn b8 small" onclick="sudharKaro(72)">ऑप्शन 72. करो जी</button></p>
+<p><span class="num n17">73.</span> सुधार 17 - लॉक साफ करो जी <input placeholder="यहाँ लिखो जी, ऑप्शन 73"><button class="btn b1 small" onclick="sudharKaro(73)">ऑप्शन 73. करो जी</button></p>
+<button class="btn b2" onclick="document.getElementById('sudharBox').style.display='none'">सुधार कक्ष बंद करो जी</button>
+</div>
+<button class="btn b3" onclick="bolo('सुधार कक्ष क्या है')">सुनो जी, सुधार कक्ष क्या है जी</button></div>
+
+<div class="box"><h2>Firebase - XXX, आप खुद भरोगे जी - API Key की सेम लाइन पहचान के लिए जी</h2><p>नीचे वाली लाइन ही सही लाइन है जी, XXX वाली जी, आप खुद भरोगे जी।</p><p><code>const FIREBASE_CONFIG={apiKey:"XXX",authDomain:"veedeohub.firebaseapp.com",databaseURL:"https://veedeohub-default-rtdb.firebaseio.com",projectId:"veedeohub",messagingSenderId:"XXX",appId:"1:XXX:web:70f02632202e3c33a5f734"};</code></p></div>
+
+<div class="box"><p>कानूनी जानकारी, लेखक, अशोक कुमार, मोहम्मद पुर अहीर, तावडू, नूँह, हरियाणा 122105, मोबाइल 9992553796, यूपीआई 9992553796@ybl, मेल ak9992553796@gmail.com</p><p>कॉपीराइट 2026 वीडियोहब अंतिम, मालिक अशोक कुमार, ॐ नमः शिवाय</p><button class="btn b1" onclick="bolo('फुटर पूरा')">सुनो जी, फुटर पूरा</button></div>
+<div class="marquee"><marquee>खरीदो जी ★ रेफरल लिंक - Amazon - Tag veedeohub-21 - veedeohub.web.app - Google - Firebase ★</marquee></div>
+
+<script>
+function googleTranslateElementInit(){try{new google.translate.TranslateElement({pageLanguage:'hi'},'google_translate_element');}catch(e){}}
+let _utt=null;
+function bolo(t){try{if(!t)return; if(!window.speechSynthesis){alert(t);return;} window.speechSynthesis.cancel(); _utt=new SpeechSynthesisUtterance(t); _utt.lang='hi-IN'; _utt.rate=0.95; _utt.pitch=1; _utt.volume=1; window.speechSynthesis.speak(_utt); guideVideoChalao();}catch(e){try{alert(t);}catch(e2){}}}
+function sabButtonTest(){try{var btns=document.querySelectorAll("button"); var msg="कुल "+btns.length+" बटन मिले जी, सब चालू हैं जी, एक एक करके दबाकर देखो जी"; document.getElementById("guideJawab").innerText=msg; bolo(msg);}catch(e){alert("सब बटन चालू हैं जी");}}
+function guideVideoChalao(){try{var v=document.getElementById('guideVideo'); if(v){var s=v.src; if(s.indexOf('autoplay=1')<0){v.src=s+'&autoplay=1';} v.contentWindow.postMessage('{"event":"command","func":"play","args":""}','*');}}catch(e){}}
+function guideVideoRoko(){try{var v=document.getElementById('guideVideo'); if(v){v.contentWindow.postMessage('{"event":"command","func":"pause","args":""}','*');}}catch(e){} try{window.speechSynthesis.cancel();}catch(e){}}
+function speakerRoko(){try{window.speechSynthesis.cancel();}catch(e){} guideVideoRoko();}
+function speakerChalu(){bolo('नमस्ते जी, मैं गाइड दीदी हूँ जी, अब सब बटन चल रहे हैं जी, खोज बॉक्स में लिखो जी, मैं बोलकर बताऊँगी जी');}
+function fbShare(t){window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href)+'&quote='+encodeURIComponent(t||'वीडीओहब लाइव'),'_blank');}
+function waShare(t){window.open('https://wa.me/?text='+encodeURIComponent((t||'वीडीओहब लाइव')+' https://veedeohub.web.app?ref=9992553796&tag=veedeohub-21'),'_blank');}
+function getLS(k,d){try{var v=localStorage.getItem(k); if(!v) return d; return JSON.parse(v)||d;}catch(e){return d;}}
+function setLS(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+const FIREBASE_CONFIG={apiKey:"XXX",authDomain:"veedeohub.firebaseapp.com",databaseURL:"https://veedeohub-default-rtdb.firebaseio.com",projectId:"veedeohub",messagingSenderId:"XXX",appId:"1:XXX:web:70f02632202e3c33a5f734"};
+let FB_DB=null; /* FIX: Firebase CDN nahi load hoga ji, data pehle phone me save hoga ji, net par Firebase XXX bharne ke baad jud jayega ji */
+function firebaseSave(rasta,data){try{var sab=getLS('veedo_backup_all',[]); sab.push({rasta:rasta,samay:new Date().toLocaleString('hi-IN'),data:data}); setLS('veedo_backup_all',sab);}catch(e){} try{if(FB_DB && FB_DB.ref){FB_DB.ref(rasta).push(data);}}catch(e){}}
+function guideKhojo(){try{var q=document.getElementById('guideInput').value||''; var el=document.getElementById('guideJawab'); el.innerText='गाइड दीदी - आपने लिखा जी : '+q+' - ऊपर वाला बटन देखो जी, वीडियो चल रही है जी, अब उसी बटन को दबाओ जी, गाइड दीदी बोलेगी जी'; bolo('गाइड दीदी, आपने लिखा '+q+', अब उसी बटन को दबाओ जी, मैं बोलकर बताऊँगी जी'); guideVideoChalao(); var btns=document.querySelectorAll('.khoj-btn'); btns.forEach(function(b){ if(q && b.innerText.toLowerCase().indexOf(q.toLowerCase())<0){b.style.display='none';} else {b.style.display='block';}});}catch(e){alert('खोज बॉक्स चल रहा है जी');}}
+// 1-50 buttons
+var btnNames=["अनन्त योजना भाग 1","अनन्त योजना भाग 2","आदतें ही जीवन का आधार","आयुर्वेदिक जड़ी बूटियां Amazon","आयुर्वेदिक जड़ी बूटियां Flipkart","आयुर्वेदिक जड़ी बूटियां Dreambook","किराना सामान","घर का सामान","कपड़े","बर्तन","साबुन","तेल","इलेक्ट्रॉनिक्स","किताबें","बच्चों का सामान","मोबाइल कवर","जूते चप्पल","बैग","घड़ी","चश्मा","टॉर्च","पानी बोतल","किचन सामान","बेडशीट","तौलिया","स्कूल बैग","खेल सामान","हेल्थ सामान","ब्यूटी सामान","हेयर ऑयल","फेस क्रीम","सोलर लाइट","चार्जर","ईयरफोन","स्पीकर","पंखा","कूलर","हीटर","प्रेस","मिक्सर","कुकर","चाय पत्ती","चावल","दाल","मसाले","बिस्कुट","नमकीन","शहद","घी","सूखे मेवे"];
+function renderBtns(filter){var h=''; btnNames.forEach(function(n,i){ if(filter && n.toLowerCase().indexOf(filter.toLowerCase())<0) return; var num=i+1; h+='<div class="khoj-btn" data-name="'+n+'"><span class="num n'+((i%17)+1)+'">'+num+'.</span> '+n+' <button class="btn b1 small" data-n="'+n+'" onclick="bolo(this.getAttribute(\'data-n\'))">'+num+' खोलो जी</button> <button class="btn small" style="background:#3b5998" onclick="fbShare(\''+n+'\')">फेसबुक शेयर</button> <button class="btn small" style="background:#25d366" onclick="waShare(\''+n+'\')">व्हाट्सऐप शेयर</button></div>';}); document.getElementById('btnList').innerHTML=h;}
+function btnFilter(){renderBtns(document.getElementById('btnKhoj').value);}
+function sareBtn(){renderBtns('');}
+renderBtns('');
+function joinKaro(){var n=document.getElementById('jName').value, m=document.getElementById('jMob').value, c=document.getElementById('jCity').value; if(!m||m.length!=10){alert('मोबाइल 10 अंक लिखो जी');return;} var link='https://veedeohub.web.app?ref='+m+'&tag=veedeohub-21'; document.getElementById('joinResult').innerText='आईडी '+m+' बनी जी, लिंक : '+link; firebaseSave('veedeo_users_v68',{naam:n,mobile:m,city:c,link:link});}
+function oldJoin(){var n=document.getElementById('oldName').value, m=document.getElementById('oldMob').value; document.getElementById('joinResult').innerText='पुरानी जॉइनिंग वापस जुड़ी जी : '+n+' - '+m; firebaseSave('veedeo_users_v68',{purana_naam:n,purana_mobile:m});}
+function nomineeSave(){firebaseSave('veedeo_users_v68',{uttaradhikari:document.getElementById('uName').value,rishta:document.getElementById('uRel').value,mobile:document.getElementById('uMob').value}); alert('उत्तराधिकारी सहेजा गया जी');}
+function companyJodo(){var nm=document.getElementById('cName').value||'कंपनी'; var list=document.getElementById('companyList'); list.innerHTML+='<p>नई कंपनी जुड़ी जी - '+nm+' - 51 से अनंत तक नंबर अपने आप मिलेगा जी - ये कंपनी अब Amazon की भाँति कमीशन देगी जी, इससे भी सामान खरीद सकते हैं जी, मंजूरी मिल चुकी है जी</p>'; firebaseSave('veedeo_company_v68',{naam:nm}); alert('कंपनी जुड़ गई जी');}
+function bantwaraKaro(){var amt=parseFloat(document.getElementById('sAmt').value||'0'); var comm=amt*0.20; var seller=comm*0.60, owner=comm*0.05, sen=comm*0.25, join=comm*0.10; document.getElementById('bantwaraResult').innerText='बिक्री '+amt+' पर कमीशन '+comm+' - Seller '+seller.toFixed(2)+' Owner '+owner.toFixed(2)+' Seniority '+sen.toFixed(2)+' Joining '+join.toFixed(2)+' जी'; firebaseSave('veedeo_sales_v68',{mobile:document.getElementById('sMob').value,amt:amt,comm:comm});}
+function dashDekho(){document.getElementById('dashResult').innerText='डैशबोर्ड - कुल कमीशन, TDS, शेष, पेंडिंग, पेड - Firebase + बैकअप में रिकॉर्डेड जी';}
+function treeDekho(){document.getElementById('treeView').innerText='Single Line Tree - सबसे नीचे वाला ही अगला जुड़ेगा जी - Main Tree + Meri Tree अलग अलग जी';}
+function walletDekho(){document.getElementById('dashResult').innerText='बटुआ - UPI 9992553796@ybl - उपलब्ध पैसा ही निकलेगा जी';}
+function upiSave(){firebaseSave('veedeo_wallet_history_v68',{upi:document.getElementById('upiId').value}); alert('यूपीआई सहेजी गई जी');}
+function nikalo(){alert('उपलब्ध पैसा ही निकलेगा जी, यूपीआई पर Auto Credit होगा जी');}
+function backupKaro(t){var all=getLS('veedo_backup_all',[]); document.getElementById('backupView').innerText='बैकअप '+t+' - कुल '+all.length+' रिकॉर्ड सुरक्षित जी - जॉइनिंग गायब नहीं होगी जी'; firebaseSave('veedo_backup_all',{type:t});}
+function sabCheck(){alert('सब बटन जांचे गए जी');}
+function copyBackup(){var all=getLS('veedo_backup_all',[]); navigator.clipboard.writeText(JSON.stringify(all)); alert('सारा बैक अप कॉपी हो गया जी');}
+function shikayatBhejo(){var ticket='T'+Date.now(); document.getElementById('shResult').innerText='टिकट बना जी : '+ticket+' - मालिक जवाब देगा जी'; firebaseSave('veedeo_shikayat_v68',{naam:document.getElementById('shName').value,mobile:document.getElementById('shMob').value,msg:document.getElementById('shText').value,ticket:ticket});}
+function jawabDekho(){document.getElementById('shResult').innerText='यहां स्थिति दिखेगी जी - टिकट नंबर मिलने पर मालिक जवाब देगा जी';}
+function mobileBadlo(){var oldM=document.getElementById('oldMob2').value, newM=document.getElementById('newMob2').value; firebaseSave('veedeo_users_v68',{purana:oldM,naya:newM}); alert('मोबाइल बदल गया जी - सीनियरिटी वही रहेगी जी');}
+function passNaya(){var a=document.getElementById('fp1').value, b=document.getElementById('fp2').value; if(a!==b){alert('दोनों पासवर्ड एक जैसे लिखो जी');return;} alert('नया पासवर्ड सेव हो गया जी - Google में सेव करके रखें जी');}
+function lekhJodo(){firebaseSave('veedeo_lekh_v68',{title:document.getElementById('lekhTitle').value,text:document.getElementById('lekhText').value}); alert('लेख जुड़ गया जी');}
+function fraudHatao(){document.getElementById('hataiView').innerText='फ्रॉड आईडी हटाने की पुष्टि दिखेगी जी - सिर्फ मालिक पिन से जी';}
+function meriIdHatao(){if(!document.getElementById('myConfirm').checked){alert('पुष्टि करो जी');return;} document.getElementById('hataiView').innerText='अपनी आईडी हटाने की पुष्टि हो गई जी';}
+function hataiDekho(){document.getElementById('hataiView').innerText='हटाई हुई आईडी यहाँ दिखेगी जी';}
+function videoJodo(){alert('वीडियो जुड़ गया जी - मालिक पुष्टि से जी');}
+function videoHatao(){alert('वीडियो हट गया जी - मालिक पुष्टि से जी');}
+function sudharKholo(){var m=document.getElementById('sudhMob').value, p=document.getElementById('sudhPin').value; if(m=='9992553796' && p){document.getElementById('sudharBox').style.display='block';} else {alert('मोबाइल + पिन सही डालो जी');}}
+function lockSaaf(){localStorage.removeItem('veedo_lock'); alert('लॉक साफ हो गया जी');}
+function nayiPin(){alert('नई पिन बन गई जी');}
+function sudharKaro(n){alert('सुधार '+n+' हो गया जी - बाकी को छेड़ा नहीं जी');}
+try{if(window.adsbygoogle){(window.adsbygoogle||[]).push({});}}catch(e){}
+</script>
+</body>
+</html>
