@@ -376,6 +376,9 @@ try{ var _sudharObs=new MutationObserver(function(){ keepSudharAtBottom(); }); _
 <div id="guideDidiFull" aria-label="Guide Didi Full Screen - No YouTube">
   <div id="guideDidiTop"><div><b>गाइड दीदी बोल रही हैं जी</b><br><span>आवाज़ + चेहरा एक साथ है जी - YouTube नहीं खुलेगा जी</span></div><button onclick="closeGuideDidi()" style="background:#FF0000;color:#fff;border:none;padding:10px 14px;border-radius:10px;font-weight:bold;cursor:pointer">X बंद करो जी</button></div>
   <div id="guideDidiAvatarWrap">
+    <video id="guideDidiVideoBinaAwaz" src="guide-didi-video-bina-awaz.mp4" muted loop playsinline preload="auto" style="width:100%;max-width:320px;border:2px solid #FFD700;border-radius:12px;display:block;margin:0 auto;background:#000"></video>
+    <video id="guideDidiVideoAwaz" src="guide-didi-video-awaz-wali.mp4" playsinline preload="auto" style="width:100%;max-width:320px;border:2px solid #FFD700;border-radius:12px;display:none;margin:0 auto;background:#000"></video>
+    <button onclick="playWelcomeVideo()" style="display:block;margin:8px auto;padding:10px 14px;background:#FFD700;color:#000;border:none;border-radius:10px;font-weight:bold;cursor:pointer">▶️ असली वीडियो वाली दीदी - Welcome वीडियो चलाओ जी</button>
     <div id="guideDidiAvatar">
       <div class="gd-hair"></div>
       <div class="gd-face">
@@ -428,12 +431,14 @@ function showGuideDidi(text,videoId){
     box.style.display='block';
     var tx=document.getElementById('guideDidiText');
     if(tx){ tx.textContent=(text||'नमस्ते जी, मैं गाइड दीदी बोल रही हूँ जी'); tx.scrollTop=0; }
+    try{ var bv=document.getElementById('guideDidiVideoBinaAwaz'); var av=document.getElementById('guideDidiVideoAwaz'); if(av){ av.pause(); av.style.display='none'; } if(bv){ bv.style.display='block'; var pr=bv.play(); if(pr&&pr.catch){ pr.catch(function(){}); } } }catch(e){}
     guideTalkOn();
     try{ if(typeof setOutFix==='function'){ setOutFix('voiceOut2','गाइड दीदी बोल रही हैं जी - फुल स्क्रीन में जी - YouTube नहीं खुलेगा जी : '+(text||'').substring(0,120)); } }catch(e){}
   }catch(e){}
 }
 function hideGuideDidiOnly(){
   try{ var box=document.getElementById('guideDidiFull'); if(box){ box.classList.remove('show'); box.classList.remove('talking'); box.style.display='none'; } }catch(e){}
+  try{ var bv2=document.getElementById('guideDidiVideoBinaAwaz'); if(bv2) bv2.pause(); var av2=document.getElementById('guideDidiVideoAwaz'); if(av2) av2.pause(); }catch(e){}
   guideTalkOff();
   try{ var vf=document.getElementById('videoFrame'); if(vf){ vf.src=''; vf.removeAttribute('src'); } }catch(e){}
   try{ var vb=document.getElementById('videoBox'); if(vb) vb.style.display='none'; }catch(e){}
@@ -441,6 +446,8 @@ function hideGuideDidiOnly(){
 function minimizeGuideDidi(){ try{ var b=document.getElementById('guideDidiFull'); if(b) b.classList.add('mini'); }catch(e){} }
 function maximizeGuideDidi(){ try{ var b=document.getElementById('guideDidiFull'); if(b) b.classList.remove('mini'); }catch(e){} }
 function closeGuideDidi(){ try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(e){} hideGuideDidiOnly(); try{ if(typeof setOutFix==='function') setOutFix('voiceOut2','गाइड दीदी बंद हो गई जी'); }catch(e){} }
+function playWelcomeVideo(){ try{ var bv=document.getElementById('guideDidiVideoBinaAwaz'); if(bv){ bv.pause(); bv.style.display='none'; } var av=document.getElementById('guideDidiVideoAwaz'); if(av){ av.style.display='block'; av.muted=false; av.currentTime=0; var pr=av.play(); if(pr&&pr.catch){ pr.catch(function(){}); } av.onended=function(){ try{ av.style.display='none'; if(bv){ bv.style.display='block'; var p2=bv.play(); if(p2&&p2.catch){ p2.catch(function(){}); } } }catch(e){} }; } }catch(e){} }
+window.playWelcomeVideo=playWelcomeVideo;
 window.showGuideDidi=showGuideDidi;
 window.hideGuideDidiOnly=hideGuideDidiOnly;
 window.minimizeGuideDidi=minimizeGuideDidi;
